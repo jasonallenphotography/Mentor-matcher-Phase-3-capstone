@@ -18,9 +18,6 @@ class UsersController < ApplicationController
   def update
   end
 
-  def update
-  end
-
   def destroy
   end
 
