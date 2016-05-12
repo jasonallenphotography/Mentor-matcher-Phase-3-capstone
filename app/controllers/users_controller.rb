@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users =  return_opposite_type(current_user)
+    # @users = return_opposite_type(current_user)
     render 'index'
   end
 
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
 
     if @user.save
       redirect_to users_path
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.assign_attributes(params[:user])
+    @user.assign_attributes(user_params)
 
     if @user.save
       redirect_to users_path
@@ -49,6 +49,21 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect '/users'
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:first_name,
+                                 :last_name,
+                                 :location,
+                                 :industry,
+                                 :picture_url,
+                                 :public_profile_url,
+                                 :current_title,
+                                 :current_company,
+                                 :type,
+                                 :status,
+                                 :mission_statement)
   end
 
 end
