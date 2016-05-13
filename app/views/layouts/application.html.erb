@@ -1,33 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Mentormatch</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+          <a href="/">Mentorship</a>
+        <% if logged_in? %>
+          <a href="/users/<%=current_user.id%>">My Profile</a>
+        <% else %>
+          <a href="/auth/linkedin">Login or Join here!</a>
+        <% end %>
+      </nav>
+    </header>
+
+  <%= yield %>
+
+  <footer>
     <nav>
-        <a href="/">Mentorship</a>
       <% if logged_in? %>
-        <a href="/users/<%=current_user.id%>">My Profile</a>
-      <% else %>
-        <a href="/auth/linkedin">Login or Join here!</a>
+      <p>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %></p>
+      <a href="/logout">Logout?</a>
       <% end %>
+
     </nav>
-  </header>
+  </footer>
+  </body>
 
-<%= yield %>
-
-<footer>
-  <nav>
-    <% if logged_in? %>
-    <p>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %></p>
-    <a href="/logout">Logout?</a>
-    <% end %>
-
-  </nav>
-</footer>
-</body>
 </html>

@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
-# gem 'httparty'
-# gem 'oauth2', '~> 1.1'
+# Adds LinkedIn User creation and authentication
 gem 'omniauth'
 gem 'omniauth-linkedin'
+
+# Add Foundation CSS package
+gem 'foundation-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
