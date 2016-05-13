@@ -13,14 +13,27 @@
 
   <body>
     <header>
-      <nav class="top-bar">
-          <a href="/">Mentorship</a>
-        <% if logged_in? %>
-          <a href="/users/<%=current_user.id%>">My Profile</a>
-        <% else %>
-          <a href="/auth/linkedin">Login or Join here!</a>
-        <% end %>
+
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">Mentorship</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <ul class="right">
+            <% if logged_in? %>
+              <li><a href="/users/<%=current_user.id%>">My Profile</a</li>
+            <% else %>
+              <li><a href="/auth/linkedin">Login</a</li>
+              <li><a href="/auth/linkedin">Register</a</li>
+            <% end %>
+          </ul>
+        </section>
       </nav>
+
     </header>
 
   <%= yield %>
@@ -28,8 +41,8 @@
   <footer>
     <nav>
       <% if logged_in? %>
-      <p>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %></p>
-      <a href="/logout">Logout?</a>
+      <p>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %> |
+      <a href="/logout">Logout?</a></p>
       <% end %>
 
     </nav>
