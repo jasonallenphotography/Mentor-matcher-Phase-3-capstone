@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20160512223018) do
     t.string   "public_profile_url",                       null: false
     t.string   "current_title"
     t.string   "current_company"
-    t.string   "type",                                     null: false
-    t.string   "status",             default: "available", null: false
+    t.string   "type"
+    t.string   "status",             default: "available"
     t.string   "mission_statement"
+    t.string   "linkedin_id",                              null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
   end

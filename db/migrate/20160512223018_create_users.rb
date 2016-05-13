@@ -9,10 +9,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :public_profile_url, null: false, unique: true
       t.string :current_title
       t.string :current_company
-      t.string :type, null: false
-      t.string :status, null: false, default: "available"
+      t.string :type
+      t.string :status, default: "available"
       t.string :mission_statement
-      t.string :linkedin_id, null: false
+      t.string :linkedin_id, null: false, unique: true
 
       t.timestamps null: false
     end

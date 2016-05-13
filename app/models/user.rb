@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
             :last_name,
             :picture_url,
             :public_profile_url,
-            :type,
             :status,
             :linkedin_id, presence: true
   validates :linkedin_id, uniqueness: true
@@ -23,24 +22,22 @@ class User < ActiveRecord::Base
     end
   end
 
+#move this to the controller
   def self.find_or_create_from_auth_hash(auth)
     if User.find_by(linkedin_id: auth['uid'])
-      @user = User.find_by(linkedin_id: auth['uid'])
+      User.find_by(linkedin_id: auth['uid'])
     else
       @user = User.new()
+      @user.linkedin_id = auth['uid']
       @user.first_name = auth['info']['first_name']
       @user.last_name = auth['info']['last_name']
       @user.location = auth['info']['location']
       @user.industry = auth['info']['industry']
       @user.picture_url = auth['info']['image']
-      @user.public_profile_url = auth['info']['public_profile']
+      @user.public_profile_url = auth['info']['urls']['public_profile']
       # @user.current_title = auth['extra']['raw_info']['firstName']
       # @user.current_company = auth['extra']['raw_info']['firstName']
-      if @user.save
-        redirect_to users_path
-      else
-        redirect_to '/auth/linkedin'
-      end
+      return @user if @user.save
     end
   end
 
