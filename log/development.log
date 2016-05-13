@@ -23794,4 +23794,9 @@ Completed 302 Found in 13ms (ActiveRecord: 1.2ms)
 Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:22:18 -0400
 (linkedin) Request phase initiated.
   [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+<<<<<<< 686a332213a4026cf947e9287dc8b33baae78e12
 >>>>>>> Add seedfile data for later to seed users. Add small modification to gitignore
+=======
+  [1m[36mMentor Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Mentor')[0m
+  [1m[35mMentee Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Mentee')
+>>>>>>> Create matches migration, model, type models for pending,accepted,closed,and rejected

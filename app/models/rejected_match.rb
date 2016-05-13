@@ -1,0 +1,2 @@
+class RejectedMatch < Match
+end
