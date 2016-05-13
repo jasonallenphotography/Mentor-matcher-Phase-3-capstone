@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    # @users = return_opposite_type(current_user)
+    @users = return_opposite_type(current_user)
     render 'index'
   end
 
