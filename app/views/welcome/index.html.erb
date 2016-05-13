@@ -1,1 +1,37 @@
-<h1>Welcome to Mentor Match</h1>
+<h1><%=current_user.first_name%>'s Dashboard</h1>
+
+<div class="row">
+  <div class="small-3 large-4 columns">
+    <img src="<%=current_user.picture_url%>" alt="Profile Image"/>
+  </div>
+  <div class="small-6 large-4 columns">
+    <h4><%=current_user.location%></h4>
+  </div>
+  <div class="small-6 large-4 columns">
+    <h4><%=current_user.current_title%> at <%=current_user.current_company%></h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-6 large-4 columns">
+    <h4>Interests:</h4>
+    <h2>What would you like to do?</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-6 large-4 columns">
+    <a href="#" class="button round">Find a Match</a>
+  </div>
+  <div class="small-6 large-4 columns">
+    <a href="#" class="button round">View Requests</a>
+  </div>
+</div>
+<div class="row">
+  <div class="small-6 large-4 columns">
+    <a href="#" class="button round">View Inbox</a>
+  </div>
+  <div class="small-6 large-4 columns">
+    <a href="#" class="button round">Profile</a>
+  </div>
+</div>

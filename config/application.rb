@@ -12,7 +12,7 @@ require "sprockets/railtie"
 require "omniauth"
 require "omniauth-linkedin"
 require "json"
-require "YAML"
+
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
