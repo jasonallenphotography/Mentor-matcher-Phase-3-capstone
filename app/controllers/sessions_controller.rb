@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    binding.pry
-    user = User.from_omniauth(env["omniauth.auth"])
+    # binding.pry
+    p auth_hash
+    user = User.from_omniauth(request.env["omniauth.auth"])
     session[:user_id] = user.id
     # @user = User.find_or_create_from_auth_hash(auth_hash)
     # self.current_user = @user
