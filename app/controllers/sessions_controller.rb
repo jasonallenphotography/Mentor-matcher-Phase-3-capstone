@@ -5,7 +5,11 @@ class SessionsController < ApplicationController
     @data_hash = YAML.load(@data)
     if @user = User.find_or_create_from_auth_hash(request.env["omniauth.auth"])
       @user = session[:user_id] = @user.id
-      redirect_to '/'
+      unless @user.needs_type?
+        redirect_to '/'
+      else
+        redirect_to "/users/#{@user.id}/finish"
+      end
     else
       redirect_to '/auth/linkedin'
     end
