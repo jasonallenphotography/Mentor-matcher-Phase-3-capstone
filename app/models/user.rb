@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.find_or_create_from_auth_hash(auth)
+
+  end
+
 end
