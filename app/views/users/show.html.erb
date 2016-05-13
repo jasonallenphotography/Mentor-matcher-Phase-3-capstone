@@ -1,1 +1,52 @@
-<h1>This is the Users Show</h1>
+<h1><b><%= @user.first_name %> <%= @user.last_name %></b> |
+  <% if @user.status == 'available' %>
+    <% if @user.type == 'Mentor' %>
+      Offering
+    <% else %>
+      Seeking
+    <% end %>
+  <% end %></h1>
+
+<div class="row">
+  <div class="small-4 columns">
+    <img src="<%= @user.picture_url %>">
+  </div>
+  <div class="small-8 columns">
+    <%= @user.industry %>
+    <%= @user.location %>
+    <p><%= @user.current_title %> | <%= @user.current_company %></p>
+  </div>
+</div>
+
+    <p>About me:</br>
+    <%= @user.mission_statement %></p>
+    <form action="#" method="post">
+      <input type="hidden" method="_update">
+      <input type="button" value='Interested?'>
+    </form>
+
+
+<hr>
+
+<!-- ADD USER ASSOCIATIONS WITH THE BELOW INTERESTS AND JOBS -->
+<% interests = nil %>
+<% if interests == nil %>
+  <p>You don't have any interests yet!</p>
+  <form action="#" method="get">
+    <input type="button" value="Add interests">
+  </form>
+<% else %>
+  <% @user.interests.each do |interest| %>
+    <%= puts interest %>
+  <% end %>
+  <form action="#" method="get">
+    <input type="button" value="Edit interests">
+  </form>
+<% end %></br>
+
+<hr>
+
+<a href="<%= @user.public_profile_url %>">View me on LinkedIn</a>
+
+<hr>
+
