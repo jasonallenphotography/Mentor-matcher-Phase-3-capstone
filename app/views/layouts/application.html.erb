@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <nav>
+        <a href="/">Mentorship</a>
+      <% if logged_in? %>
+        <a href="/users/<%=current_user.id%>">My Profile</a>
+      <% else %>
+        <a href="/auth/linkedin">Login or Join here!</a>
+      <% end %>
+    </nav>
+  </header>
 
 <%= yield %>
 
+<footer>
+  <nav>
+    <% if logged_in? %>
+    <p>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <a href="/logout">Logout?</a>
+    <% end %>
+
+  </nav>
+</footer>
 </body>
 </html>
