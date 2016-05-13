@@ -13,14 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new()
-    #  @user.first_name = #response from JSON ||= a default placeholder
-    #  @user.last_name = response.last-name
-    #  @user.location =
-    #  @user.industry =
-    #  @user.picture_url =
-    #  @user.public_profile_url =
-    #  @user.current_title =
-    #  @user.current_company =
+  
     if @user.save
       redirect_to users_path
     # else
