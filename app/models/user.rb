@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
             :picture_url,
             :public_profile_url,
             :status,
+            :email,
             :linkedin_id, presence: true
-  validates :linkedin_id, uniqueness: true
+  validates :linkedin_id, :email, uniqueness: true
 
   has_many :interest_users
   has_many :interests, through: :interest_users
@@ -29,6 +30,7 @@ class User < ActiveRecord::Base
     else
       @user = User.new()
       @user.linkedin_id = auth['uid']
+      @user.email = auth['info']['email']
       @user.first_name = auth['info']['first_name']
       @user.last_name = auth['info']['last_name']
       @user.location = auth['info']['location']

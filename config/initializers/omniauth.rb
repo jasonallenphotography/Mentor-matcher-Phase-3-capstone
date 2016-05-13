@@ -2,10 +2,10 @@ OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :linkedin, "77gircg58feacx", "RK4LciZBygRURCGP",
-  :scope => 'r_basicprofile',
-  #  r_emailaddress'
+  :scope => 'r_basicprofile r_emailaddress',
+
   :fields => ["id",
-              # "email-address",
+              "email-address",
               "first-name",
               "last-name",
               "industry",
