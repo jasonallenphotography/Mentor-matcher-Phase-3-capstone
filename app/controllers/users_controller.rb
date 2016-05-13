@@ -12,23 +12,29 @@ class UsersController < ApplicationController
 
 
   def create
-    @params = params.to_json
+    @user = User.new()
+    # Step 3 on LI guide post to get token
+    #we need to collect OAUTH token on return from LI login
 
-    # @user = User.new()
+
+    # Step 4 on LI guide make authenticated request to retrieve basic profile as object
+    # url = 'https://api.linkedin.com/v1/people/~?format=json'
+    # response = HTTParty.get(url)
+
     #  @user.first_name = #response from JSON ||= a default placeholder
-    #  @user.last_name =
+    #  @user.last_name = response.last-name
     #  @user.location =
     #  @user.industry =
     #  @user.picture_url =
     #  @user.public_profile_url =
     #  @user.current_title =
     #  @user.current_company =
-    # if @user.save
+    if @user.save
       redirect_to users_path
     # else
       # @errors = @user.errors.full_messages
       # render 'new'
-    # end
+    end
   end
 
 
