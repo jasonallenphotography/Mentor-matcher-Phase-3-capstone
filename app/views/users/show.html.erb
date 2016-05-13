@@ -22,31 +22,29 @@
     <%= @user.mission_statement %></p>
     <form action="#" method="post">
       <input type="hidden" method="_update">
-      <input type="button" value='Interested?'>
+      <input class="button" type="button" value='Interested?'>
     </form>
-
 
 <hr>
 
-<!-- ADD USER ASSOCIATIONS WITH THE BELOW INTERESTS AND JOBS -->
 <% interests = nil %>
 <% if interests == nil %>
   <p>You don't have any interests yet!</p>
   <form action="#" method="get">
-    <input type="button" value="Add interests">
+    <input class="button" type="button" value="Add interests">
   </form>
 <% else %>
   <% @user.interests.each do |interest| %>
     <%= puts interest %>
   <% end %>
   <form action="#" method="get">
-    <input type="button" value="Edit interests">
+    <input class="button" type="button" value="Edit interests">
   </form>
 <% end %></br>
 
 <hr>
 
-<a href="<%= @user.public_profile_url %>">View me on LinkedIn</a>
+<a href="<%= @user.public_profile_url %>" class="button">View me on LinkedIn</a>
 
 <hr>
 
