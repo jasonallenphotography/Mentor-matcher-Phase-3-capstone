@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :type, null: false
       t.string :status, null: false, default: "available"
       t.string :mission_statement
+      t.string :linkedin_id, null: false
 
       t.timestamps null: false
     end
