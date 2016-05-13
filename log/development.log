@@ -8218,6 +8218,7 @@ Completed 200 OK in 125ms (Views: 123.3ms | ActiveRecord: 0.6ms)
   [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
   [1m[35mMentee Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Mentee')
   [1m[36mMentor Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Mentor')[0m
+<<<<<<< 0bae3c3f85c06f9084a353d87e38046c422cdbdb
 
 
 Started GET "/" for ::1 at 2016-05-13 17:50:39 -0400
@@ -8304,15 +8305,31 @@ ORDER BY c.conname
 Migrating to CreateUsers (20160512223018)
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (3.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "location" character varying, "industry" character varying, "picture_url" character varying NOT NULL, "public_profile_url" character varying NOT NULL, "current_title" character varying, "current_company" character varying, "type" character varying, "status" character varying DEFAULT 'available', "mission_statement" character varying, "linkedin_id" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+=======
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160512223018)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "location" character varying, "industry" character varying, "picture_url" character varying NOT NULL, "public_profile_url" character varying NOT NULL, "current_title" character varying, "current_company" character varying, "type" character varying, "status" character varying DEFAULT 'available', "mission_statement" character varying, "linkedin_id" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+>>>>>>> Add seedfile data for later to seed users. Add small modification to gitignore
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160512223018"]]
   [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
 Migrating to AddEmailToUsers (20160513212031)
   [1m[35m (0.2ms)[0m  BEGIN
+<<<<<<< 0bae3c3f85c06f9084a353d87e38046c422cdbdb
   [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "email" character varying NOT NULL[0m
   [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160513212031"]]
   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
   [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+=======
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "email" character varying NOT NULL[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160513212031"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+>>>>>>> Add seedfile data for later to seed users. Add small modification to gitignore
 FROM pg_constraint c
 JOIN pg_class t1 ON c.conrelid = t1.oid
 JOIN pg_class t2 ON c.confrelid = t2.oid
@@ -8324,6 +8341,7 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+<<<<<<< 0bae3c3f85c06f9084a353d87e38046c422cdbdb
 
 
 Started GET "/" for ::1 at 2016-05-13 17:55:14 -0400
@@ -23047,3 +23065,733 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-1509cb3433bf7f60a75710bd4d8561d25423676b3c4d4a21914940bf07b8869a.js?body=1" for ::1 at 2016-05-13 19:26:47 -0400
+=======
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users/1" for ::1 at 2016-05-13 17:52:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 20ms (ActiveRecord: 3.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/users_controller.rb:27:in `show'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (82.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (170.9ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 17:52:45 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 720ms (Views: 718.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 17:52:47 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--2182d947-b916-47cb-809d-8cad652b96a9&oauth_verifier=11816" for ::1 at 2016-05-13 17:52:56 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--2182d947-b916-47cb-809d-8cad652b96a9", "oauth_verifier"=>"11816"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1[0m  [["linkedin_id", "g8CGYxpaQV"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'g8CGYxpaQV' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'JasonAllen127@GMAIL.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["linkedin_id", "g8CGYxpaQV"], ["email", "JasonAllen127@GMAIL.com"], ["first_name", "Jason"], ["last_name", "Allen"], ["location", "Greater New York City Area, US"], ["industry", "Media Production"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_0-CI4tcKiF1Slxg8jNhq4A67i8NSPVg8gznN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnVym4rT"], ["public_profile_url", "https://www.linkedin.com/in/jasonallen127"], ["created_at", "2016-05-13 21:52:56.898843"], ["updated_at", "2016-05-13 21:52:56.898843"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/users/1/finish
+Completed 302 Found in 32ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/users/1/finish" for ::1 at 2016-05-13 17:52:56 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"1"}
+  Rendered users/finish.html.erb within layouts/application (10.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 121ms (Views: 119.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/1/finish" for ::1 at 2016-05-13 17:53:41 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZ61daQJJOZOgIFM2Y76upCwvkjSNcChWW9oQdxRQSMgsoQHLBDgW+fcs3z75nwqsOHim+VwLeSnk1Rt7OMrdA==", "user"=>{"mission_statement"=>"My goal is to be mentored!", "current_title"=>"Unemployed student", "current_company"=>"None", "type"=>"Mentee"}, "commit"=>"Finish my Profile!", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = 'g8CGYxpaQV' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'JasonAllen127@GMAIL.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["current_title", "Unemployed student"], ["current_company", "None"], ["type", "Mentee"], ["mission_statement", "My goal is to be mentored!"], ["updated_at", "2016-05-13 21:53:41.036695"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 17:53:41 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 142ms (Views: 141.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for ::1 at 2016-05-13 17:53:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 117ms (Views: 115.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 17:53:44 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 138ms (Views: 137.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 17:53:45 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 17:53:45 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 120ms (Views: 120.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 17:53:46 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 17:54:28 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 17:54:35 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 17:56:19 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/users/1/finish" for ::1 at 2016-05-13 17:56:37 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"1"}
+  Rendered users/finish.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 142ms (Views: 141.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 17:57:14 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 121ms (Views: 120.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 17:57:15 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 124ms (Views: 123.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 17:57:16 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--2d0abca5-25cc-43e8-a974-92daddc75768&oauth_verifier=71662" for ::1 at 2016-05-13 17:57:38 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--2d0abca5-25cc-43e8-a974-92daddc75768", "oauth_verifier"=>"71662"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1[0m  [["linkedin_id", "RgcyJ34e37"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'RgcyJ34e37' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jaclynfeminella@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["linkedin_id", "RgcyJ34e37"], ["email", "jaclynfeminella@gmail.com"], ["first_name", "Jaclyn"], ["last_name", "Feminella"], ["location", "Greater New York City Area, US"], ["industry", "Staffing and Recruiting"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_OfVE-1Vsm-RuFeWaOIuoVzeUmbIlTEWi0DuXcQgsEhErTsVacfhoMzKsebZlkJe_OJGkx31VGTeKGmMxBy0nVF-9bTeAGmY7By0WA6FRu8ggHZ51RDWFltdoFqt3wmdYO0UQnZmQlfs"], ["public_profile_url", "https://www.linkedin.com/in/jaclyn-feminella-b634485b"], ["created_at", "2016-05-13 21:57:39.861788"], ["updated_at", "2016-05-13 21:57:39.861788"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/users/2/finish
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/2/finish" for ::1 at 2016-05-13 17:57:39 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"2"}
+  Rendered users/finish.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 124ms (Views: 123.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/2/finish" for ::1 at 2016-05-13 17:58:21 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vPNi20xcDxSD72aEwUYAWYKDUlw/yMuzwi+evop7Qqs4S/ao+Y1Y1iLj6lej/w3xHcKJ9eDzhXki55UPOzdlOg==", "user"=>{"mission_statement"=>"Offering professional mentorship to navigate industry changes from Recruiting to Technology.", "current_title"=>"Student", "current_company"=>"DBC", "type"=>"Mentor"}, "commit"=>"Finish my Profile!", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = 'RgcyJ34e37' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'jaclynfeminella@gmail.com' AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["current_title", "Student"], ["current_company", "DBC"], ["type", "Mentor"], ["mission_statement", "Offering professional mentorship to navigate industry changes from Recruiting to Technology."], ["updated_at", "2016-05-13 21:58:21.919134"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 17:58:21 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 144ms (Views: 143.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 17:58:56 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 17:58:56 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 128ms (Views: 128.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 17:58:57 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 17:59:31 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--016be54d-b1fa-4e3f-a4be-95cb7d8cb998&oauth_verifier=94919" for ::1 at 2016-05-13 17:59:56 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--016be54d-b1fa-4e3f-a4be-95cb7d8cb998", "oauth_verifier"=>"94919"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1  [["linkedin_id", "_PHmiMG9vW"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '_PHmiMG9vW' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ivyvetor@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["linkedin_id", "_PHmiMG9vW"], ["email", "ivyvetor@gmail.com"], ["first_name", "Ivy"], ["last_name", "Vetor"], ["location", "Greater New York City Area, US"], ["industry", "Computer Software"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_9-HjcTh_ZbVjjXIlNvJCcG-_s3ppxbRlqzpCciT05XHD8i2Asq4AM_zAN7yGp8VgcAoi4kPNkgoD"], ["public_profile_url", "https://www.linkedin.com/in/ivyvetor"], ["created_at", "2016-05-13 21:59:57.368563"], ["updated_at", "2016-05-13 21:59:57.368563"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/users/3/finish
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/3/finish" for ::1 at 2016-05-13 17:59:57 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"3"}
+  Rendered users/finish.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 112ms (Views: 111.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/3/finish" for ::1 at 2016-05-13 18:00:21 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a8aoLcvE2E09AHbKsNY8r2ZlEcfNYCyephl+tCoKG8psTyV3BrzB7FujO4eUMg6Zd46dFfWVKDQdI3q1KyS+Ng==", "user"=>{"mission_statement"=>"looking for a mentor", "current_title"=>"unemployed", "current_company"=>"none", "type"=>"Mentee"}, "commit"=>"Finish my Profile!", "id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = '_PHmiMG9vW' AND "users"."id" != 3) LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'ivyvetor@gmail.com' AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6  [["current_title", "unemployed"], ["current_company", "none"], ["type", "Mentee"], ["mission_statement", "looking for a mentor"], ["updated_at", "2016-05-13 22:00:21.306652"], ["id", 3]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 18:00:21 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 200 OK in 128ms (Views: 127.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 18:02:53 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 18:02:53 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 119ms (Views: 119.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:02:55 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--3b9e3b30-796a-40a7-9005-73c6adb6aaa5&oauth_verifier=39670" for ::1 at 2016-05-13 18:03:24 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--3b9e3b30-796a-40a7-9005-73c6adb6aaa5", "oauth_verifier"=>"39670"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1[0m  [["linkedin_id", "brhUXch3Ka"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'brhUXch3Ka' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'emosowski@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["linkedin_id", "brhUXch3Ka"], ["email", "emosowski@gmail.com"], ["first_name", "Emily"], ["last_name", "Osowski"], ["location", "Greater New York City Area, US"], ["industry", "Music"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_tiUBxkqj_z-ycw7rYt_MlPYp6kGhldP8ZtfBsKUpCCDTqJa8ZtiMlKzp5zHyBej2AFfMq1nymk-3-DSuYKYwBKBKIk-8-DErYKYNylCgh5F24Rlu-3HVpLuuwAHKUDj3c1VUR7J7iuU"], ["public_profile_url", "https://www.linkedin.com/in/emily-osowski-b04a64a3"], ["created_at", "2016-05-13 22:03:25.061855"], ["updated_at", "2016-05-13 22:03:25.061855"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Redirected to http://localhost:3000/users/4/finish
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/4/finish" for ::1 at 2016-05-13 18:03:25 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"4"}
+  Rendered users/finish.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+Completed 200 OK in 117ms (Views: 116.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/4/finish" for ::1 at 2016-05-13 18:04:14 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ii/+bS1Bk8Rcx/HO3OjV5K7fZeUSOUIt4T9UJx7+jBIxqcl9rA9PLeoR8HONzRSQdxPHr6vc/99acoTUi7eRiw==", "user"=>{"mission_statement"=>"I'm looking to mentor junior developers!", "current_title"=>"Senior Developer", "current_company"=>"Facebook", "type"=>"Mentor"}, "commit"=>"Finish my Profile!", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = 'brhUXch3Ka' AND "users"."id" != 4) LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'emosowski@gmail.com' AND "users"."id" != 4) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["current_title", "Senior Developer"], ["current_company", "Facebook"], ["type", "Mentor"], ["mission_statement", "I'm looking to mentor junior developers!"], ["updated_at", "2016-05-13 22:04:14.856038"], ["id", 4]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 18:04:14 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 121ms (Views: 121.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 18:04:17 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 18:04:17 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 118ms (Views: 118.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:04:18 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--b7c9bf28-a257-4445-a9d1-393a8cc8652c&oauth_verifier=59792" for ::1 at 2016-05-13 18:04:35 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--b7c9bf28-a257-4445-a9d1-393a8cc8652c", "oauth_verifier"=>"59792"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1  [["linkedin_id", "0-7hFUkCA5"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '0-7hFUkCA5' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'uddin2589@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["linkedin_id", "0-7hFUkCA5"], ["email", "uddin2589@yahoo.com"], ["first_name", "Ayaz"], ["last_name", "Uddin"], ["location", "Greater New York City Area, US"], ["industry", "Information Technology and Services"], ["picture_url", "https://media.licdn.com/mpr/mprx/0__by8vxujMQ9vB_a1T_V1vpDAv6tnz_a13Qe0vjpGEiQboFJPfTuuRge2Ue-enkf0CkYYssCxZXBS"], ["public_profile_url", "https://www.linkedin.com/in/ayaz2589"], ["created_at", "2016-05-13 22:04:36.193362"], ["updated_at", "2016-05-13 22:04:36.193362"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Redirected to http://localhost:3000/users/5/finish
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/5/finish" for ::1 at 2016-05-13 18:04:36 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"5"}
+  Rendered users/finish.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 131ms (Views: 130.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/5/finish" for ::1 at 2016-05-13 18:04:58 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2htlZjuM0i5QuJ70Xbsx50WN/pWuTO78udF+N5OPGvkHnaYQORWcXgT4NmypZSWjtF/BDNOGOp+7zaydmTVtMw==", "user"=>{"mission_statement"=>"Eager to mentor junior devs!", "current_title"=>"Senior Product Manager", "current_company"=>"Google", "type"=>"Mentor"}, "commit"=>"Finish my Profile!", "id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = '0-7hFUkCA5' AND "users"."id" != 5) LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'uddin2589@yahoo.com' AND "users"."id" != 5) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6  [["current_title", "Senior Product Manager"], ["current_company", "Google"], ["type", "Mentor"], ["mission_statement", "Eager to mentor junior devs!"], ["updated_at", "2016-05-13 22:04:58.584228"], ["id", 5]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 18:04:58 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 131ms (Views: 130.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 18:05:01 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 18:05:01 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 124ms (Views: 123.9ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mMentor Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Mentor')
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:08:24 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--738d8c11-cfe2-4858-901e-eaeab96cf8f2&oauth_verifier=77753" for ::1 at 2016-05-13 18:08:36 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--738d8c11-cfe2-4858-901e-eaeab96cf8f2", "oauth_verifier"=>"77753"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1[0m  [["linkedin_id", "bSsHbsgN7h"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'bSsHbsgN7h' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'debbiemilburn2@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["linkedin_id", "bSsHbsgN7h"], ["email", "debbiemilburn2@gmail.com"], ["first_name", "Debbie"], ["last_name", "Milburn"], ["location", "Greater New York City Area, US"], ["industry", "Computer Software"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_goVSNNoIq5NhQGpjjdRON9ENniTiEGpjxea-N9sqW6v-vQIgA2oTVnaVZS3jdLjAyd4PUlk-jLed"], ["public_profile_url", "https://www.linkedin.com/in/debbiemilburn"], ["created_at", "2016-05-13 22:08:37.752715"], ["updated_at", "2016-05-13 22:08:37.752715"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Redirected to http://localhost:3000/users/6/finish
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/6/finish" for ::1 at 2016-05-13 18:08:37 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"6"}
+  Rendered users/finish.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+Completed 200 OK in 127ms (Views: 126.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/6/finish" for ::1 at 2016-05-13 18:09:07 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B15zqtIWlwv40OvDng1ZTrIj+YEbG2MrHK6S87Y1a+ihPDxBlyrazbwY0SsnbGUMXksjlPDmBbOsrTXe8yqZMQ==", "user"=>{"mission_statement"=>"I'd love to mentor new devs!", "current_title"=>"Mentor", "current_company"=>"Dev Bootcamp", "type"=>"Mentor"}, "commit"=>"Finish my Profile!", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = 'bSsHbsgN7h' AND "users"."id" != 6) LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'debbiemilburn2@gmail.com' AND "users"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["current_title", "Mentor"], ["current_company", "Dev Bootcamp"], ["type", "Mentor"], ["mission_statement", "I'd love to mentor new devs!"], ["updated_at", "2016-05-13 22:09:07.117073"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 18:09:07 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Completed 200 OK in 122ms (Views: 121.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 18:09:09 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 18:09:09 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 123ms (Views: 123.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:09:16 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--e43bc38e-86a2-4bb5-ae5b-9c33a316f216&oauth_verifier=37323" for ::1 at 2016-05-13 18:10:31 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--e43bc38e-86a2-4bb5-ae5b-9c33a316f216", "oauth_verifier"=>"37323"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1  [["linkedin_id", "WFLGt31_tq"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'WFLGt31_tq' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'chandnirankari@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["linkedin_id", "WFLGt31_tq"], ["email", "chandnirankari@gmail.com"], ["first_name", "Chand"], ["last_name", "Nirankari"], ["location", "Greater New York City Area, US"], ["industry", "Political Organization"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_ukJ160xKZeX9qiJzmXW26gVK4w-Q4ieza_Du6y4rFm6nFbxvhCd0epuO9LtMUXWJSbRDdR6a-0jD"], ["public_profile_url", "https://www.linkedin.com/in/chandnirankari"], ["created_at", "2016-05-13 22:10:32.123904"], ["updated_at", "2016-05-13 22:10:32.123904"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+Redirected to http://localhost:3000/users/7/finish
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/7/finish" for ::1 at 2016-05-13 18:10:32 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"7"}
+  Rendered users/finish.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+Completed 200 OK in 113ms (Views: 112.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/7/finish" for ::1 at 2016-05-13 18:13:42 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NxbOvQaIVC2IrVFLd2452qVGz4JqzOBMmKCm9vzoczbqQ2TEl9lVckVsNnvBqLzgSys1EcKPY5ZJgJ/dqoMNIg==", "user"=>{"mission_statement"=>"I'd like to meet mentors in tech.", "current_title"=>"Student", "current_company"=>"Dev Bootcamp", "type"=>"Mentee"}, "commit"=>"Finish my Profile!", "id"=>"7"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = 'WFLGt31_tq' AND "users"."id" != 7) LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'chandnirankari@gmail.com' AND "users"."id" != 7) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6  [["current_title", "Student"], ["current_company", "Dev Bootcamp"], ["type", "Mentee"], ["mission_statement", "I'd like to meet mentors in tech."], ["updated_at", "2016-05-13 22:13:42.814294"], ["id", 7]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 18:13:42 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+Completed 200 OK in 144ms (Views: 143.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 18:13:44 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 18:13:44 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 119ms (Views: 118.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:13:48 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--d7dda6bb-8e1e-49ba-b5b7-0d84938ff58c&oauth_verifier=10916" for ::1 at 2016-05-13 18:14:17 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--d7dda6bb-8e1e-49ba-b5b7-0d84938ff58c", "oauth_verifier"=>"10916"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1[0m  [["linkedin_id", "2Pe9IYOHkm"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '2Pe9IYOHkm' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'choffma@tulane.edu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["linkedin_id", "2Pe9IYOHkm"], ["email", "choffma@tulane.edu"], ["first_name", "Caitlin"], ["last_name", "Hoffman"], ["location", "San Francisco Bay Area, US"], ["industry", "Non-profit Organization Management"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_-NRfZkejjr-2lLBP-Ki3nKojM9YSqX50cKSfOKYjJ9P2lq9P-K7frCQpsGrYt6wCZL7mJ8WyrlluBhP14FO1KKeKvllDBht-OFO2UlggYKkTg9WmtneCRLPuzXwjOhLiBksipi8XRtu"], ["public_profile_url", "https://www.linkedin.com/in/caitlin-hoffman-17720647"], ["created_at", "2016-05-13 22:14:18.552228"], ["updated_at", "2016-05-13 22:14:18.552228"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+Redirected to http://localhost:3000/users/8/finish
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/8/finish" for ::1 at 2016-05-13 18:14:18 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"8"}
+  Rendered users/finish.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+Completed 200 OK in 117ms (Views: 116.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/8/finish" for ::1 at 2016-05-13 18:15:54 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ixTJDUxJbQ0y1ThtOnQjJK5PmXgSGSBCAWVE7AgGsHJ21Q39Xx0n87rWqfDE3zc6RMkF7++VXo+XuiMUdBtX1w==", "user"=>{"mission_statement"=>"Looking forward to meeting mentors in tech!", "current_title"=>"Student", "current_company"=>"Dev Bootcamp", "type"=>"Mentee"}, "commit"=>"Finish my Profile!", "id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = '2Pe9IYOHkm' AND "users"."id" != 8) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'choffma@tulane.edu' AND "users"."id" != 8) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["current_title", "Student"], ["current_company", "Dev Bootcamp"], ["type", "Mentee"], ["mission_statement", "Looking forward to meeting mentors in tech!"], ["updated_at", "2016-05-13 22:15:54.943596"], ["id", 8]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/users
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 18:15:54 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 133ms (Views: 133.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 18:15:56 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 18:15:56 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 115ms (Views: 114.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:15:57 -0400
+(linkedin) Request phase initiated.
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mMentor Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Mentor')
+  [1m[36mMentee Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."type" IN ('Mentee')[0m
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--b6da6277-a1ea-4f05-9106-f212acdcb1a5&oauth_verifier=76440" for ::1 at 2016-05-13 18:19:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--b6da6277-a1ea-4f05-9106-f212acdcb1a5", "oauth_verifier"=>"76440"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1  [["linkedin_id", "5ZDPyI0kYi"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '5ZDPyI0kYi' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cbudzyna@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("linkedin_id", "email", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["linkedin_id", "5ZDPyI0kYi"], ["email", "cbudzyna@gmail.com"], ["first_name", "Christyn"], ["last_name", "Budzyna"], ["location", "Greater New York City Area, US"], ["industry", "Entertainment"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_xRVPDrusr2ribFSN9ECP_PaUt4jYT6yMs0uPHX8UcHj0T9DN9Rm-QG3sNwDYkXpZnRC-LTaVxWuxbGEvPe07LXf9VWuObGWZ9e0KaLVRAeMtSqtXsJWOmlqospnaaGOWxIUxWcYo0tb"], ["public_profile_url", "https://www.linkedin.com/in/christyn-budzyna-27685753"], ["created_at", "2016-05-13 22:19:12.551507"], ["updated_at", "2016-05-13 22:19:12.551507"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+Redirected to http://localhost:3000/users/9/finish
+Completed 302 Found in 58ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/users/9/finish" for ::1 at 2016-05-13 18:19:12 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"9"}
+  Rendered users/finish.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 9]]
+Completed 200 OK in 728ms (Views: 726.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/9/finish" for ::1 at 2016-05-13 18:19:33 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kzg8wGvtd6q+aeignjt71u+izishOIm/YrdCNcB3C8TSbyoth6PD0xACaiFjTYvYg3HOasnsjMGZHrZojXZj0Q==", "user"=>{"mission_statement"=>"I want to mentor junior devs!", "current_title"=>"Junior Engineer", "current_company"=>"Twitter", "type"=>"Mentor"}, "commit"=>"Finish my Profile!", "id"=>"9"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."linkedin_id" = '5ZDPyI0kYi' AND "users"."id" != 9) LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'cbudzyna@gmail.com' AND "users"."id" != 9) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_title" = $1, "current_company" = $2, "type" = $3, "mission_statement" = $4, "updated_at" = $5 WHERE "users"."id" = $6  [["current_title", "Junior Engineer"], ["current_company", "Twitter"], ["type", "Mentor"], ["mission_statement", "I want to mentor junior devs!"], ["updated_at", "2016-05-13 22:19:33.867036"], ["id", 9]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 10ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for ::1 at 2016-05-13 18:19:33 -0400
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+Completed 200 OK in 138ms (Views: 137.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/logout" for ::1 at 2016-05-13 18:19:35 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 18:19:35 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 145ms (Views: 145.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:19:36 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--3e69a941-d8b9-4fef-8240-956287de6693&oauth_verifier=98641" for ::1 at 2016-05-13 18:22:17 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--3e69a941-d8b9-4fef-8240-956287de6693", "oauth_verifier"=>"98641"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1[0m  [["linkedin_id", "m5U35oeQz5"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'm5U35oeQz5' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'aliciabriceland@hotmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/auth/linkedin
+Completed 302 Found in 13ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-13 18:22:18 -0400
+(linkedin) Request phase initiated.
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+>>>>>>> Add seedfile data for later to seed users. Add small modification to gitignore
