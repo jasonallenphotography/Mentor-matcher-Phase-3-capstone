@@ -12,23 +12,14 @@ class UsersController < ApplicationController
 
 
   def create
-    @params = params.to_json
-
-    # @user = User.new()
-    #  @user.first_name = #response from JSON ||= a default placeholder
-    #  @user.last_name =
-    #  @user.location =
-    #  @user.industry =
-    #  @user.picture_url =
-    #  @user.public_profile_url =
-    #  @user.current_title =
-    #  @user.current_company =
-    # if @user.save
+    @user = User.new()
+  
+    if @user.save
       redirect_to users_path
     # else
       # @errors = @user.errors.full_messages
       # render 'new'
-    # end
+    end
   end
 
 
