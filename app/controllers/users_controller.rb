@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new()
-  
+
     if @user.save
       redirect_to users_path
     # else
@@ -49,6 +49,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect '/users'
+  end
+
+  def finish
+    render 'finish'
   end
 
   private

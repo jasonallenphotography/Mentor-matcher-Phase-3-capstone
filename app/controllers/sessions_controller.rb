@@ -4,8 +4,12 @@ class SessionsController < ApplicationController
     @data = JSON.pretty_generate(auth_hash) #.to_json
     @data_hash = YAML.load(@data)
     if @user = User.find_or_create_from_auth_hash(request.env["omniauth.auth"])
-      @user = session[:user_id] = @user.id
-      redirect_to '/'
+      session[:user_id] = @user.id
+      unless needs_type?
+        redirect_to '/'
+      else
+        redirect_to "/users/#{@user.id}/finish"
+      end
     else
       redirect_to '/auth/linkedin'
     end

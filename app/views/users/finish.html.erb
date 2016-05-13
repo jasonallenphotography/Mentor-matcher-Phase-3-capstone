@@ -1,0 +1,47 @@
+<h1>The finish page!</h1>
+<%= form_for :user do |f| %>
+
+<table>
+<tr>
+  <td>
+    Please put your mission statement here
+  </td>
+  <td>
+    <%= f.text_field :mission_statement %>
+  </td>
+</tr>
+<tr>
+  <td>
+    What is your current position?
+  </td>
+  <td>
+    <%= f.text_field :current_title %>
+  </td>
+</tr>
+<tr>
+  <td>
+    What is your current company?
+  </td>
+  <td>
+    <%= f.text_field :current_company %>
+  </td>
+</tr>
+<tr>
+  <td>
+    Are you seeking or offering mentorship?
+  </td>
+  <td>
+    Seeking <%= f.radio_button :type, 'Mentee', :checked => true %>
+    Offering <%= f.radio_button :type, 'Mentor' %>
+  </td>
+</tr>
+<tr>
+  <td>
+  </td>
+  <td>
+    <%= f.submit value="Finish my Profile!" %>
+  </td>
+</tr>
+  <% end %>
+
+</table>
