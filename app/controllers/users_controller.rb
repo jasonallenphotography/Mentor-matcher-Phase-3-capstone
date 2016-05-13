@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
 
   def create
-    @params = params
+    @params = params.to_json
 
     # @user = User.new()
     #  @user.first_name = #response from JSON ||= a default placeholder
