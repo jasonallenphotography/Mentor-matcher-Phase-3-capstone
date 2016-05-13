@@ -1,0 +1,2 @@
+class ClosedMatch < Match
+end
