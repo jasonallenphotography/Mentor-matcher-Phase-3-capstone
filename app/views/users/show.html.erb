@@ -41,13 +41,16 @@
 <% else %> -->
 
 <!-- #make each interest clickable and look like a button taht you can see other users with this interest -->
-<% if @user.interests %>
-  Current interests:
-  <% @user.interests.each do |interest| %>
-  <a href="/users" class="button round"><%= interest.name %></a>
-  <% end %>
-<% end %>
-
+<div class="row">
+  <div class="small-12 columns">
+    <% if @user.interests %>
+      Current interests:
+      <% @user.interests.each do |interest| %>
+      <a href="/users" class="button round"><%= interest.name %></a>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 <!-- <a href="/auth/linkedin" class="button round">Sign up through LinkedIn</a> -->
 
   <!-- <form action="#" method="get">
@@ -55,30 +58,32 @@
   </form>
 <% end %></br> -->
 
+<div class="row">
+  <div class="small-8 columns">
+    <%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
+      <table>
+        <tr>
+          <!-- <td>
+            Add some interests here!
+          </td> -->
 
-<%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
-  <table>
-    <tr>
-      <td>
-        Add some interests here!
-      </td>
-
-      <td>
-        <select name="interest_id" multiple>
-          <% @interests.each do |int| %>
-          <option value="<%=int.id%>"><%=int.name%></option>
-          <%end%>
-        <select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= f.submit value="Add Interest!" %>
-      </td>
-    </tr>
-  </table>
-<% end %>
-
+          <td>
+            <select name="interest_id" multiple>
+              <% @interests.each do |int| %>
+              <option value="<%=int.id%>"><%=int.name%></option>
+              <%end%>
+            <select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.submit value="Add Interest!" %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>
 
 <hr>
 

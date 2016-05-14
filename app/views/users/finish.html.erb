@@ -37,19 +37,17 @@
 </tr>
 <tr>
   <td>
-    Add your first interest here!
+    What area are you interested in? You can always add more later!
   </td>
-  <td><%=f.collection_select(:user_interests, Interest.all, :id, :name) %>
-  </td>
-</tr>
-<tr>
   <td>
-    <%= f.submit value="Add Interest!" %>
+    <%= f.fields_for :users_interests do |ui| %>
+    <%= ui.collection_select(:interest_ids, @interests, :id, :name, {}) %>
+    <% end %>
   </td>
 </tr>
   <td>
     <%= f.submit value="Finish my Profile!" %>
   </td>
 </tr>
-  <% end %>
+<% end %>
 </table>

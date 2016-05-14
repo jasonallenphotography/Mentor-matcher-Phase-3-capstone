@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new()
-
     if @user.save
       redirect_to users_path
     # else
@@ -36,7 +35,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
+    p "-----------------------------"
     @user.assign_attributes(user_params)
 
     if @user.save
@@ -54,6 +53,7 @@ class UsersController < ApplicationController
   end
 
   def finish
+    @interests = Interest.all
     render 'finish'
   end
 
