@@ -35,17 +35,21 @@
     Offering <%= f.radio_button :type, 'Mentor' %>
   </td>
 </tr>
-
 <tr>
-  <%= render '/users/interests' %>
+  <td>
+    Add your first interest here!
+  </td>
+  <td><%=f.collection_select(:user_interests, Interest.all, :id, :name) %>
+  </td>
 </tr>
 <tr>
   <td>
+    <%= f.submit value="Add Interest!" %>
   </td>
+</tr>
   <td>
     <%= f.submit value="Finish my Profile!" %>
   </td>
 </tr>
   <% end %>
-
 </table>

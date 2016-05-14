@@ -8,4 +8,16 @@
 
 
 
-<%= select_tag "interest_ids[]", options_from_collection_for_select(Interest.all,"id","name",{:selected=>[1,2,3,4]}), :multiple => true, :id => "interest_ids" %>
+<!-- <%= select_tag "interest_ids[]", options_from_collection_for_select(Interest.all,"id","name",{:selected=>[1,2,3,4]}), :multiple => true, :id => "interest_ids" %> -->
+
+<%= form_for :user do |f| %>
+  <table>
+    <tr>
+      <td>
+        Add some interests here!
+      </td>
+      <td><%=options_for_select(Interest.all, :id, :name) %>
+      </td>
+    </tr>
+  </table>
+<% end %>
