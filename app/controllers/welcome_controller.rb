@@ -1,9 +1,9 @@
 class WelcomeController < ApplicationController
   def index
     if current_user
-      @user
+      render 'show'
     else
-      redirect_to '/auth/linkedin'
+      render 'index'
     end
   end
 end
