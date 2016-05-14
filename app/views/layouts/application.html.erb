@@ -13,20 +13,16 @@
   <body>
     <header>
       <nav>
-        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
           <button class="menu-icon" type="button" data-toggle></button>
-          <div class="title-bar-title">Mentorship</div>
+          <div class="title-bar-title"><a href="/">Mentorship</a></div>
         </div>
         <div class="top-bar" id="main-menu">
           <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
-              <li class="menu-text"><a href="/">Home</a></li>
-            </ul>
-          </div>
-          <div class="top-bar-right">
-            <ul class="menu">
               <% if logged_in? %>
                 <li><a href="/users/<%=current_user.id%>">My Profile</a></li>
+                <li><a href="/matches">My <%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Requests</a></li>
               <% else %>
                 <li><a href="/auth/linkedin">Login</a></li>
                 <li><a href="/auth/linkedin">Register</a></li>
