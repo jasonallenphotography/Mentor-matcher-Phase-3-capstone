@@ -53,7 +53,6 @@ class UsersController < ApplicationController
   end
 
   def finish
-    @interests = Interest.all
     render 'finish'
   end
 

@@ -35,16 +35,6 @@
     Offering <%= f.radio_button :type, 'Mentor' %>
   </td>
 </tr>
-<tr>
-  <td>
-    What area are you interested in? You can always add more later!
-  </td>
-  <td>
-    <%= f.fields_for :users_interests do |ui| %>
-    <%= ui.collection_select(:interest_ids, @interests, :id, :name, {}) %>
-    <% end %>
-  </td>
-</tr>
   <td>
     <%= f.submit value="Finish my Profile!" %>
   </td>

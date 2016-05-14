@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :matches
   has_many :conversations, through: :matches
   has_many :messages
+  accepts_nested_attributes_for :user_interests
 
 
   def return_opposite_type(current_user)
