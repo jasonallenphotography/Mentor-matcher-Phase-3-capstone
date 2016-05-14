@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   resources :users
+  resources :matches
+
   get '/auth/linkedin/callback', to: 'sessions#create', as: 'sessions_create'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
