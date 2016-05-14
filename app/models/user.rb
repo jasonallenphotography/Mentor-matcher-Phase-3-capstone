@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
             :linkedin_id, presence: true
   validates :linkedin_id, :email, uniqueness: true
 
-  has_many :interest_users
-  has_many :interests, through: :interest_users
+  has_many :user_interests
+  has_many :interests, through: :user_interests
   has_many :matches
   has_many :conversations, through: :matches
   has_many :messages

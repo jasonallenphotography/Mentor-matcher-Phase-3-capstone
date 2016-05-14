@@ -39083,3 +39083,221 @@ Processing by WelcomeController#index as HTML
   Rendered welcome/index.html.erb within layouts/application (0.0ms)
 Completed 200 OK in 110ms (Views: 108.5ms | ActiveRecord: 0.3ms)
 >>>>>>> Add new show page for welcome/unlogged in users'
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mInterest Load (0.9ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInterests (20160514011840)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.6ms)[0m  [1mCREATE TABLE "interests" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160514011840"]]
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateJoinTableUserInterest (20160514012404)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "interests_users" ("user_id" integer NOT NULL, "interest_id" integer NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160514012404"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'interests'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'interests_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mInterest Load (0.6ms)[0m  SELECT "interests".* FROM "interests"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mInterest Load (0.2ms)[0m  SELECT  "interests".* FROM "interests"  ORDER BY "interests"."id" ASC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'interests'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'interests_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mInterest Load (0.5ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160512223018)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "location" character varying, "industry" character varying, "picture_url" character varying NOT NULL, "public_profile_url" character varying NOT NULL, "current_title" character varying, "current_company" character varying, "type" character varying, "status" character varying DEFAULT 'available', "mission_statement" character varying, "linkedin_id" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160512223018"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddEmailToUsers (20160513212031)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "email" character varying NOT NULL[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160513212031"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateInterests (20160514011840)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "interests" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160514011840"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserInterests (20160514015119)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "user_interests" ("id" serial primary key, "user_id" integer, "interest_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160514015119"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'interests'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_interests'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'g8CGYxpaQV' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'JasonAllen127@GMAIL.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["type", "Mentee"], ["first_name", "Jason"], ["last_name", "Allen"], ["location", "Greater New York City Area, US"], ["industry", "Media Production"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_0-CI4tcKiF1Slxg8jNhq4A67i8NSPVg8gznN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnVym4rT"], ["public_profile_url", "https://www.linkedin.com/in/jasonallen127"], ["current_title", "Unemployed student"], ["current_company", "None"], ["mission_statement", "My goal is to be mentored!"], ["linkedin_id", "g8CGYxpaQV"], ["email", "JasonAllen127@GMAIL.com"], ["created_at", "2016-05-14 01:53:52.899321"], ["updated_at", "2016-05-14 01:53:52.899321"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'RgcyJ34e37' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jaclynfeminella@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["type", "Mentor"], ["first_name", "Jaclyn"], ["last_name", "Feminella"], ["location", "Greater New York City Area, US"], ["industry", "Staffing and Recruiting"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_OfVE-1Vsm-RuFeWaOIuoVzeUmbIlTEWi0DuXcQgsEhErTsVacfhoMzKsebZlkJe_OJGkx31VGTeKGmMxBy0nVF-9bTeAGmY7By0WA6FRu8ggHZ51RDWFltdoFqt3wmdYO0UQnZmQlfs"], ["public_profile_url", "https://www.linkedin.com/in/jaclyn-feminella-b634485b"], ["current_title", "Student"], ["current_company", "DBC"], ["mission_statement", "Offering professional mentorship to navigate industry changes from Recruiting to Technology."], ["linkedin_id", "RgcyJ34e37"], ["email", "jaclynfeminella@gmail.com"], ["created_at", "2016-05-14 01:53:52.920757"], ["updated_at", "2016-05-14 01:53:52.920757"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '_PHmiMG9vW' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ivyvetor@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["type", "Mentee"], ["first_name", "Ivy"], ["last_name", "Vetor"], ["location", "Greater New York City Area, US"], ["industry", "Computer Software"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_9-HjcTh_ZbVjjXIlNvJCcG-_s3ppxbRlqzpCciT05XHD8i2Asq4AM_zAN7yGp8VgcAoi4kPNkgoD"], ["public_profile_url", "https://www.linkedin.com/in/ivyvetor"], ["current_title", "unemployed"], ["current_company", "none"], ["mission_statement", "looking for a mentor"], ["linkedin_id", "_PHmiMG9vW"], ["email", "ivyvetor@gmail.com"], ["created_at", "2016-05-14 01:53:52.924764"], ["updated_at", "2016-05-14 01:53:52.924764"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'brhUXch3Ka' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'emosowski@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["type", "Mentor"], ["first_name", "Emily"], ["last_name", "Osowski"], ["location", "Greater New York City Area, US"], ["industry", "Music"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_tiUBxkqj_z-ycw7rYt_MlPYp6kGhldP8ZtfBsKUpCCDTqJa8ZtiMlKzp5zHyBej2AFfMq1nymk-3-DSuYKYwBKBKIk-8-DErYKYNylCgh5F24Rlu-3HVpLuuwAHKUDj3c1VUR7J7iuU"], ["public_profile_url", "https://www.linkedin.com/in/emily-osowski-b04a64a3"], ["current_title", "Senior Developer"], ["current_company", "Facebook"], ["mission_statement", "I'm looking to mentor junior developers!"], ["linkedin_id", "brhUXch3Ka"], ["email", "emosowski@gmail.com"], ["created_at", "2016-05-14 01:53:52.928384"], ["updated_at", "2016-05-14 01:53:52.928384"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '0-7hFUkCA5' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'uddin2589@yahoo.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["type", "Mentor"], ["first_name", "Ayaz"], ["last_name", "Uddin"], ["location", "Greater New York City Area, US"], ["industry", "Information Technology and Services"], ["picture_url", "https://media.licdn.com/mpr/mprx/0__by8vxujMQ9vB_a1T_V1vpDAv6tnz_a13Qe0vjpGEiQboFJPfTuuRge2Ue-enkf0CkYYssCxZXBS"], ["public_profile_url", "https://www.linkedin.com/in/ayaz2589"], ["current_title", "Senior Product Manager"], ["current_company", "Google"], ["mission_statement", "Eager to mentor junior devs!"], ["linkedin_id", "0-7hFUkCA5"], ["email", "uddin2589@yahoo.com"], ["created_at", "2016-05-14 01:53:52.931793"], ["updated_at", "2016-05-14 01:53:52.931793"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'bSsHbsgN7h' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'debbiemilburn2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["type", "Mentor"], ["first_name", "Debbie"], ["last_name", "Milburn"], ["location", "Greater New York City Area, US"], ["industry", "Computer Software"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_goVSNNoIq5NhQGpjjdRON9ENniTiEGpjxea-N9sqW6v-vQIgA2oTVnaVZS3jdLjAyd4PUlk-jLed"], ["public_profile_url", "https://www.linkedin.com/in/debbiemilburn"], ["current_title", "Mentor"], ["current_company", "Dev Bootcamp"], ["mission_statement", "I'd love to mentor new devs!"], ["linkedin_id", "bSsHbsgN7h"], ["email", "debbiemilburn2@gmail.com"], ["created_at", "2016-05-14 01:53:52.935233"], ["updated_at", "2016-05-14 01:53:52.935233"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'WFLGt31_tq' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'chandnirankari@gmail.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["type", "Mentee"], ["first_name", "Chand"], ["last_name", "Nirankari"], ["location", "Greater New York City Area, US"], ["industry", "Political Organization"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_ukJ160xKZeX9qiJzmXW26gVK4w-Q4ieza_Du6y4rFm6nFbxvhCd0epuO9LtMUXWJSbRDdR6a-0jD"], ["public_profile_url", "https://www.linkedin.com/in/chandnirankari"], ["current_title", "Student"], ["current_company", "Dev Bootcamp"], ["mission_statement", "I'd like to meet mentors in tech."], ["linkedin_id", "WFLGt31_tq"], ["email", "chandnirankari@gmail.com"], ["created_at", "2016-05-14 01:53:52.938772"], ["updated_at", "2016-05-14 01:53:52.938772"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '2Pe9IYOHkm' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'choffma@tulane.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["type", "Mentee"], ["first_name", "Caitlin"], ["last_name", "Hoffman"], ["location", "San Francisco Bay Area, US"], ["industry", "Non-profit Organization Management"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_-NRfZkejjr-2lLBP-Ki3nKojM9YSqX50cKSfOKYjJ9P2lq9P-K7frCQpsGrYt6wCZL7mJ8WyrlluBhP14FO1KKeKvllDBht-OFO2UlggYKkTg9WmtneCRLPuzXwjOhLiBksipi8XRtu"], ["public_profile_url", "https://www.linkedin.com/in/caitlin-hoffman-17720647"], ["current_title", "Student"], ["current_company", "Dev Bootcamp"], ["mission_statement", "Looking forward to meeting mentors in tech!"], ["linkedin_id", "2Pe9IYOHkm"], ["email", "choffma@tulane.edu"], ["created_at", "2016-05-14 01:53:52.942190"], ["updated_at", "2016-05-14 01:53:52.942190"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '5ZDPyI0kYi' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cbudzyna@gmail.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("type", "first_name", "last_name", "location", "industry", "picture_url", "public_profile_url", "current_title", "current_company", "mission_statement", "linkedin_id", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["type", "Mentor"], ["first_name", "Christyn"], ["last_name", "Budzyna"], ["location", "Greater New York City Area, US"], ["industry", "Entertainment"], ["picture_url", "https://media.licdn.com/mpr/mprx/0_xRVPDrusr2ribFSN9ECP_PaUt4jYT6yMs0uPHX8UcHj0T9DN9Rm-QG3sNwDYkXpZnRC-LTaVxWuxbGEvPe07LXf9VWuObGWZ9e0KaLVRAeMtSqtXsJWOmlqospnaaGOWxIUxWcYo0tb"], ["public_profile_url", "https://www.linkedin.com/in/christyn-budzyna-27685753"], ["current_title", "Junior Engineer"], ["current_company", "Twitter"], ["mission_statement", "I want to mentor junior devs!"], ["linkedin_id", "5ZDPyI0kYi"], ["email", "cbudzyna@gmail.com"], ["created_at", "2016-05-14 01:53:52.945801"], ["updated_at", "2016-05-14 01:53:52.945801"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mInterest Load (0.5ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mInterest Load (0.3ms)[0m  SELECT "interests".* FROM "interests"
