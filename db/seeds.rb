@@ -7,6 +7,10 @@
 # #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+Interest.create(name: "Technology")
+Interest.create(name: "Business Development")
+Interest.create(name: "Recruiting")
+
 User.create(
   first_name: "Jason",
   last_name: "Allen",
@@ -167,4 +171,3 @@ User.create(
     receiver: Mentee.all.sample,
     )
 end
-

@@ -1,0 +1,11 @@
+<!-- <% if @interests && @interests.length > 0 %>
+   <strong>Interests:</strong>
+     <% @interests.each do |interest| %>
+     <%= check_box_tag "user[interests][]", interest.id %>
+     <%= interest.name %>
+     <% end %>
+   <% end %> -->
+
+
+
+<%= select_tag "interest_ids[]", options_from_collection_for_select(Interest.all,"id","name",{:selected=>[1,2,3,4]}), :multiple => true, :id => "interest_ids" %>

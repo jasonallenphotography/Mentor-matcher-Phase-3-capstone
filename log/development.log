@@ -39301,3 +39301,1401 @@ ORDER BY c.conname
   [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
   [1m[36mInterest Load (0.5ms)[0m  [1mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = $1[0m  [["user_id", 1]]
   [1m[35mInterest Load (0.3ms)[0m  SELECT "interests".* FROM "interests"
+  [1m[36mActiveRecord::SchemaMigration Load (19.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mSQL (17.5ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Technology"], ["created_at", "2016-05-14 15:31:09.352231"], ["updated_at", "2016-05-14 15:31:09.352231"]]
+  [1m[35m (5.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "interests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Business Development"], ["created_at", "2016-05-14 15:31:09.388036"], ["updated_at", "2016-05-14 15:31:09.388036"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "interests" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Recruiting"], ["created_at", "2016-05-14 15:31:09.390445"], ["updated_at", "2016-05-14 15:31:09.390445"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (18.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'g8CGYxpaQV' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'JasonAllen127@GMAIL.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'RgcyJ34e37' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jaclynfeminella@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '_PHmiMG9vW' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ivyvetor@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'brhUXch3Ka' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'emosowski@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '0-7hFUkCA5' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'uddin2589@yahoo.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'bSsHbsgN7h' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'debbiemilburn2@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = 'WFLGt31_tq' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'chandnirankari@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '2Pe9IYOHkm' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'choffma@tulane.edu' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."linkedin_id" = '5ZDPyI0kYi' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cbudzyna@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+
+
+Started GET "/" for ::1 at 2016-05-14 11:31:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 766ms (Views: 736.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/auth/linkedin" for ::1 at 2016-05-14 11:31:21 -0400
+(linkedin) Request phase initiated.
+
+
+Started GET "/auth/linkedin/callback?oauth_token=77--63c0c0dc-7159-4705-85e2-24473b8fbc8e&oauth_verifier=91180" for ::1 at 2016-05-14 11:31:23 -0400
+(linkedin) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"77--63c0c0dc-7159-4705-85e2-24473b8fbc8e", "oauth_verifier"=>"91180"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1[0m  [["linkedin_id", "RgcyJ34e37"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."linkedin_id" = $1 LIMIT 1  [["linkedin_id", "RgcyJ34e37"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 34ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-14 11:31:25 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered welcome/show.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 102ms (Views: 100.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for ::1 at 2016-05-14 11:31:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 117ms (Views: 114.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for ::1 at 2016-05-14 11:32:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 104ms (Views: 102.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/foundation_and_overrides.self-b0ad276f100a0194d8b4209e20946bf28156f8facfaa69b015b6927e7528d089.css?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/_settings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/linkedin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/application.self-167193cd81d9330d9ddb5c4ec7b44214fea529aa8a94f3a86e6526e4f652fc02.css?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.accordionMenu.self-6a75eb2b3768268d8ec00fc703ea3752f847738031a2614ce3ab5e4bbb9882dd.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.equalizer.self-20c80813228b7707630bb8e9b79d9e9e95bc08793fd7f7c0bb4d1a8e1abba874.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.interchange.self-8098699bc5e479e34a597c857ca10cf84217780d16b09b4be350ec42d7c3ba85.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.magellan.self-185cddbb3ea900a8b64ad9482999414820039c72b88ac73ce4062e26c2fcb51f.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.responsiveMenu.self-04daa3af5d3c617fa7d588b45b56abd62539f5fde28756c7b4705de2aa10c4fd.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.responsiveToggle.self-2b01f8c5e2bfe4eeaf7b15dd94962ef957112c455f4dc3abcf5e41e4c98b5b91.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.slider.self-89883a154b8e68187e9465e5470bf26d54b48a4a69de4636afbb38953ee41ea6.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.sticky.self-8e0aa578f0015adbf99c14d1bb8464da751951e2c6e2923c2395ceba99c28bac.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.tabs.self-891f2cfe78a15ab6d129ae1bdcd83bb8c344b5677446700c8329442081eddddf.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.toggler.self-e503f9a635124ad4578a03dc24e47ac4cdb922a60bac8c9c99d024da00b0bd52.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.tooltip.self-4cf167bdbe826668ee0d73e6e30da8aaba252c73084db7b005923d5cd102d11e.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.util.box.self-789413a9ae946f5aee2709ac5e1ad5c9a7780fb4e16b46efe3572f22a0ea6b4d.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.util.keyboard.self-cf209dc0383f29cb576393bbdee52dbbd819837d6430a35afb4a4703770972f9.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.util.mediaQuery.self-931eb6f96f60670ad0ebcb0a6d7bed0cced317a2059749343b094c4d72098b6c.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.util.motion.self-13d4248460aba53c0fd52e1ec0d5cb41c317b1c4d974bc5d905c9976dc9ef218.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.util.nest.self-c9876586f80b068aea0d01390583424a28fa305c450e12a49bb301dcc686d1a0.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.util.timerAndImageLoader.self-68c67c1b0b4f2e2cb7f2af57124f38f54b749efed9f1bebc44677dc27abf7864.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.util.touch.self-e26387c8ba249a8e90745647603562023cd1932c720ddf72407dc7a489ecb893.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.util.triggers.self-71a2360cfe56c89eb46e0776c3d04601a8cce01d9e1098b808375eecc4b2418c.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.self-5ecf2f4d83e6260dabd6ec48e76d8ddebccf956563f34072221bf960d3b8c255.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/linkedin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/application.self-1509cb3433bf7f60a75710bd4d8561d25423676b3c4d4a21914940bf07b8869a.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.core.self-f55f82f1d32e31421cdb346360219495e02cb256a9235560ae847258f51ded3a.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.abide.self-fbc98127620ee01eaa2881e128f8448984eecf2eaf9fd8cc40b020ad7e9f2bd3.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.accordion.self-6c28f3f91f10621dea9006b993acf28cda9ea59c4e962048fee0e94588b696bb.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.drilldown.self-11995b03e1b847772717a9123dc61fb32511459cccc6b8bc816b29e6739c3555.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.dropdown.self-f384376d246673d8cc9e59e8a1e0655d1ac164ebd79ed62938bb665b8e98fda0.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.dropdownMenu.self-d58c8deb698da27cd9f2df0dd6bef68b289948015c0eb1f1734e601754b77a22.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.offcanvas.self-43878eed51fe559619ff3c62e266b58335e0cd40bc765ede9bb5c61a5e25625d.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.orbit.self-3790b70d486b6233de7bf36256a99b4470bbf5bab8d5cdba23038a96bed7c426.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/assets/foundation.reveal.self-3b377de155fe3f888dcbb074b9017ed4e19c3ef995e13eea42b10839dd9756f6.js?body=1" for ::1 at 2016-05-14 11:32:44 -0400
+
+
+Started GET "/users/2" for ::1 at 2016-05-14 11:34:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 131ms (Views: 129.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/_settings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation_and_overrides.self-b0ad276f100a0194d8b4209e20946bf28156f8facfaa69b015b6927e7528d089.css?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/linkedin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/application.self-167193cd81d9330d9ddb5c4ec7b44214fea529aa8a94f3a86e6526e4f652fc02.css?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.accordionMenu.self-6a75eb2b3768268d8ec00fc703ea3752f847738031a2614ce3ab5e4bbb9882dd.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.equalizer.self-20c80813228b7707630bb8e9b79d9e9e95bc08793fd7f7c0bb4d1a8e1abba874.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.interchange.self-8098699bc5e479e34a597c857ca10cf84217780d16b09b4be350ec42d7c3ba85.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.magellan.self-185cddbb3ea900a8b64ad9482999414820039c72b88ac73ce4062e26c2fcb51f.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.responsiveMenu.self-04daa3af5d3c617fa7d588b45b56abd62539f5fde28756c7b4705de2aa10c4fd.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.responsiveToggle.self-2b01f8c5e2bfe4eeaf7b15dd94962ef957112c455f4dc3abcf5e41e4c98b5b91.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.slider.self-89883a154b8e68187e9465e5470bf26d54b48a4a69de4636afbb38953ee41ea6.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.sticky.self-8e0aa578f0015adbf99c14d1bb8464da751951e2c6e2923c2395ceba99c28bac.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.tabs.self-891f2cfe78a15ab6d129ae1bdcd83bb8c344b5677446700c8329442081eddddf.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.toggler.self-e503f9a635124ad4578a03dc24e47ac4cdb922a60bac8c9c99d024da00b0bd52.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.tooltip.self-4cf167bdbe826668ee0d73e6e30da8aaba252c73084db7b005923d5cd102d11e.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.util.box.self-789413a9ae946f5aee2709ac5e1ad5c9a7780fb4e16b46efe3572f22a0ea6b4d.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.util.keyboard.self-cf209dc0383f29cb576393bbdee52dbbd819837d6430a35afb4a4703770972f9.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.util.mediaQuery.self-931eb6f96f60670ad0ebcb0a6d7bed0cced317a2059749343b094c4d72098b6c.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.util.motion.self-13d4248460aba53c0fd52e1ec0d5cb41c317b1c4d974bc5d905c9976dc9ef218.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.util.nest.self-c9876586f80b068aea0d01390583424a28fa305c450e12a49bb301dcc686d1a0.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.util.timerAndImageLoader.self-68c67c1b0b4f2e2cb7f2af57124f38f54b749efed9f1bebc44677dc27abf7864.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.util.touch.self-e26387c8ba249a8e90745647603562023cd1932c720ddf72407dc7a489ecb893.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.util.triggers.self-71a2360cfe56c89eb46e0776c3d04601a8cce01d9e1098b808375eecc4b2418c.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.self-5ecf2f4d83e6260dabd6ec48e76d8ddebccf956563f34072221bf960d3b8c255.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/linkedin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/application.self-1509cb3433bf7f60a75710bd4d8561d25423676b3c4d4a21914940bf07b8869a.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.core.self-f55f82f1d32e31421cdb346360219495e02cb256a9235560ae847258f51ded3a.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.abide.self-fbc98127620ee01eaa2881e128f8448984eecf2eaf9fd8cc40b020ad7e9f2bd3.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.accordion.self-6c28f3f91f10621dea9006b993acf28cda9ea59c4e962048fee0e94588b696bb.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.drilldown.self-11995b03e1b847772717a9123dc61fb32511459cccc6b8bc816b29e6739c3555.js?body=1" for ::1 at 2016-05-14 11:34:11 -0400
+
+
+Started GET "/assets/foundation.dropdown.self-f384376d246673d8cc9e59e8a1e0655d1ac164ebd79ed62938bb665b8e98fda0.js?body=1" for ::1 at 2016-05-14 11:34:12 -0400
+
+
+Started GET "/assets/foundation.dropdownMenu.self-d58c8deb698da27cd9f2df0dd6bef68b289948015c0eb1f1734e601754b77a22.js?body=1" for ::1 at 2016-05-14 11:34:12 -0400
+
+
+Started GET "/assets/foundation.offcanvas.self-43878eed51fe559619ff3c62e266b58335e0cd40bc765ede9bb5c61a5e25625d.js?body=1" for ::1 at 2016-05-14 11:34:12 -0400
+
+
+Started GET "/assets/foundation.orbit.self-3790b70d486b6233de7bf36256a99b4470bbf5bab8d5cdba23038a96bed7c426.js?body=1" for ::1 at 2016-05-14 11:34:12 -0400
+
+
+Started GET "/assets/foundation.reveal.self-3b377de155fe3f888dcbb074b9017ed4e19c3ef995e13eea42b10839dd9756f6.js?body=1" for ::1 at 2016-05-14 11:34:12 -0400
+
+
+Started GET "/users/finish" for ::1 at 2016-05-14 11:34:25 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"finish"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=finish):
+  app/controllers/users_controller.rb:27:in `show'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.7ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (125.0ms)
+
+
+Started GET "/users/finish" for ::1 at 2016-05-14 12:23:52 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"finish"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=finish):
+  app/controllers/users_controller.rb:27:in `show'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.6ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (101.3ms)
+  [1m[36mInterest Load (0.4ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  [1m[35mUser Load (2.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mInterest Load (2.4ms)[0m  SELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = $1  [["user_id", 1]]
+
+
+Started GET "/users/2" for ::1 at 2016-05-14 12:32:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 129ms (Views: 127.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/foundation_and_overrides.self-b0ad276f100a0194d8b4209e20946bf28156f8facfaa69b015b6927e7528d089.css?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/linkedin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/_settings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/application.self-167193cd81d9330d9ddb5c4ec7b44214fea529aa8a94f3a86e6526e4f652fc02.css?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.accordion.self-6c28f3f91f10621dea9006b993acf28cda9ea59c4e962048fee0e94588b696bb.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.accordionMenu.self-6a75eb2b3768268d8ec00fc703ea3752f847738031a2614ce3ab5e4bbb9882dd.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.equalizer.self-20c80813228b7707630bb8e9b79d9e9e95bc08793fd7f7c0bb4d1a8e1abba874.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.interchange.self-8098699bc5e479e34a597c857ca10cf84217780d16b09b4be350ec42d7c3ba85.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.magellan.self-185cddbb3ea900a8b64ad9482999414820039c72b88ac73ce4062e26c2fcb51f.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.offcanvas.self-43878eed51fe559619ff3c62e266b58335e0cd40bc765ede9bb5c61a5e25625d.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.orbit.self-3790b70d486b6233de7bf36256a99b4470bbf5bab8d5cdba23038a96bed7c426.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.responsiveMenu.self-04daa3af5d3c617fa7d588b45b56abd62539f5fde28756c7b4705de2aa10c4fd.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.responsiveToggle.self-2b01f8c5e2bfe4eeaf7b15dd94962ef957112c455f4dc3abcf5e41e4c98b5b91.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.reveal.self-3b377de155fe3f888dcbb074b9017ed4e19c3ef995e13eea42b10839dd9756f6.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.slider.self-89883a154b8e68187e9465e5470bf26d54b48a4a69de4636afbb38953ee41ea6.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.sticky.self-8e0aa578f0015adbf99c14d1bb8464da751951e2c6e2923c2395ceba99c28bac.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.tabs.self-891f2cfe78a15ab6d129ae1bdcd83bb8c344b5677446700c8329442081eddddf.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.toggler.self-e503f9a635124ad4578a03dc24e47ac4cdb922a60bac8c9c99d024da00b0bd52.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.tooltip.self-4cf167bdbe826668ee0d73e6e30da8aaba252c73084db7b005923d5cd102d11e.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.util.box.self-789413a9ae946f5aee2709ac5e1ad5c9a7780fb4e16b46efe3572f22a0ea6b4d.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.util.keyboard.self-cf209dc0383f29cb576393bbdee52dbbd819837d6430a35afb4a4703770972f9.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.util.mediaQuery.self-931eb6f96f60670ad0ebcb0a6d7bed0cced317a2059749343b094c4d72098b6c.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.util.motion.self-13d4248460aba53c0fd52e1ec0d5cb41c317b1c4d974bc5d905c9976dc9ef218.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.util.nest.self-c9876586f80b068aea0d01390583424a28fa305c450e12a49bb301dcc686d1a0.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.util.timerAndImageLoader.self-68c67c1b0b4f2e2cb7f2af57124f38f54b749efed9f1bebc44677dc27abf7864.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.util.touch.self-e26387c8ba249a8e90745647603562023cd1932c720ddf72407dc7a489ecb893.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.util.triggers.self-71a2360cfe56c89eb46e0776c3d04601a8cce01d9e1098b808375eecc4b2418c.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.self-5ecf2f4d83e6260dabd6ec48e76d8ddebccf956563f34072221bf960d3b8c255.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/linkedin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/application.self-1509cb3433bf7f60a75710bd4d8561d25423676b3c4d4a21914940bf07b8869a.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.core.self-f55f82f1d32e31421cdb346360219495e02cb256a9235560ae847258f51ded3a.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.abide.self-fbc98127620ee01eaa2881e128f8448984eecf2eaf9fd8cc40b020ad7e9f2bd3.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.drilldown.self-11995b03e1b847772717a9123dc61fb32511459cccc6b8bc816b29e6739c3555.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.dropdown.self-f384376d246673d8cc9e59e8a1e0655d1ac164ebd79ed62938bb665b8e98fda0.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/assets/foundation.dropdownMenu.self-d58c8deb698da27cd9f2df0dd6bef68b289948015c0eb1f1734e601754b77a22.js?body=1" for ::1 at 2016-05-14 12:32:11 -0400
+
+
+Started GET "/users/finish" for ::1 at 2016-05-14 12:32:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"finish"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=finish):
+  app/controllers/users_controller.rb:27:in `show'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.9ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (112.6ms)
+
+
+Started GET "/users/1/finish" for ::1 at 2016-05-14 12:32:31 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"1"}
+  Rendered users/finish.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial users/__interests with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views"
+  * "/Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/foundation-rails-6.2.1.0/app/views"
+):
+    37: </tr>
+    38: 
+    39: <tr>
+    40:   <%= render 'users/_interests' %>
+    41: </tr>
+    42: <tr>
+    43:   <td>
+  app/views/users/finish.html.erb:40:in `block in _app_views_users_finish_html_erb__1098359325798104567_70234450740020'
+  app/views/users/finish.html.erb:2:in `_app_views_users_finish_html_erb__1098359325798104567_70234450740020'
+  app/controllers/users_controller.rb:55:in `finish'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.8ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (105.2ms)
+
+
+Started GET "/users/2" for ::1 at 2016-05-14 12:33:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 126ms (Views: 124.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/_settings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/application.self-167193cd81d9330d9ddb5c4ec7b44214fea529aa8a94f3a86e6526e4f652fc02.css?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/linkedin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation_and_overrides.self-b0ad276f100a0194d8b4209e20946bf28156f8facfaa69b015b6927e7528d089.css?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.accordion.self-6c28f3f91f10621dea9006b993acf28cda9ea59c4e962048fee0e94588b696bb.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.accordionMenu.self-6a75eb2b3768268d8ec00fc703ea3752f847738031a2614ce3ab5e4bbb9882dd.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.drilldown.self-11995b03e1b847772717a9123dc61fb32511459cccc6b8bc816b29e6739c3555.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.dropdown.self-f384376d246673d8cc9e59e8a1e0655d1ac164ebd79ed62938bb665b8e98fda0.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.dropdownMenu.self-d58c8deb698da27cd9f2df0dd6bef68b289948015c0eb1f1734e601754b77a22.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.equalizer.self-20c80813228b7707630bb8e9b79d9e9e95bc08793fd7f7c0bb4d1a8e1abba874.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.interchange.self-8098699bc5e479e34a597c857ca10cf84217780d16b09b4be350ec42d7c3ba85.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.magellan.self-185cddbb3ea900a8b64ad9482999414820039c72b88ac73ce4062e26c2fcb51f.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.offcanvas.self-43878eed51fe559619ff3c62e266b58335e0cd40bc765ede9bb5c61a5e25625d.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.orbit.self-3790b70d486b6233de7bf36256a99b4470bbf5bab8d5cdba23038a96bed7c426.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.responsiveMenu.self-04daa3af5d3c617fa7d588b45b56abd62539f5fde28756c7b4705de2aa10c4fd.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.responsiveToggle.self-2b01f8c5e2bfe4eeaf7b15dd94962ef957112c455f4dc3abcf5e41e4c98b5b91.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.reveal.self-3b377de155fe3f888dcbb074b9017ed4e19c3ef995e13eea42b10839dd9756f6.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.slider.self-89883a154b8e68187e9465e5470bf26d54b48a4a69de4636afbb38953ee41ea6.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.sticky.self-8e0aa578f0015adbf99c14d1bb8464da751951e2c6e2923c2395ceba99c28bac.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.tabs.self-891f2cfe78a15ab6d129ae1bdcd83bb8c344b5677446700c8329442081eddddf.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.toggler.self-e503f9a635124ad4578a03dc24e47ac4cdb922a60bac8c9c99d024da00b0bd52.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.tooltip.self-4cf167bdbe826668ee0d73e6e30da8aaba252c73084db7b005923d5cd102d11e.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.util.box.self-789413a9ae946f5aee2709ac5e1ad5c9a7780fb4e16b46efe3572f22a0ea6b4d.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.util.keyboard.self-cf209dc0383f29cb576393bbdee52dbbd819837d6430a35afb4a4703770972f9.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.util.mediaQuery.self-931eb6f96f60670ad0ebcb0a6d7bed0cced317a2059749343b094c4d72098b6c.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.util.motion.self-13d4248460aba53c0fd52e1ec0d5cb41c317b1c4d974bc5d905c9976dc9ef218.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.util.nest.self-c9876586f80b068aea0d01390583424a28fa305c450e12a49bb301dcc686d1a0.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.util.timerAndImageLoader.self-68c67c1b0b4f2e2cb7f2af57124f38f54b749efed9f1bebc44677dc27abf7864.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.util.touch.self-e26387c8ba249a8e90745647603562023cd1932c720ddf72407dc7a489ecb893.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.util.triggers.self-71a2360cfe56c89eb46e0776c3d04601a8cce01d9e1098b808375eecc4b2418c.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.self-5ecf2f4d83e6260dabd6ec48e76d8ddebccf956563f34072221bf960d3b8c255.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/linkedin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/application.self-1509cb3433bf7f60a75710bd4d8561d25423676b3c4d4a21914940bf07b8869a.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.core.self-f55f82f1d32e31421cdb346360219495e02cb256a9235560ae847258f51ded3a.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/assets/foundation.abide.self-fbc98127620ee01eaa2881e128f8448984eecf2eaf9fd8cc40b020ad7e9f2bd3.js?body=1" for ::1 at 2016-05-14 12:33:12 -0400
+
+
+Started GET "/users/2/finish" for ::1 at 2016-05-14 12:33:14 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"2"}
+  Rendered users/finish.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial users/__interests with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views"
+  * "/Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/foundation-rails-6.2.1.0/app/views"
+):
+    37: </tr>
+    38: 
+    39: <tr>
+    40:   <%= render 'users/_interests' %>
+    41: </tr>
+    42: <tr>
+    43:   <td>
+  app/views/users/finish.html.erb:40:in `block in _app_views_users_finish_html_erb__1098359325798104567_70234450740020'
+  app/views/users/finish.html.erb:2:in `_app_views_users_finish_html_erb__1098359325798104567_70234450740020'
+  app/controllers/users_controller.rb:55:in `finish'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.9ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.8ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (114.2ms)
+
+
+Started GET "/users/2/finish" for ::1 at 2016-05-14 12:33:49 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"2"}
+  Rendered users/finish.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/finish.html.erb:40: syntax error, unexpected $undefined, expecting keyword_do or '{' or '('
+...buffer.safe_append='/interests\' %>
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/finish.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/finish.html.erb:53: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/finish.html.erb:55: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/finish.html.erb:40: syntax error, unexpected $undefined, expecting keyword_do or '{' or '('
+  app/views/users/finish.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/finish.html.erb:53: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/finish.html.erb:55: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/users_controller.rb:55:in `finish'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.7ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.1ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.1ms)
+
+
+Started GET "/users/2/finish" for ::1 at 2016-05-14 12:33:58 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"2"}
+  Rendered users/_interests.html.erb (1.5ms)
+  Rendered users/finish.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting keyword_end
+...ted=>[1,2,3,4]})), :multiple => true, :id => "interest_ids" ...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: Can't assign to true
+...1,2,3,4]})), :multiple => true, :id => "interest_ids" );@out...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting :: or '[' or '.'
+...]})), :multiple => true, :id => "interest_ids" );@output_buf...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected ')', expecting keyword_end
+...> true, :id => "interest_ids" );@output_buffer.safe_append='
+...                               ^):
+  app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting keyword_end
+  app/views/users/_interests.html.erb:11: Can't assign to true
+  app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting :: or '[' or '.'
+  app/views/users/_interests.html.erb:11: syntax error, unexpected ')', expecting keyword_end
+  app/views/users/finish.html.erb:40:in `block in _app_views_users_finish_html_erb__1098359325798104567_70234485375100'
+  app/views/users/finish.html.erb:2:in `_app_views_users_finish_html_erb__1098359325798104567_70234485375100'
+  app/controllers/users_controller.rb:55:in `finish'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.6ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.0ms)
+
+
+Started GET "/users/2/finish" for ::1 at 2016-05-14 12:34:10 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"2"}
+  Rendered users/_interests.html.erb (1.1ms)
+  Rendered users/finish.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting keyword_end
+...ted=>[1,2,3,4]})), :multiple => true, :id => "interest_ids" ...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: Can't assign to true
+...1,2,3,4]})), :multiple => true, :id => "interest_ids" );@out...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting :: or '[' or '.'
+...]})), :multiple => true, :id => "interest_ids" );@output_buf...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected ')', expecting keyword_end
+...> true, :id => "interest_ids" );@output_buffer.safe_append='
+...                               ^):
+  app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting keyword_end
+  app/views/users/_interests.html.erb:11: Can't assign to true
+  app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting :: or '[' or '.'
+  app/views/users/_interests.html.erb:11: syntax error, unexpected ')', expecting keyword_end
+  app/views/users/finish.html.erb:40:in `block in _app_views_users_finish_html_erb__1098359325798104567_70234467957480'
+  app/views/users/finish.html.erb:2:in `_app_views_users_finish_html_erb__1098359325798104567_70234467957480'
+  app/controllers/users_controller.rb:55:in `finish'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (106.9ms)
+
+
+Started GET "/users/2/finish" for ::1 at 2016-05-14 12:34:35 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"2"}
+  Rendered users/_interests.html.erb (1.1ms)
+  Rendered users/finish.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting keyword_end
+...ted=>[1,2,3,4]})), :multiple => true, :id => "interest_ids" ...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: Can't assign to true
+...1,2,3,4]})), :multiple => true, :id => "interest_ids" );@out...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting :: or '[' or '.'
+...]})), :multiple => true, :id => "interest_ids" );@output_buf...
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/_interests.html.erb:11: syntax error, unexpected ')', expecting keyword_end
+...> true, :id => "interest_ids" );@output_buffer.safe_append='
+...                               ^):
+  app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting keyword_end
+  app/views/users/_interests.html.erb:11: Can't assign to true
+  app/views/users/_interests.html.erb:11: syntax error, unexpected =>, expecting :: or '[' or '.'
+  app/views/users/_interests.html.erb:11: syntax error, unexpected ')', expecting keyword_end
+  app/views/users/finish.html.erb:40:in `block in _app_views_users_finish_html_erb__1098359325798104567_70234467957480'
+  app/views/users/finish.html.erb:2:in `_app_views_users_finish_html_erb__1098359325798104567_70234467957480'
+  app/controllers/users_controller.rb:55:in `finish'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.1ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (9.8ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.8ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.3ms)
+
+
+Started GET "/users/2/finish" for ::1 at 2016-05-14 12:34:52 -0400
+Processing by UsersController#finish as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInterest Load (0.5ms)[0m  [1mSELECT "interests".* FROM "interests"[0m
+  Rendered users/_interests.html.erb (11.5ms)
+  Rendered users/finish.html.erb within layouts/application (15.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 137ms (Views: 134.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/_settings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation_and_overrides.self-b0ad276f100a0194d8b4209e20946bf28156f8facfaa69b015b6927e7528d089.css?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/linkedin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/application.self-167193cd81d9330d9ddb5c4ec7b44214fea529aa8a94f3a86e6526e4f652fc02.css?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.accordion.self-6c28f3f91f10621dea9006b993acf28cda9ea59c4e962048fee0e94588b696bb.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.accordionMenu.self-6a75eb2b3768268d8ec00fc703ea3752f847738031a2614ce3ab5e4bbb9882dd.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.drilldown.self-11995b03e1b847772717a9123dc61fb32511459cccc6b8bc816b29e6739c3555.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.dropdownMenu.self-d58c8deb698da27cd9f2df0dd6bef68b289948015c0eb1f1734e601754b77a22.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.equalizer.self-20c80813228b7707630bb8e9b79d9e9e95bc08793fd7f7c0bb4d1a8e1abba874.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.interchange.self-8098699bc5e479e34a597c857ca10cf84217780d16b09b4be350ec42d7c3ba85.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.magellan.self-185cddbb3ea900a8b64ad9482999414820039c72b88ac73ce4062e26c2fcb51f.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.offcanvas.self-43878eed51fe559619ff3c62e266b58335e0cd40bc765ede9bb5c61a5e25625d.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.orbit.self-3790b70d486b6233de7bf36256a99b4470bbf5bab8d5cdba23038a96bed7c426.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.responsiveMenu.self-04daa3af5d3c617fa7d588b45b56abd62539f5fde28756c7b4705de2aa10c4fd.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.responsiveToggle.self-2b01f8c5e2bfe4eeaf7b15dd94962ef957112c455f4dc3abcf5e41e4c98b5b91.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.reveal.self-3b377de155fe3f888dcbb074b9017ed4e19c3ef995e13eea42b10839dd9756f6.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.slider.self-89883a154b8e68187e9465e5470bf26d54b48a4a69de4636afbb38953ee41ea6.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.sticky.self-8e0aa578f0015adbf99c14d1bb8464da751951e2c6e2923c2395ceba99c28bac.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.tabs.self-891f2cfe78a15ab6d129ae1bdcd83bb8c344b5677446700c8329442081eddddf.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.toggler.self-e503f9a635124ad4578a03dc24e47ac4cdb922a60bac8c9c99d024da00b0bd52.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.tooltip.self-4cf167bdbe826668ee0d73e6e30da8aaba252c73084db7b005923d5cd102d11e.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.util.box.self-789413a9ae946f5aee2709ac5e1ad5c9a7780fb4e16b46efe3572f22a0ea6b4d.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.util.keyboard.self-cf209dc0383f29cb576393bbdee52dbbd819837d6430a35afb4a4703770972f9.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.util.mediaQuery.self-931eb6f96f60670ad0ebcb0a6d7bed0cced317a2059749343b094c4d72098b6c.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.util.motion.self-13d4248460aba53c0fd52e1ec0d5cb41c317b1c4d974bc5d905c9976dc9ef218.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.util.nest.self-c9876586f80b068aea0d01390583424a28fa305c450e12a49bb301dcc686d1a0.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.util.timerAndImageLoader.self-68c67c1b0b4f2e2cb7f2af57124f38f54b749efed9f1bebc44677dc27abf7864.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.util.touch.self-e26387c8ba249a8e90745647603562023cd1932c720ddf72407dc7a489ecb893.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.util.triggers.self-71a2360cfe56c89eb46e0776c3d04601a8cce01d9e1098b808375eecc4b2418c.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.self-5ecf2f4d83e6260dabd6ec48e76d8ddebccf956563f34072221bf960d3b8c255.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/linkedin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/application.self-1509cb3433bf7f60a75710bd4d8561d25423676b3c4d4a21914940bf07b8869a.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.core.self-f55f82f1d32e31421cdb346360219495e02cb256a9235560ae847258f51ded3a.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.abide.self-fbc98127620ee01eaa2881e128f8448984eecf2eaf9fd8cc40b020ad7e9f2bd3.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/assets/foundation.dropdown.self-f384376d246673d8cc9e59e8a1e0655d1ac164ebd79ed62938bb665b8e98fda0.js?body=1" for ::1 at 2016-05-14 12:34:52 -0400
+
+
+Started GET "/users/2" for ::1 at 2016-05-14 12:58:07 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.7ms)
+
+SyntaxError (/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/show.html.erb:23: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...f @user.id != current_user.id );@output_buffer.safe_append='
+...                               ^
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/show.html.erb:28: syntax error, unexpected keyword_end, expecting ')'
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/show.html.erb:54: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/jaclynfeminella/DBC Work/phase-3/Mentor-matcher-Phase-3-capstone/app/views/users/show.html.erb:56: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/show.html.erb:23: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/users/show.html.erb:28: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/show.html.erb:54: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/show.html.erb:56: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.2ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.1ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jaclynfeminella/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (114.6ms)
+
+
+Started GET "/users/2" for ::1 at 2016-05-14 12:58:17 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 126ms (Views: 124.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/foundation_and_overrides.self-b0ad276f100a0194d8b4209e20946bf28156f8facfaa69b015b6927e7528d089.css?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/application.self-167193cd81d9330d9ddb5c4ec7b44214fea529aa8a94f3a86e6526e4f652fc02.css?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/_settings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/linkedin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/application.self-1509cb3433bf7f60a75710bd4d8561d25423676b3c4d4a21914940bf07b8869a.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.core.self-f55f82f1d32e31421cdb346360219495e02cb256a9235560ae847258f51ded3a.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.abide.self-fbc98127620ee01eaa2881e128f8448984eecf2eaf9fd8cc40b020ad7e9f2bd3.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.accordion.self-6c28f3f91f10621dea9006b993acf28cda9ea59c4e962048fee0e94588b696bb.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.accordionMenu.self-6a75eb2b3768268d8ec00fc703ea3752f847738031a2614ce3ab5e4bbb9882dd.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.drilldown.self-11995b03e1b847772717a9123dc61fb32511459cccc6b8bc816b29e6739c3555.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.dropdown.self-f384376d246673d8cc9e59e8a1e0655d1ac164ebd79ed62938bb665b8e98fda0.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.dropdownMenu.self-d58c8deb698da27cd9f2df0dd6bef68b289948015c0eb1f1734e601754b77a22.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.equalizer.self-20c80813228b7707630bb8e9b79d9e9e95bc08793fd7f7c0bb4d1a8e1abba874.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.interchange.self-8098699bc5e479e34a597c857ca10cf84217780d16b09b4be350ec42d7c3ba85.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.magellan.self-185cddbb3ea900a8b64ad9482999414820039c72b88ac73ce4062e26c2fcb51f.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.offcanvas.self-43878eed51fe559619ff3c62e266b58335e0cd40bc765ede9bb5c61a5e25625d.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.orbit.self-3790b70d486b6233de7bf36256a99b4470bbf5bab8d5cdba23038a96bed7c426.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.responsiveMenu.self-04daa3af5d3c617fa7d588b45b56abd62539f5fde28756c7b4705de2aa10c4fd.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.responsiveToggle.self-2b01f8c5e2bfe4eeaf7b15dd94962ef957112c455f4dc3abcf5e41e4c98b5b91.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.reveal.self-3b377de155fe3f888dcbb074b9017ed4e19c3ef995e13eea42b10839dd9756f6.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.slider.self-89883a154b8e68187e9465e5470bf26d54b48a4a69de4636afbb38953ee41ea6.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.sticky.self-8e0aa578f0015adbf99c14d1bb8464da751951e2c6e2923c2395ceba99c28bac.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.tabs.self-891f2cfe78a15ab6d129ae1bdcd83bb8c344b5677446700c8329442081eddddf.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.toggler.self-e503f9a635124ad4578a03dc24e47ac4cdb922a60bac8c9c99d024da00b0bd52.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.tooltip.self-4cf167bdbe826668ee0d73e6e30da8aaba252c73084db7b005923d5cd102d11e.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.util.box.self-789413a9ae946f5aee2709ac5e1ad5c9a7780fb4e16b46efe3572f22a0ea6b4d.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.util.keyboard.self-cf209dc0383f29cb576393bbdee52dbbd819837d6430a35afb4a4703770972f9.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.util.mediaQuery.self-931eb6f96f60670ad0ebcb0a6d7bed0cced317a2059749343b094c4d72098b6c.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.util.motion.self-13d4248460aba53c0fd52e1ec0d5cb41c317b1c4d974bc5d905c9976dc9ef218.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.util.nest.self-c9876586f80b068aea0d01390583424a28fa305c450e12a49bb301dcc686d1a0.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.util.timerAndImageLoader.self-68c67c1b0b4f2e2cb7f2af57124f38f54b749efed9f1bebc44677dc27abf7864.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.util.touch.self-e26387c8ba249a8e90745647603562023cd1932c720ddf72407dc7a489ecb893.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.util.triggers.self-71a2360cfe56c89eb46e0776c3d04601a8cce01d9e1098b808375eecc4b2418c.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/foundation.self-5ecf2f4d83e6260dabd6ec48e76d8ddebccf956563f34072221bf960d3b8c255.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/assets/linkedin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 12:58:17 -0400
+
+
+Started GET "/users/2" for ::1 at 2016-05-14 13:00:56 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 126ms (Views: 124.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/_settings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/linkedin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation_and_overrides.self-b0ad276f100a0194d8b4209e20946bf28156f8facfaa69b015b6927e7528d089.css?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/application.self-167193cd81d9330d9ddb5c4ec7b44214fea529aa8a94f3a86e6526e4f652fc02.css?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.core.self-f55f82f1d32e31421cdb346360219495e02cb256a9235560ae847258f51ded3a.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.abide.self-fbc98127620ee01eaa2881e128f8448984eecf2eaf9fd8cc40b020ad7e9f2bd3.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.accordion.self-6c28f3f91f10621dea9006b993acf28cda9ea59c4e962048fee0e94588b696bb.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.accordionMenu.self-6a75eb2b3768268d8ec00fc703ea3752f847738031a2614ce3ab5e4bbb9882dd.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.drilldown.self-11995b03e1b847772717a9123dc61fb32511459cccc6b8bc816b29e6739c3555.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.dropdown.self-f384376d246673d8cc9e59e8a1e0655d1ac164ebd79ed62938bb665b8e98fda0.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.dropdownMenu.self-d58c8deb698da27cd9f2df0dd6bef68b289948015c0eb1f1734e601754b77a22.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.equalizer.self-20c80813228b7707630bb8e9b79d9e9e95bc08793fd7f7c0bb4d1a8e1abba874.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.interchange.self-8098699bc5e479e34a597c857ca10cf84217780d16b09b4be350ec42d7c3ba85.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.magellan.self-185cddbb3ea900a8b64ad9482999414820039c72b88ac73ce4062e26c2fcb51f.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.offcanvas.self-43878eed51fe559619ff3c62e266b58335e0cd40bc765ede9bb5c61a5e25625d.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.orbit.self-3790b70d486b6233de7bf36256a99b4470bbf5bab8d5cdba23038a96bed7c426.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.responsiveMenu.self-04daa3af5d3c617fa7d588b45b56abd62539f5fde28756c7b4705de2aa10c4fd.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.responsiveToggle.self-2b01f8c5e2bfe4eeaf7b15dd94962ef957112c455f4dc3abcf5e41e4c98b5b91.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.reveal.self-3b377de155fe3f888dcbb074b9017ed4e19c3ef995e13eea42b10839dd9756f6.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.slider.self-89883a154b8e68187e9465e5470bf26d54b48a4a69de4636afbb38953ee41ea6.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.sticky.self-8e0aa578f0015adbf99c14d1bb8464da751951e2c6e2923c2395ceba99c28bac.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.tabs.self-891f2cfe78a15ab6d129ae1bdcd83bb8c344b5677446700c8329442081eddddf.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.toggler.self-e503f9a635124ad4578a03dc24e47ac4cdb922a60bac8c9c99d024da00b0bd52.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.tooltip.self-4cf167bdbe826668ee0d73e6e30da8aaba252c73084db7b005923d5cd102d11e.js?body=1" for ::1 at 2016-05-14 13:00:56 -0400
+
+
+Started GET "/assets/foundation.util.box.self-789413a9ae946f5aee2709ac5e1ad5c9a7780fb4e16b46efe3572f22a0ea6b4d.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/foundation.util.keyboard.self-cf209dc0383f29cb576393bbdee52dbbd819837d6430a35afb4a4703770972f9.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/foundation.util.mediaQuery.self-931eb6f96f60670ad0ebcb0a6d7bed0cced317a2059749343b094c4d72098b6c.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/foundation.util.motion.self-13d4248460aba53c0fd52e1ec0d5cb41c317b1c4d974bc5d905c9976dc9ef218.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/foundation.util.nest.self-c9876586f80b068aea0d01390583424a28fa305c450e12a49bb301dcc686d1a0.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/foundation.util.timerAndImageLoader.self-68c67c1b0b4f2e2cb7f2af57124f38f54b749efed9f1bebc44677dc27abf7864.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/foundation.util.touch.self-e26387c8ba249a8e90745647603562023cd1932c720ddf72407dc7a489ecb893.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/foundation.util.triggers.self-71a2360cfe56c89eb46e0776c3d04601a8cce01d9e1098b808375eecc4b2418c.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/foundation.self-5ecf2f4d83e6260dabd6ec48e76d8ddebccf956563f34072221bf960d3b8c255.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/linkedin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/application.self-1509cb3433bf7f60a75710bd4d8561d25423676b3c4d4a21914940bf07b8869a.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-14 13:00:57 -0400

@@ -20,19 +20,22 @@
 
     <p>About me:</br>
     <%= @user.mission_statement %></p>
-    <form action="#" method="post">
-      <input type="hidden" method="_update">
-      <input class="button" type="button" value='Interested?'>
-    </form>
+    <% if @user.id != current_user.id %>
+      <form action="#" method="post">
+        <input type="hidden" method="_update">
+        <input class="button" type="button" value='Interested?'>
+      </form>
+    <%end%>
 
 <hr>
 
 <% interests = nil %>
 <% if interests == nil %>
   <p>You don't have any interests yet!</p>
-  <form action="#" method="get">
+  <a href="/users/<%=@user.id%>/finish" class="button round">Add Interests</a>
+  <!-- <form action="/users/finish" method="get">
     <input class="button" type="button" value="Add interests">
-  </form>
+  </form> -->
 <% else %>
   <% @user.interests.each do |interest| %>
     <%= puts interest %>
@@ -44,7 +47,9 @@
 
 <hr>
 
-<a href="<%= @user.public_profile_url %>" class="button">View me on LinkedIn</a>
-
+<% if @user.id != current_user.id %>
+  <a href="<%= @user.public_profile_url %>" class="button">View me on LinkedIn</a>
+<% else %>
+  <a href="https://www.linkedin.com/profile/edit?trk=nav_responsive_sub_nav_edit_profile" class="button">Edit my LinkedIn Profile</a>
+<%end%>
 <hr>
-
