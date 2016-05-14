@@ -7,7 +7,6 @@
 # #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
 User.create(
   first_name: "Jason",
   last_name: "Allen",
@@ -160,18 +159,12 @@ User.create(
 
 5.times do
   PendingMatch.create(
-    initiator_id: Mentee.all.sample,
-    receiver_id: Mentor.all.sample,
+    initiator: Mentee.all.sample,
+    receiver: Mentor.all.sample,
     )
   PendingMatch.create(
-    initiator_id: Mentor.all.sample,
-    receiver_id: Mentee.all.sample,
+    initiator: Mentor.all.sample,
+    receiver: Mentee.all.sample,
     )
 end
-
-
-
-
-
-
 
