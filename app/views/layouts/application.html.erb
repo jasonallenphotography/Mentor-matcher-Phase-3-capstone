@@ -35,15 +35,16 @@
 
   <%= yield %>
 
-  <footer>
-    <nav>
-      <% if logged_in? %>
-      <p>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %> |
-      <a href="/logout">Logout?</a></p>
-      <% end %>
-
-    </nav>
+<% if logged_in? %>
+  <hr class="style-two">
+  <footer class='text-center'>
+    You are logged in as <%= current_user.first_name %> <%= current_user.last_name %><br>
+    <ul class="expanded button-group">
+      <a href="/users/<%=current_user.id%>/edit" class="button success">Edit Profile</a>
+      <a href="/logout" class="button alert">Logout</a>
+    </ul>
   </footer>
+<% end %>
   </body>
 
 </html>
