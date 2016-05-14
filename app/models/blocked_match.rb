@@ -1,0 +1,2 @@
+class BlockedMatch < Match
+end

@@ -1,2 +1,0 @@
-class RejectedMatch < Match
-end

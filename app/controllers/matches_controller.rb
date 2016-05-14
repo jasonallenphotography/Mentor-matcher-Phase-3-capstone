@@ -7,16 +7,38 @@ class MatchesController < ApplicationController
 
 
   def create
+    @match = PendingMatch.new(params[:pending])
+
+    if @match.save
+      redirect_to '/matches#tabs-2'
+    else
+      @errors = @match.errors.full_messages
+      redirect_to user_path(current_user)
+    end
   end
 
 
   def show
+    #Chat window that belongs to match will go here
   end
 
 
   def update
+    @match = Match.find(params[:id])
+
+    @match.assign_attributes(params[:match])
+    if @match.save
+      redirect_to '/'
+    else
+      @errors = @match.errors.full_messages
+      render 'index'
+    end
   end
 
+  def destroy
+    @match = Match.find(params[:id])
+    @match.destroy
+  end
 
 end
 
