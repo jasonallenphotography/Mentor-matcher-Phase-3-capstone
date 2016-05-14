@@ -156,3 +156,22 @@ User.create(
   linkedin_id: "5ZDPyI0kYi",
   email: "cbudzyna@gmail.com"
   )
+
+
+5.times do
+  PendingMatch.create(
+    initiator_id: Mentee.all.sample,
+    receiver_id: Mentor.all.sample,
+    )
+  PendingMatch.create(
+    initiator_id: Mentor.all.sample,
+    receiver_id: Mentee.all.sample,
+    )
+end
+
+
+
+
+
+
+
