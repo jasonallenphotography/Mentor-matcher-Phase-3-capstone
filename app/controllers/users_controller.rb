@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new()
-
     if @user.save
       redirect_to users_path
     # else
@@ -25,6 +24,7 @@ class UsersController < ApplicationController
 
   def show
    @user = User.find(params[:id])
+   @interests = Interest.all
   end
 
 
@@ -35,10 +35,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    p "-----------------------------"
     @user.assign_attributes(user_params)
 
     if @user.save
-      redirect_to users_path
+      redirect_to user_path(current_user)
     else
       render 'edit'
     end
@@ -67,7 +68,8 @@ class UsersController < ApplicationController
                                  :current_company,
                                  :type,
                                  :status,
-                                 :mission_statement)
+                                 :mission_statement,
+                                 :user_interests)
   end
 
 end
