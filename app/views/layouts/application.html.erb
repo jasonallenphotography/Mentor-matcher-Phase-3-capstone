@@ -6,7 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -19,10 +19,12 @@
         </div>
         <div class="top-bar" id="main-menu">
           <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu>
+            <ul class="vertical dropdown menu" data-dropdown-menu>
               <% if logged_in? %>
-                <li><a href="/users/<%=current_user.id%>">My Profile</a></li>
                 <li><a href="/matches">My <%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Requests</a></li>
+                <li><a href="/users/<%=current_user.id%>"><i class="step fi-mail size-24"></i> My Inbox</a></li>
+                <li><a href="/users/<%=current_user.id%>">My Profile</a></li>
+                <li><a href="/users/<%=current_user.id%>">My Profile</a></li>
               <% else %>
                 <li><a href="/auth/linkedin">Login</a></li>
                 <li><a href="/auth/linkedin">Register</a></li>
@@ -36,14 +38,17 @@
   <%= yield %>
 
 <% if logged_in? %>
-  <hr class="style-two">
-  <footer class='text-center'>
-    You are logged in as <%= current_user.first_name %> <%= current_user.last_name %><br>
-    <ul class="expanded button-group">
-      <a href="/users/<%=current_user.id%>/edit" class="button success">Edit Profile</a>
-      <a href="/logout" class="button alert">Logout</a>
-    </ul>
-  </footer>
+  <br>
+  <div class="small-12 small-centered columns text-center">
+    <footer>
+      <p class='text-center'>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %></p>
+        <div class="expanded stacked-for-small button-group">
+          <a href="/users/<%=current_user.id%>/edit" class="button success">Edit Profile</a>
+          <a href="/logout" class="button alert">Logout</a>
+        </div>
+    </footer>
+  </div>
+
 <% end %>
   </body>
 
