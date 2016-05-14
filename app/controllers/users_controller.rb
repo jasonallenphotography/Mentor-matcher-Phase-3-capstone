@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def show
    @user = User.find(params[:id])
+   @interests = Interest.all
   end
 
 
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+
     @user.assign_attributes(user_params)
 
     if @user.save
@@ -67,7 +69,8 @@ class UsersController < ApplicationController
                                  :current_company,
                                  :type,
                                  :status,
-                                 :mission_statement)
+                                 :mission_statement,
+                                 :user_interests)
   end
 
 end
