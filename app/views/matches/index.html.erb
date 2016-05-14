@@ -4,13 +4,12 @@
 
 <h1><%=current_user.first_name%>'s Requests</h1>
 
-
-
 <div id="tabs">
   <div class="row">
     <ul>
-      <li><a href="#tabs-1"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Requests</a></li>
-      <li><a href="#tabs-2">Pending</a></li>
+      <li><a href="#tabs-1"><small><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%><br>Requests</small></a></li>
+      <li><a href="#tabs-2"><small>My<br><%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%></small></a></li>
+      <li><a href="#tabs-3"><small>Pending<br>Requests</small></a></li>
     </ul>
   </div>
   <div id="tabs-1">
@@ -20,58 +19,108 @@
             <div class="row">
               <div class="small-4 large-4 columns"><%= image_tag decision.initiator.picture_url %></div>
               <div class="small-8 large-8 columns">
-                <%= decision.initiator.first_name %> <%= decision.initiator.last_name %><br>
-                <%= decision.initiator.industry %><br>
+                <b><%= decision.initiator.first_name %> <%= decision.initiator.last_name %></b><br>
+                <small><%= decision.initiator.current_title %></small><br>
+                <small>at </small><b><%= decision.initiator.current_company%></b><br>
               </div>
             </div>
-          <br>
             <div class="row">
-              <div class="small-12 small-centered columns"><small><%= decision.initiator.mission_statement %></small></div>
+              <div class="small-12 small-centered columns"><small><i><%= decision.initiator.mission_statement %></i></small></div>
             </div>
-          <br>
+            <hr class="style-two">
             <div class="row">
               <ul class="button-group small">
-                <a href="#" class="button small success">Connect!</a>
-                <a href="#" class="button small">No Thanks.</a>
-                <a href="#" class="button small alert">Block!</a>
+                <a href="#" class="button small success">Accept</a>
+                <a href="#" class="button small">Reject</a>
+                <a href="#" class="button small alert">Block</a>
               </ul>
             </div>
-          <hr>
+          <hr class="style-one">
         <% end %>
+      <% else %>
+        <p>It looks like you don't have any requests from <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>. Check back later!</p>
       <% end %>
     </div>
   </div>
   <div id="tabs-2">
+    <div class="container">
+      <% if @matches %>
+        <% @matches.each do |match| %>
+          <h3>Matches go here!</h3>
+          <p>Matches stuff.</p>
+        <% end %>
+      <% else %>
+        <h3><b>On no!</b></h3>
+        <p>It looks like you don't have any <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>!</p>
+        <p>Connect with a <%= current_user.type == "Mentor" ? "Protegé" : "Mentor"%> today!</p>
+        <p><a href="/users" class="button small success">Click here</a></p>
+      <% end %>
+    </div>
+  </div>
+  <div id="tabs-3">
     <div class="container">
       <% if @matches_pending_others_decision %>
         <% @matches_pending_others_decision.each do |decision| %>
           <div class="row">
             <div class="small-4 large-4 columns"><%= image_tag decision.receiver.picture_url %></div>
             <div class="small-8 large-8 columns">
-              <%= decision.receiver.first_name %> <%= decision.receiver.last_name %><br>
-              <%= decision.receiver.industry %><br>
+              <b><%= decision.receiver.first_name %> <%= decision.receiver.last_name %></b><br>
+              <small><%= decision.receiver.current_title %></small><br>
+              <small>at </small><b><%= decision.receiver.current_company%></b><br>
             </div>
           </div>
-        <br>
           <div class="row">
-            <div class="small-10 small-centered columns"><small><%= decision.receiver.mission_statement %></small></div>
+            <div class="small-12 small-centered columns"><small><i><%= decision.receiver.mission_statement %></i></small></div>
           </div>
-        <br>
+        <hr class="style-two">
           <div class="row">
             <ul class="button-group round">
               <a href="<%=decision.receiver.public_profile_url%>" class="button small">LinkedIn</a>
-              <a href="#" class="button small alert">Cancel?</a>
+              <a href="#" class="button small alert">Cancel</a>
             </ul>
           </div>
-        <hr>
+        <hr class="style-one">
         <% end %>
+      <% else %>
+        <p>It looks like you don't have made any requests to connect with <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>.</p>
+        <p>Connect with a <%= current_user.type == "Mentor" ? "Protegé" : "Mentor"%> today!</p>
+        <p><a href="/users" class="button small success">Click here</a></p>
       <% end %>
     </div>
   </div>
 </div>
+
+
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script>
 $(function() {
   $( "#tabs" ).tabs();
 });
 </script>
+
+
+<style type="text/css">
+  hr.style-one {
+      height: 30px;
+      border-style: solid;
+      border-color: black;
+      border-width: 1px 0 0 0;
+      border-radius: 20px;
+  }
+  hr.style-one:before {
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: black;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+  }
+
+  hr.style-two {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  }
+</style>
