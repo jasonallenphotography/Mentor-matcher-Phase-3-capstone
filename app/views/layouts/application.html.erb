@@ -13,27 +13,30 @@
 
   <body>
     <header>
+      <nav>
+        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+          <button class="menu-icon" type="button" data-toggle></button>
+          <div class="title-bar-title">Menu</div>
+        </div>
 
-      <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="#">Mentorship</a></h1>
-          </li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-
-        <section class="top-bar-section">
-          <ul class="right">
-            <% if logged_in? %>
-              <li><a href="/users/<%=current_user.id%>">My Profile</a</li>
-            <% else %>
-              <li><a href="/auth/linkedin">Login</a</li>
-              <li><a href="/auth/linkedin">Register</a</li>
-            <% end %>
-          </ul>
-        </section>
+        <div class="top-bar" id="main-menu">
+          <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+              <li class="menu-text">Mentorship</li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <% if logged_in? %>
+                <li><a href="/users/<%=current_user.id%>">My Profile</a></li>
+              <% else %>
+                <li><a href="/auth/linkedin">Login</a></li>
+                <li><a href="/auth/linkedin">Register</a></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </nav>
-
     </header>
 
   <%= yield %>
