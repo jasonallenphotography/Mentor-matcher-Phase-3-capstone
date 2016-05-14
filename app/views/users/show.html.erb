@@ -39,12 +39,17 @@
     <input class="button" type="button" value="Add interests">
   </form>
 <% else %> -->
+
+<!-- #make each interest clickable and look like a button taht you can see other users with this interest -->
 <% if @user.interests %>
   Current interests:
   <% @user.interests.each do |interest| %>
-    <ul><li><%= interest.name %></li></ul>
+  <a href="/users" class="button round"><%= interest.name %></a>
   <% end %>
 <% end %>
+
+<!-- <a href="/auth/linkedin" class="button round">Sign up through LinkedIn</a> -->
+
   <!-- <form action="#" method="get">
     <input class="button" type="button" value="Edit interests">
   </form>
