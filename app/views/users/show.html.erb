@@ -48,16 +48,16 @@
 <% else %> -->
 
 <!-- #make each interest clickable and look like a button taht you can see other users with this interest -->
-<div class="row">
-    <% if @user.interests %>
+  <% if @user.interests %>
+    <div class="row">
       <p class="text-center">Current interests</p>
         <% @user.interests.each do |interest| %>
         <div class="small-6 columns">
           <a href="/users" class="button expanded"><%= interest.name %></a>
         </div>
-        <% end %>
-    <% end %>
-</div>
+      <% end %>
+    </div>
+  <% end %>
 <!-- <a href="/auth/linkedin" class="button round">Sign up through LinkedIn</a> -->
 
   <!-- <form action="#" method="get">
