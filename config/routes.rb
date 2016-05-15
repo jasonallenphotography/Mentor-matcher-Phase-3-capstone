@@ -2,7 +2,13 @@ Rails.application.routes.draw do
 
   resources :users
   resources :matches
+
   resources :user_interests, only: [:create, :destroy]
+
+  resources :conversations do
+    resources :messages
+  end
+
 
   get '/auth/linkedin/callback', to: 'sessions#create', as: 'sessions_create'
   get '/logout', to: 'sessions#destroy', as: 'logout'

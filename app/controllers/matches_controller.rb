@@ -9,7 +9,7 @@ class MatchesController < ApplicationController
 
   def create
     @match = PendingMatch.new(params[:pending])
-
+    @match.conversation = Conversation.new()
     if @match.save
       redirect_to '/matches#tabs-2'
     else

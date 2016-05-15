@@ -1,0 +1,46 @@
+<div id="wrapper">
+  <h3>Inbox</h3>
+  <div class='row'>
+
+    <div class='small-4 columns'>
+        <% current_user.conversations.each do |conv| %>
+          <div class="row">
+            <%= link_to(conversation_messages_path(conv)) do %>
+              <% if mentor? %>
+                <div class='row'>
+                  <div class="small-12 columns">
+                    <img src="<%= conv.mentee.picture_url %>">
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class="small-12 columns">
+                    <%= conv.mentee.first_name %> <%= conv.mentee.last_name %><br>
+                    <small> <%= conv.mentee.current_title %> at <%= conv.mentee.current_company %></small>
+                  </div>
+                </div>
+              <% else %>
+                <div class='row'>
+                  <div class="small-12 columns">
+                    <img src="<%= conv.mentor.picture_url %>">
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class="small-12 columns">
+                    <%= conv.mentor.first_name %> <%= conv.mentor.last_name %><br>
+                    <small> <%= conv.mentor.current_title %> at <%= conv.mentor.current_company %></small>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+    <div class='small-8 columns'>
+
+      <p>text text text</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
