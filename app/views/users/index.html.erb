@@ -1,7 +1,7 @@
 <h1><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Matches</h1>
 
 <% @users.each do |user| %>
-<div class="container">
+<div class="container" id='<%=user.id%>'>
   <div class="row">
     <div class="small-4 large-4 columns"><%= image_tag user.picture_url %></div>
     <div class="small-8 large-8 columns">
