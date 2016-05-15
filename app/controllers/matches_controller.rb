@@ -18,7 +18,10 @@ class MatchesController < ApplicationController
       @match.mentor = @match.receiver
       @match.mentee = current_user
     end
-    # @match.conversation = Conversation.new()
+
+    @convo = Conversation.create(mentor: @match.mentor, mentee: @match.mentee)
+    @match.conversation_id = @convo.id
+
     if @match.save
       redirect_to '/matches'
     else

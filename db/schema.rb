@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515075410) do
+ActiveRecord::Schema.define(version: 20160515095539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,13 +30,14 @@ ActiveRecord::Schema.define(version: 20160515075410) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "initiator_id", null: false
-    t.integer  "receiver_id",  null: false
-    t.string   "type",         null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "mentee_id",    null: false
-    t.string   "mentor_id",    null: false
+    t.integer  "initiator_id",    null: false
+    t.integer  "receiver_id",     null: false
+    t.string   "type",            null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "mentee_id",       null: false
+    t.integer  "mentor_id",       null: false
+    t.integer  "conversation_id"
   end
 
   create_table "messages", force: :cascade do |t|

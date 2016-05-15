@@ -3,31 +3,31 @@
   <div class='row'>
 
     <div class='small-4 columns'>
-        <% current_user.conversations.each do |conv| %>
+        <% @matches.each do |match| %>
           <div class="row">
-            <%= link_to(conversation_messages_path(conv)) do %>
+            <%= link_to(conversation_messages_path(match.conversation.id)) do %>
               <% if mentor? %>
                 <div class='row'>
                   <div class="small-12 columns">
-                    <img src="<%= conv.mentee.picture_url %>">
+                    <img src="<%= match.mentee.picture_url %>">
                   </div>
                 </div>
                 <div class='row'>
                   <div class="small-12 columns">
-                    <%= conv.mentee.first_name %> <%= conv.mentee.last_name %><br>
-                    <small> <%= conv.mentee.current_title %> at <%= conv.mentee.current_company %></small>
+                    <%= match.mentee.first_name %> <%= match.mentee.last_name %><br>
+                    <small> <%= match.mentee.current_title %> at <%= match.mentee.current_company %></small>
                   </div>
                 </div>
               <% else %>
                 <div class='row'>
                   <div class="small-12 columns">
-                    <img src="<%= conv.mentor.picture_url %>">
+                    <img src="<%= match.mentor.picture_url %>">
                   </div>
                 </div>
                 <div class='row'>
                   <div class="small-12 columns">
-                    <%= conv.mentor.first_name %> <%= conv.mentor.last_name %><br>
-                    <small> <%= conv.mentor.current_title %> at <%= conv.mentor.current_company %></small>
+                    <%= match.mentor.first_name %> <%= match.mentor.last_name %><br>
+                    <small> <%= match.mentor.current_title %> at <%= match.mentor.current_company %></small>
                   </div>
                 </div>
               <% end %>
