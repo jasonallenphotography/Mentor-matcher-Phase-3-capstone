@@ -6,4 +6,9 @@ class InterestsController < ApplicationController
   #   else
   #     @interests = Interest.all.order(name: ASC)
   # end
+  end
+
+  def show
+    @interest = Interest.find(params[:id])
+  end
 end

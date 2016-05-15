@@ -47,12 +47,10 @@ class User < ActiveRecord::Base
   end
 
   def self.search(search)
-    # where("first_name || email || last_name || industry || current_company || current_title || mission_statement LIKE ?", "%#{search}%")
+    User.joins(:interests).where("first_name || email || last_name || industry || current_company || current_title || mission_statement || interests.name LIKE ?", "%#{search}%")
 
-    # where("user_interests LIKE ?", "%#{search}%")
-    User.joins(:interests).where("interests.name LIKE ?", "%#{search}%")
-
-
+    # Just the interests join table query:
+    # User.joins(:interests).where("interest.name LIKE ?", "%#{search}%")
   end
 
 

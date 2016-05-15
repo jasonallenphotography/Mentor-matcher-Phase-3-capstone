@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/users/:id/finish', to: 'users#update'
 
   resources :user_interests, only: [:create, :destroy]
+  resources :interests, only: [:show]
 
   resources :matches, only: [:index, :create, :update, :destroy]
 

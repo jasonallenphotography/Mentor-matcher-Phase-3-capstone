@@ -1,0 +1,45 @@
+<div class="container">
+<h1 class="text-center"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Search Matches</h1>
+<br>
+
+<% if @interest.users.length == 0 %>
+  <div class="row"><h2>No users have that interest at the moment. Try expanding your search.</h2></div>
+<%else%>
+  <% @interest.users.each do |user| %>
+    <a href="/users/<%=user.id%>">
+    <div class="row">
+      <div class="small-4 columns"><%= image_tag user.picture_url %></div>
+      <div class="small-8 columns">
+        <b><%= user.first_name %> <%= user.last_name %></b><br>
+        <small><%= user.current_title %></small><br>
+        <small>at </small><b><%= user.current_company%></b><br>
+      </div>
+    </div>
+    </a>
+    <hr class="style-two">
+
+    <div class="row">
+      <div class="small-12 small-centered columns text-center">
+        <small><i><%= user.mission_statement %></i></small>
+      </div>
+    </div>
+
+    <hr class="style-two">
+
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="button-group text-center">
+          <a href="/users/<%=user.id%>" class="button success"><i class="step fi-address-book size-36"></i><br><%=user.first_name%>'s Profile</a>
+          <a href="<%=user.public_profile_url%>" target="_blank" id="tabs-3-linkedin-button" class="button small"><i class="step fi-social-linkedin size-36"></i><br>LinkedIn</a>
+          <!-- <a href="#" class="button success"><i class="step fi-like size-36"></i><br>Connect!</a> -->
+          <%= link_to matches_path(:match => { :receiver_id => "#{user.id}" }), {:method => :post} do %>
+            <div class="button success"><i class='step fi-like size-36'></i><br>Connect!</div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <hr class="style-three">
+  <% end %>
+  </div>
+<% end %>
