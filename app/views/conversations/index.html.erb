@@ -2,7 +2,7 @@
   <h3>Inbox</h3>
   <div class='row'>
 
-    <div class='small-4 columns' style="overflow-y:scroll; height: 600px;">
+    <div id='left-side-chat-column-for-messages-index' class='small-4 columns'>
         <% @matches.each do |match| %>
           <div class="row">
             <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
@@ -36,13 +36,33 @@
         <% end %>
     </div>
 
-    <div class='small-8 columns' id="AppendedMessagesForConversation" style="overflow-y: scroll; height: 600px;">
+    <div id='right-side-chat-column-for-messages-index' class='small-8 columns' >
 
-      <p>render stuff here</p>
 
-    </div>
+      <div id="append-messages-here-when-a-conversation-button-is-clicked">
+        <strong>Ivy 05/15/16 at 3:43 PM</strong><br>
+        <small>Hello</small><hr>
+        <strong>Christyn 05/15/16 at 3:56 PM</strong><br>
+        <small>Hi</small><hr>
+        <strong>Ivy 05/15/16 at 3:56 PM</strong><br>
+        <small>I'm looking for a mentor that shares my passion in technology and robotics in particular</small><hr>
+        <strong>Christyn 05/15/16 at 3:57 PM</strong><br>
+        <small>I don't have experience in robotics but I definitely can help you with tech related material</small><hr>
+        <strong>Ivy 05/15/16 at 3:57 PM</strong><br>
+        <small>That's great!  How's your ruby?</small><hr>
+        <strong>Christyn 05/15/16 at 3:57 PM</strong><br>
+        <small>I graduated from DBC so it's slamming</small><hr>
+        <strong>Ivy 05/15/16 at 4:25 PM</strong><br>
+        <small>Oh yes, I've heard DBC is really awesome.</small>
+      </div>
   </div>
 </div>
 
-<hr>
+<div id="form-for-text-on-conversations-index">
+  <form style="text-align: center;" >
+    <input type="text">
+    <input class="button" type="submit" value="Send">
+  </form>
+</div>
+
 

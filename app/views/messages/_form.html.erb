@@ -1,0 +1,9 @@
+<%= form_for [@conversation, @message] do |f| %>
+  <div>
+    <%= f.text_area :body, required: true %>
+  </div>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+  <div style="text-align: center;">
+    <%= f.submit "Send" %>
+  </div>
+<% end %>

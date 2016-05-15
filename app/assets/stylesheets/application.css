@@ -65,3 +65,35 @@ hr.style-three {
 .size-48 { font-size: 48px; }
 .size-60 { font-size: 60px; }
 .size-72 { font-size: 72px; }
+
+
+/* STYLING FOR CONVERSATIONS AND MESSAGES BELOW */
+
+#right-side-chat-column-for-messages-index {
+    box-sizing:border-box;
+    max-height: 500px;
+    overflow-y: scroll;
+    background-color: #ecebeb;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#left-side-chat-column-for-messages-index {
+    overflow-y: scroll;
+    max-height: 500px;
+}
+
+#message-layout-on-the-right-side-of-conversations-index {
+    overflow-y: scroll;
+}
+
+#form-for-text-on-conversations-index {
+    /*padding-top: 20px;*/
+    margin-top: 10px;
+}
+
+
+
+
+
+
