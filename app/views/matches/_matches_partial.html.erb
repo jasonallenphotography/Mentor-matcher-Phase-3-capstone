@@ -21,8 +21,8 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="button-group text-center">
-        <%= link_to match_path(match.id, :match => { :type => "AcceptedMatch" }), {:method => :put} do %>
-          <div class="button success"><i class='step fi-like size-36'></i><br>Accept</div>
+        <%= link_to conversations_path do %>
+          <div class="button success"><i class='step fi-like size-36'></i><br>Message</div>
         <% end %>
         <%= link_to match_path(match.id), {:method => :delete} do %>
           <div class="button warning"><i class='step fi-lock size-36'></i><br>Close</div>
@@ -55,7 +55,8 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="button-group expanded text-center">
-        <%= link_to match_path(match.id, :match => { :type => "AcceptedMatch" }), {:method => :put} do %>
+        <%= link_to conversations_path do %>
+
           <div class="button success"><i class='step fi-mail size-36'></i><br>Message</div>
         <% end %>
         <%= link_to match_path(match.id, :match => { :type => "ClosedMatch" }), {:method => :put} do %>
