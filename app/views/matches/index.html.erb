@@ -113,7 +113,7 @@
           <div class="row">
             <div class="small-12 columns">
               <div class="button-group small text-center">
-                <a href="<%=decision.receiver.public_profile_url%>" id="tabs-3-linkedin-button" class="button small"><i class="step fi-social-linkedin size-36"></i><br>LinkedIn</a>
+                <a href="<%=decision.receiver.public_profile_url%>" target='_empty' id="tabs-3-linkedin-button" class="button small"><i class="step fi-social-linkedin size-36"></i><br>LinkedIn</a>
                 <%= link_to match_path(decision.id), {:method => :delete} do %>
                   <div class="button small alert"><i class='step fi-x size-36'></i><br>Cancel</div>
                 <% end %>
