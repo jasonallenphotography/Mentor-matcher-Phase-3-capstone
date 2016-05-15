@@ -5,6 +5,6 @@ class Interest < ActiveRecord::Base
   fuzzily_searchable :name
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    # where("name LIKE ?", "%#{search}%")
   end
 end

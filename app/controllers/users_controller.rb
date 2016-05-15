@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @users = return_opposite_type(current_user)
     if params[:search]
       @users = User.search(params[:search])
+      # @users = User.interests.search(params[:search])
     else
       @users
     end
