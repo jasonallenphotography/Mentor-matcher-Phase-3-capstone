@@ -70,11 +70,6 @@ User.create(
   type: "Mentor",
   status: "available",
   mission_statement: "Offering professional mentorship to navigate industry changes from Recruiting to Technology.",
-
-  type: "Mentee",
-  status: "available",
-  mission_statement: "Seeking professional mentorship to navigate industry changes from Recruiting to Technology.",
-
   linkedin_id: "RgcyJ34e37",
   email: "jaclynfeminella@gmail.com"
   )
