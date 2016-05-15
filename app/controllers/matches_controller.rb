@@ -6,7 +6,6 @@ class MatchesController < ApplicationController
     @matches_pending_others_decision = PendingMatch.where(initiator_id: current_user.id)
   end
 
-
   def create
     @match = PendingMatch.new(match_params)
     @match.initiator_id = current_user.id
@@ -30,12 +29,6 @@ class MatchesController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-
-
-  def show
-    #Chat window that belongs to match will go here
-  end
-
 
   def update
     @match = Match.find(params[:id])
@@ -62,7 +55,6 @@ class MatchesController < ApplicationController
                                     :receiver_id,
                                     :initiator_id)
     end
-
 
 end
 
