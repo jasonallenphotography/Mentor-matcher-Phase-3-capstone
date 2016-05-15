@@ -1,4 +1,3 @@
-
 <h1 class="text-center"><%=current_user.first_name%>'s Dashboard</h1>
 
 <div class="container">
@@ -14,11 +13,32 @@
   </div>
   <hr class="style-two">
 
-<!--   <div class="row">
-    <div class="small-12 columns text-center">
-      <h2>What would you like to do?</h2>
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <div class="row">
+      <div class="small-4 columns text-center">
+        <i id="error-glyphicon-notification" class="step fi-alert size-72"></i>
+      </div>
+      <div class="small-8 columns">
+        <b><%=error.full_messages%></b>
+      </div>
     </div>
-  </div> -->
+    <hr class="style-two">
+  <% end %>
+<% end %>
+
+<% if current_user.interests.length == 0 %>
+    <div class="row">
+      <div class="small-4 columns text-center">
+        <i id='no-interests-glyphicon' class="step fi-lightbulb size-72"></i>
+      </div>
+      <div class="small-8 columns"><br>
+        <b>You'll get noticed faster <br>
+            if you add what fields <br>
+            you're interested in!</b></div>
+    </div>
+    <hr class="style-two">
+<% end %>
   <div class="row">
     <div class="small-6 columns">
       <a href="/conversations" class="button expanded"><i class="step fi-mail size-48"></i><br>My Inbox</a>
@@ -29,7 +49,11 @@
   </div>
   <div class="row">
     <div class="small-6 columns">
+    <% if current_user.interests.length == 0 %>
+      <a href="/users/<%=current_user.id%>" id='no-interests-profile' class="button expanded"><i class="step fi-torso size-48"></i><br>My Profile</a>
+    <% else %>
       <a href="/users/<%=current_user.id%>" class="button expanded"><i class="step fi-torso size-48"></i><br>My Profile</a>
+    <% end %>
     </div>
     <div class="small-6 columns">
       <a href="/users" class="button expanded"><i class="step fi-shuffle size-48"></i><br>Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%></a>

@@ -54,6 +54,10 @@ hr.style-three {
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+#no-interests-profile{ background-color:#FF9700; }
+#no-interests-glyphicon{ color:#FF9700; }
+#error-glyphicon-notification{ color:red; }
+
 
 .size-12 { font-size: 12px; }
 .size-14 { font-size: 14px; }
@@ -65,7 +69,7 @@ hr.style-three {
 .size-48 { font-size: 48px; }
 .size-60 { font-size: 60px; }
 .size-72 { font-size: 72px; }
-
+.size-96 { font-size: 96px; }
 
 /* STYLING FOR CONVERSATIONS AND MESSAGES BELOW */
 
@@ -91,9 +95,3 @@ hr.style-three {
     /*padding-top: 20px;*/
     margin-top: 10px;
 }
-
-
-
-
-
-
