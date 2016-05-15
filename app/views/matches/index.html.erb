@@ -37,6 +37,7 @@
             </div>
 
           <hr class="style-two">
+
             <div class="row">
               <div class="small-12 columns">
                 <div class="button-group text-center">
@@ -52,11 +53,9 @@
                 </div>
               </div>
             </div>
-
-
           <hr class="style-three">
-
         <% end %>
+
       <% else %>
 
         <p>It looks like you don't have any requests from <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>. Check back later!</p>

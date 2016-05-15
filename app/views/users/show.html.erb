@@ -28,14 +28,19 @@
     </div>
     <!-- <i class="step fi-pencil size-24"></i> -->
   </div>
-    <% if @user.id != current_user.id %>
-      <form action="#" method="post">
-        <input type="hidden" method="_update">
-        <input class="button" type="button" value='Interested?'>
-      </form>
-    <%end%>
 
 <hr class="style-three">
+
+    <% if @user.id != current_user.id %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= link_to matches_path(:match => { :receiver_id => "#{@user.id}" }), {:method => :post} do %>
+          <div class="button expanded success"><i class='step fi-shuffle size-36'></i><br>Connect!</div>
+        <% end %>
+      </div>
+    </div>
+    <%end%>
+
 
 
 <!-- <% interests = nil %>
@@ -65,30 +70,20 @@
   </form>
 <% end %></br> -->
 
-<div class="row">
-  <div class="small-12 columns text-center">
-    <%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
-      <table>
-        <tr>
-          <!-- <td>
-            Add some interests here!
-          </td> -->
+<hr class="style-two">
 
-          <td>
-            <select name="interest_id" multiple>
-              <% @interests.each do |int| %>
-                <option value="<%=int.id%>"><%=int.name%></option>
-              <%end%>
-            <select>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.submit value="Add Interest!" %>
-          </td>
-        </tr>
-      </table>
-    <% end %>
+<div class="row">
+  <div class="small-8 columns text-center">
+    <%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
+    <select name="interest_id">
+      <% @interests.each do |int| %>
+        <option value="<%=int.id%>"><%=int.name%></option>
+      <%end%>
+    </select>
+  </div>
+  <div class="small-4 columns text-center button">
+    <%= f.submit value="Add Interest!" %>
+  <% end %>
   </div>
 </div>
 
@@ -98,7 +93,7 @@
     <a href="<%= @user.public_profile_url %>" class="button">View me on LinkedIn</a>
   <% else %>
     <div class="button-group text-center">
-      <a href="<%= @user.public_profile_url %>" class="button">View me on LinkedIn</a>
+      <a href="<%= @user.public_profile_url %>" class="button">View my LinkedIn Profile</a>
       <a href="https://www.linkedin.com/profile/edit?trk=nav_responsive_sub_nav_edit_profile" target='_empty' class="button">Edit my LinkedIn Profile</a>
     </div>
   <%end%>
