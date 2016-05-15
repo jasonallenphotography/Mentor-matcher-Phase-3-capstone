@@ -1,4 +1,5 @@
 class ConversationsController < ApplicationController
+  layout "conversations"
 
   def index
     @conversations = current_user.conversations

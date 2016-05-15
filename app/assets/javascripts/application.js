@@ -17,10 +17,3 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-
-$(document).ready(function() {
-
-  $('#right').on('click', function(event) {
-    event.preventDefault();
-  });
-});

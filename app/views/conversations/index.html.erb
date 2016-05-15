@@ -2,7 +2,7 @@
   <h3>Inbox</h3>
   <div class='row'>
 
-    <div class='small-4 columns'>
+    <div class='small-4 columns' style="overflow-y:scroll; height: 600px;">
         <% @matches.each do |match| %>
           <div class="row">
             <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
@@ -35,11 +35,11 @@
           </div>
         <% end %>
     </div>
-    <div class='small-8 columns'>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lobortis tellus at sapien facilisis fermentum. Ut vel vehicula orci, eget tincidunt dolor. Aenean in luctus lectus. Nullam rhoncus sapien vel hendrerit auctor. Proin lacus sem, finibus sed nunc vel, ultricies mollis nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate luctus congue. Vestibulum elit justo, fermentum at elit quis, tempor molestie eros.</p>
+    <div class='small-8 columns' id="AppendedMessagesForConversation" style="overflow-y: scroll; height: 600px;">
 
-      <p>Nunc vitae sollicitudin neque, vitae pretium eros. Duis efficitur augue at leo consequat egestas non ut diam. Maecenas ultrices vel nulla ultricies mollis. Morbi mattis in elit in dignissim. Nulla viverra turpis vitae ligula pulvinar, a dapibus sem aliquam. Phasellus sed tristique lacus. Proin et semper mauris.</p>
+      <p>render stuff here</p>
+
     </div>
   </div>
 </div>
