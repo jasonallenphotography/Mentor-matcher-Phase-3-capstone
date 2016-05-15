@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 
 
-<h1><%=current_user.first_name%>'s Requests</h1>
+<h1 class="text-center"><%=current_user.first_name%>'s Requests</h1>
 
 <div id="tabs">
 
@@ -21,12 +21,12 @@
 
             <div class="row">
               <div class="small-4 large-4 columns">
-                <a href="<%=decision.initiator.public_profile_url%>"><%= image_tag decision.initiator.picture_url %></a>
+                <a href="<%=decision.initiator.public_profile_url%>" target="_blank"><%= image_tag decision.initiator.picture_url %></a>
               </div>
               <div class="small-8 large-8 columns">
                 <b><%= decision.initiator.first_name %> <%= decision.initiator.last_name %></b><br>
-                <small><%= decision.initiator.current_title %></small><br>
-                <small>at </small><b><%= decision.initiator.current_company%></b><br>
+                <small><%= decision.initiator.current_title %> at</small><br>
+                <b><%= decision.initiator.current_company%></b><br>
               </div>
             </div>
 
@@ -40,10 +40,10 @@
 
             <div class="row">
               <div class="small-12 columns">
-                <div class="button-group small text-center">
-                  <a href="#" class="button success">Accept</a>
-                  <a href="#" class="button warning">Reject</a>
-                  <a href="#" class="button alert">Block</a>
+                <div class="button-group text-center">
+                  <a href="#" class="button success"><i class="step fi-like size-36"></i><br>Accept</a>
+                  <a href="#" class="button warning"><i class="step fi-dislike size-36"></i><br>Reject</a>
+                  <a href="#" class="button alert"><i class="step fi-prohibited size-36"></i><br>Block</a>
                 </div>
               </div>
             </div>
@@ -86,15 +86,16 @@
     <div class="container">
       <% if @matches_pending_others_decision %>
         <% @matches_pending_others_decision.each do |decision| %>
-
+          <a href="/users/<%=decision.receiver.id%>">
           <div class="row">
-            <div class="small-4 columns"><a href="/users/<%=decision.receiver.id%>"><%= image_tag decision.receiver.picture_url %></a></div>
+            <div class="small-4 columns"><%= image_tag decision.receiver.picture_url %></div>
             <div class="small-8 columns">
               <b><%= decision.receiver.first_name %> <%= decision.receiver.last_name %></b><br>
-              <small><%= decision.receiver.current_title %></small><br>
-              <small>at </small><b><%= decision.receiver.current_company%></b><br>
+              <small><%= decision.receiver.current_title %> at</small><br>
+              <b><%= decision.receiver.current_company%></b><br>
             </div>
           </div>
+          </a>
 
         <hr class="style-two">
 
@@ -109,8 +110,8 @@
           <div class="row">
             <div class="small-12 columns">
               <div class="button-group small text-center">
-                <a href="<%=decision.receiver.public_profile_url%>" class="button small">LinkedIn</a>
-                <a href="#" class="button small alert">Cancel</a>
+                <a href="<%=decision.receiver.public_profile_url%>" id="tabs-3-linkedin-button" class="button small"><i class="step fi-social-linkedin size-36"></i><br>LinkedIn</a>
+                <a href="#" class="button small alert"><i class="step fi-x size-36"></i><br>Cancel</a>
               </div>
             </div>
           </div>

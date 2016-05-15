@@ -15,6 +15,15 @@
  *= require foundation_and_overrides
 
  */
+
+.title-bar{
+    background-color: #003b63;
+}
+
+.title-bar-title a {
+    color: white;
+}
+
 hr.style-one {
     height: 30px;
     border-style: solid;
