@@ -16,7 +16,7 @@
 
   <div id="tabs-1">
     <div class="container">
-      <% if @matches_pending_my_decision %>
+      <% if @matches_pending_my_decision.length > 0 %>
         <% @matches_pending_my_decision.each do |decision| %>
 
             <div class="row">
@@ -58,7 +58,9 @@
 
       <% else %>
 
-        <p>It looks like you don't have any requests from <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>. Check back later!</p>
+        <p class='text-center'>It looks like you don't have any requests from <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>.
+
+        Check back later!</p>
 
       <% end %>
     </div>
@@ -66,7 +68,7 @@
 
   <div id="tabs-2">
     <div class="container">
-      <% if @matches %>
+      <% if @matches.length > 0 %>
         <%= render 'matches_partial' %>
       <% else %>
 
@@ -76,7 +78,8 @@
 
         <hr class="style-two">
 
-        <p><a href="/users" class="button expanded success">Click here</a></p>
+        <p><a href="/users" class="button expanded success"><i class='step fi-shuffle size-36'></i><br>Click here</a></p>
+
 
       <% end %>
     </div>
@@ -84,7 +87,7 @@
 
   <div id="tabs-3">
     <div class="container">
-      <% if @matches_pending_others_decision %>
+      <% if @matches_pending_others_decision.length > 0 %>
         <% @matches_pending_others_decision.each do |decision| %>
           <a href="/users/<%=decision.receiver.id%>">
           <div class="row">
@@ -125,7 +128,7 @@
         <p class="text-center">It looks like you don't have any requests to connect with <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>.</p>
         <hr class="style-two">
         <p class="text-center">Connect with a <%= current_user.type == "Mentor" ? "Protegé" : "Mentor"%> today!</p>
-        <p><a href="/users" class="button small success">Click here</a></p>
+        <p><a href="/users" class="button expanded success"><i class='step fi-shuffle size-36'></i><br>Click here</a></p>
 
       <% end %>
     </div>
