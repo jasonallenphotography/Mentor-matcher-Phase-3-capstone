@@ -5,7 +5,7 @@
     <div class='small-4 columns'>
         <% @matches.each do |match| %>
           <div class="row">
-            <%= link_to(conversation_message_path(match.id, match.conversation_id)) do %>
+            <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
               <% if mentor? %>
                 <div class='row'>
                   <div class="small-12 columns">
