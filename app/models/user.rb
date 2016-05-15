@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.search(search)
+    where("first_name LIKE ?", "%#{search}%") || where("last_name LIKE ?", "%#{search}%")
+  end
+
 #move this to the controller
   def self.find_or_create_from_auth_hash(auth)
     if User.find_by(linkedin_id: auth['uid'])

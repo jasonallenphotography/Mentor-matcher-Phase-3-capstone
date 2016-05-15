@@ -17,8 +17,10 @@
           <button class="menu-icon" type="button" data-toggle></button>
           <div class="title-bar-title"><a href="/"><%= image_tag('150pxLogo.png', :alt=>'Sign In!')%></a></div>
           <% if logged_in? %>
-            <div class="small-3 columns top-bar-right"><a href="/searches" class="alert button expand">Search</a></div>
-            <div class="small-4 columns top-bar-right"><input type="text" placeholder="Search Users"></div>
+            <%= form_tag(users_path, method: "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+            <%= submit_tag "Search" %>
+            <%end%>
           <%end%>
         </div>
         <div class="top-bar" id="main-menu">

@@ -2,6 +2,11 @@ class UsersController < ApplicationController
 
   def index
     @users = return_opposite_type(current_user)
+    if params[:search]
+      @users = User.search(params[:search])
+    else
+      @users
+    end
     render 'index'
   end
 
