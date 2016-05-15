@@ -70,7 +70,7 @@
     <div class="row">
         <% current_user.interests.each do |interest| %>
         <div class="small-6 columns">
-          <a href="/users" class="button expanded"><%= interest.name %></a>
+          <a href="/interests/<%=interest.id%>" class="button expanded"><%=interest.name %></a>
         </div>
       <% end %>
     </div>
@@ -78,4 +78,3 @@
 </div>
 
 <hr class="style-two">
-

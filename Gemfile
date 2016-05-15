@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'fuzzily'
 # Adds LinkedIn User creation and authentication
 gem 'omniauth'
 gem 'omniauth-linkedin'

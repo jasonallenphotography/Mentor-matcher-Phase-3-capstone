@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
   has_many :messages
   accepts_nested_attributes_for :user_interests
 
-
   def return_opposite_type(current_user)
     if current_user.type == "Mentor"
       User.where(type: "Mentee")
@@ -23,6 +22,7 @@ class User < ActiveRecord::Base
       User.where(type: "Mentor")
     end
   end
+
 
 #move this to the controller
   def self.find_or_create_from_auth_hash(auth)
@@ -43,5 +43,13 @@ class User < ActiveRecord::Base
       return @user if @user.save
     end
   end
+
+  def self.search(search)
+    User.joins(:interests).where("first_name || email || last_name || industry || current_company || current_title || mission_statement || interests.name LIKE ?", "%#{search}%")
+
+    # Just the interests join table query:
+    # User.joins(:interests).where("interest.name LIKE ?", "%#{search}%")
+  end
+
 
 end

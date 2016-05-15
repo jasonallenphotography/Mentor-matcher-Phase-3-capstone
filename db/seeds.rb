@@ -9,37 +9,35 @@
 Interest.create(name: "3D Technology")
 Interest.create(name: "Accessibility Technology")
 Interest.create(name: "Account Management")
-Interest.create(name: "Business Development")
-Interest.create(name: "Education Technology")
-Interest.create(name: "Web Development")
-Interest.create(name: "Biotechnology")
-Interest.create(name: "Aerospace")
-Interest.create(name: "Robotics")
-Interest.create(name: "E-commerce")
-Interest.create(name: "Recruiting")
-Interest.create(name: "Nanotechnology")
-Interest.create(name: "Data Visualization")
+Interest.create(name: "Adventure Travel")
 Interest.create(name: "Advertising")
 Interest.create(name: "Advertising Technology")
-Interest.create(name: "Education Technology")
-Interest.create(name: "Food Technology")
-Interest.create(name: "Legal Technology")
-Interest.create(name: "Fashion Technology")
-Interest.create(name: "Adventure Travel")
-Interest.create(name: "Music Technology")
-Interest.create(name: "Nonprofits")
-Interest.create(name: "Sales")
-Interest.create(name: "Startups")
-Interest.create(name: "Financial Technology")
+Interest.create(name: "Aerospace")
 Interest.create(name: "Analytics")
 Interest.create(name: "Big Data")
+Interest.create(name: "Biotechnology")
+Interest.create(name: "Business Development")
 Interest.create(name: "Clean Energy")
+Interest.create(name: "Data Visualization")
+Interest.create(name: "E-commerce")
+Interest.create(name: "Education Technology")
 Interest.create(name: "Entrepreneurship")
-Interest.create(name: "Product Management")
+Interest.create(name: "Fashion Technology")
+Interest.create(name: "Financial Technology")
+Interest.create(name: "Food Technology")
+Interest.create(name: "Legal Technology")
 Interest.create(name: "Media Planning")
+Interest.create(name: "Music Technology")
+Interest.create(name: "Nanotechnology")
+Interest.create(name: "Nonprofits")
+Interest.create(name: "Product Management")
 Interest.create(name: "Product Development")
+Interest.create(name: "Recruiting")
+Interest.create(name: "Robotics")
+Interest.create(name: "Sales")
+Interest.create(name: "Startups")
 Interest.create(name: "UX/UI Design")
-
+Interest.create(name: "Web Development")
 
 User.create(
   first_name: "Jason",
@@ -58,22 +56,22 @@ User.create(
   )
 
 
-# User.create(
-#   first_name: "Jaclyn",
-#   last_name: "Feminella",
-#   location: "Greater New York City Area, US",
-#   industry: "Staffing and Recruiting",
-#   picture_url:
-#    "https://media.licdn.com/mpr/mprx/0_OfVE-1Vsm-RuFeWaOIuoVzeUmbIlTEWi0DuXcQgsEhErTsVacfhoMzKsebZlkJe_OJGkx31VGTeKGmMxBy0nVF-9bTeAGmY7By0WA6FRu8ggHZ51RDWFltdoFqt3wmdYO0UQnZmQlfs",
-  # public_profile_url: "https://www.linkedin.com/in/jaclyn-feminella-b634485b",
-#   current_title: "Student",
-#   current_company: "DBC",
-#   type: "Mentor",
-#   status: "available",
-#   mission_statement: "Offering professional mentorship to navigate industry changes from Recruiting to Technology.",
-#   linkedin_id: "RgcyJ34e37",
-#   email: "jaclynfeminella@gmail.com"
-#   )
+User.create(
+  first_name: "Jaclyn",
+  last_name: "Feminella",
+  location: "Greater New York City Area, US",
+  industry: "Staffing and Recruiting",
+  picture_url:
+   "https://media.licdn.com/mpr/mprx/0_OfVE-1Vsm-RuFeWaOIuoVzeUmbIlTEWi0DuXcQgsEhErTsVacfhoMzKsebZlkJe_OJGkx31VGTeKGmMxBy0nVF-9bTeAGmY7By0WA6FRu8ggHZ51RDWFltdoFqt3wmdYO0UQnZmQlfs",
+  public_profile_url: "https://www.linkedin.com/in/jaclyn-feminella-b634485b",
+  current_title: "Student",
+  current_company: "DBC",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "Offering professional mentorship to navigate industry changes from Recruiting to Technology.",
+  linkedin_id: "RgcyJ34e37",
+  email: "jaclynfeminella@gmail.com"
+  )
 
 User.create(
   first_name: "Ivy",
