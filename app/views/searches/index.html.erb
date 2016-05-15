@@ -1,7 +1,9 @@
 <div class="container">
 <h1 class="text-center"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Search Matches</h1>
 <br>
-
+<% if @users == nil %>
+  <div class="row"><h1>No results! Try expanding your search.</h1></div>
+<%else%>
 <% @users.each do |user| %>
   <a href="/users/<%=user.id%>">
   <div class="row">
@@ -39,3 +41,4 @@
   <hr class="style-three">
 <% end %>
 </div>
+<% end %>
