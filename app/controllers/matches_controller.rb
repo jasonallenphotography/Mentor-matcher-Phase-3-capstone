@@ -20,7 +20,7 @@ class MatchesController < ApplicationController
     end
     # @match.conversation = Conversation.new()
     if @match.save
-      redirect_to '/matches#tabs-3'
+      redirect_to '/matches'
     else
       @errors = @match.errors.full_messages
       redirect_to user_path(current_user)
@@ -38,7 +38,7 @@ class MatchesController < ApplicationController
 
     @match.assign_attributes(match_params)
     if @match.save
-      redirect_to '/matches#tabs-2'
+      redirect_to '/matches'
     else
       @errors = @match.errors.full_messages
       render 'index'
@@ -48,7 +48,7 @@ class MatchesController < ApplicationController
   def destroy
     @match = Match.find(params[:id])
     @match.destroy
-    redirect_to '/matches#tabs-1'
+    redirect_to '/matches'
   end
 
   private
