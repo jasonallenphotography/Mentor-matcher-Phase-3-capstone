@@ -25,22 +25,4 @@ class ApplicationController < ActionController::Base
     mentor? ? User.where(type: "Mentee") : User.where(type: "Mentor")
   end
 
-  # def find_users_conversations(user)
-  #   users_conversations = []
-  #   if user.conversations
-  #     # binding.pry
-  #     user.conversations.each do |conv|
-  #     case conv
-  #       when conv.sender_id == user.id
-  #         users_conversations << conv
-  #       when conv.recipient_id == user.id
-  #          users_conversations << conv
-  #       end
-  #     end
-  #   users_conversations
-  #   end
-  # end
-
-
-
 end
