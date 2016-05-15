@@ -1,0 +1,9 @@
+<% if current_user.interests %>
+  <div class="row">
+  <% current_user.interests.each do |interest| %>
+    <div class="small-4 columns">
+      <a href="/interests/<%= interest.id%>" class="button expanded small"><%= interest.name%></a>
+    </div>
+  <% end %>
+  </div>
+<% end %>

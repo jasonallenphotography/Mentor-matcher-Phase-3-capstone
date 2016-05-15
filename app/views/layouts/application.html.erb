@@ -6,27 +6,33 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
     <header>
       <nav>
-        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
           <button class="menu-icon" type="button" data-toggle></button>
-          <div class="title-bar-title">Mentorship</div>
+          <div class="title-bar-title"><a href="/">Mentorship</a></div>
         </div>
         <div class="top-bar" id="main-menu">
           <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu>
-              <li class="menu-text"><a href="/">Home</a></li>
-            </ul>
-          </div>
-          <div class="top-bar-right">
-            <ul class="menu">
+            <ul class="vertical dropdown menu" data-dropdown-menu>
               <% if logged_in? %>
-                <li><a href="/users/<%=current_user.id%>">My Profile</a></li>
+                <li><a href="/conversations">
+                    <i class="step fi-mail size-24">
+                    </i>  My Inbox</a></li>
+                <li><a href="/matches">
+                    <i class="step fi-torsos-all size-24">
+                    </i> My <%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Requests</a></li>
+                <li><a href="/users/<%=current_user.id%>">
+                    <i class="step fi-torso-business size-24">
+                    </i> My Profile</a></li>
+                <li><a href="/users">
+                    <i class="step fi-shuffle size-24">
+                    </i> Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%> </a></li>
               <% else %>
                 <li><a href="/auth/linkedin">Login</a></li>
                 <li><a href="/auth/linkedin">Register</a></li>
@@ -39,15 +45,31 @@
 
   <%= yield %>
 
-  <footer>
-    <nav>
-      <% if logged_in? %>
-      <p>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %> |
-      <a href="/logout">Logout?</a></p>
-      <% end %>
+<% if logged_in? %>
+  <br>
+  <div class="small-12 small-centered columns text-center">
+    <footer>
+      <p class='text-center'>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %></p>
+        <div class="row">
+          <div class="button-group">
+            <div class="small-6 columns">
+              <a href="/users/<%=current_user.id%>/edit" class="button expanded success"><i class="step fi-pencil size-36"></i><br>Edit My Profile</a>
+            </div>
+            <div class="small-6 columns">
+              <a href="/logout" class="button expanded alert"><i class="step fi-unlock size-36"></i><br>Logout</a>
+            </div>
 
-    </nav>
-  </footer>
+          </div>
+        </div>
+      <p class='text-center'>(C) 2016<br><small>All rights reserved.</small><br>Jaclyn Feminella, David Lange,<br>Ivy Vetor, and Jason Allen</p>
+
+      <i class="step fi-social-linkedin size-48"></i>
+      <p class='text-center'>User authentication courtesy LinkedIn API</p>
+
+    </footer>
+  </div>
+
+<% end %>
   </body>
 
 </html>

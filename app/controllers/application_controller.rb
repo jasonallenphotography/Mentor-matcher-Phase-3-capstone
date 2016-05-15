@@ -17,16 +17,12 @@ class ApplicationController < ActionController::Base
     current_user.type == nil
   end
 
-  def return_opposite_type(current_user)
-    if current_user.type == "Mentor"
-      User.where(type: "Mentee")
-    else
-      User.where(type: "Mentor")
-    end
-  end
-
   def mentor?
     current_user.type == "Mentor"
+  end
+
+  def return_opposite_type(current_user)
+    mentor? ? User.where(type: "Mentee") : User.where(type: "Mentor")
   end
 
   # def find_users_conversations(user)

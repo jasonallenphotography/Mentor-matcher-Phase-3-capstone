@@ -11,6 +11,9 @@ class UserInterestsController < ApplicationController
   end
 
   def destroy
+    @user_interest = UserInterest.find(params[:id])
+    @user_interest.destroy
+    redirect_to edit_user_path(current_user)
   end
 
 

@@ -3,31 +3,31 @@
   <div class='row'>
 
     <div class='small-4 columns'>
-        <% current_user.conversations.each do |conv| %>
+        <% @matches.each do |match| %>
           <div class="row">
-            <%= link_to(conversation_messages_path(conv)) do %>
+            <%= link_to(conversation_message_path(match.id, match.conversation_id)) do %>
               <% if mentor? %>
                 <div class='row'>
                   <div class="small-12 columns">
-                    <img src="<%= conv.mentee.picture_url %>">
+                    <img src="<%= match.mentee.picture_url %>">
                   </div>
                 </div>
                 <div class='row'>
                   <div class="small-12 columns">
-                    <%= conv.mentee.first_name %> <%= conv.mentee.last_name %><br>
-                    <small> <%= conv.mentee.current_title %> at <%= conv.mentee.current_company %></small>
+                    <%= match.mentee.first_name %> <%= match.mentee.last_name %><br>
+                    <small> <%= match.mentee.current_title %> at <%= match.mentee.current_company %></small>
                   </div>
                 </div>
               <% else %>
                 <div class='row'>
                   <div class="small-12 columns">
-                    <img src="<%= conv.mentor.picture_url %>">
+                    <img src="<%= match.mentor.picture_url %>">
                   </div>
                 </div>
                 <div class='row'>
                   <div class="small-12 columns">
-                    <%= conv.mentor.first_name %> <%= conv.mentor.last_name %><br>
-                    <small> <%= conv.mentor.current_title %> at <%= conv.mentor.current_company %></small>
+                    <%= match.mentor.first_name %> <%= match.mentor.last_name %><br>
+                    <small> <%= match.mentor.current_title %> at <%= match.mentor.current_company %></small>
                   </div>
                 </div>
               <% end %>
@@ -37,7 +37,9 @@
     </div>
     <div class='small-8 columns'>
 
-      <p>text text text</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lobortis tellus at sapien facilisis fermentum. Ut vel vehicula orci, eget tincidunt dolor. Aenean in luctus lectus. Nullam rhoncus sapien vel hendrerit auctor. Proin lacus sem, finibus sed nunc vel, ultricies mollis nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate luctus congue. Vestibulum elit justo, fermentum at elit quis, tempor molestie eros.</p>
+
+      <p>Nunc vitae sollicitudin neque, vitae pretium eros. Duis efficitur augue at leo consequat egestas non ut diam. Maecenas ultrices vel nulla ultricies mollis. Morbi mattis in elit in dignissim. Nulla viverra turpis vitae ligula pulvinar, a dapibus sem aliquam. Phasellus sed tristique lacus. Proin et semper mauris.</p>
     </div>
   </div>
 </div>

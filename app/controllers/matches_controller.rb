@@ -1,17 +1,29 @@
 class MatchesController < ApplicationController
 
   def index
-    @matches = nil # WORK IN PROGRESS, will continue for later AcceptedMatch.where(receiver_id: current_user.id) # || initiator_id: current_user.id
+    @matches = current_user.accepted_matches
     @matches_pending_my_decision = PendingMatch.where(receiver_id: current_user.id)
     @matches_pending_others_decision = PendingMatch.where(initiator_id: current_user.id)
   end
 
 
   def create
-    @match = PendingMatch.new(params[:pending])
-    @match.conversation = Conversation.new()
+    @match = PendingMatch.new(match_params)
+    @match.initiator_id = current_user.id
+
+    if mentor?
+      @match.mentor = current_user
+      @match.mentee = @match.receiver
+    else
+      @match.mentor = @match.receiver
+      @match.mentee = current_user
+    end
+
+    @convo = Conversation.create(mentor: @match.mentor, mentee: @match.mentee)
+    @match.conversation_id = @convo.id
+
     if @match.save
-      redirect_to '/matches#tabs-2'
+      redirect_to '/matches'
     else
       @errors = @match.errors.full_messages
       redirect_to user_path(current_user)
@@ -27,9 +39,9 @@ class MatchesController < ApplicationController
   def update
     @match = Match.find(params[:id])
 
-    @match.assign_attributes(params[:match])
+    @match.assign_attributes(match_params)
     if @match.save
-      redirect_to '/'
+      redirect_to '/matches'
     else
       @errors = @match.errors.full_messages
       render 'index'
@@ -39,7 +51,17 @@ class MatchesController < ApplicationController
   def destroy
     @match = Match.find(params[:id])
     @match.destroy
+    redirect_to '/matches'
   end
+
+  private
+
+    def match_params
+      params.require(:match).permit(:type,
+                                    :receiver_id,
+                                    :initiator_id)
+    end
+
 
 end
 
