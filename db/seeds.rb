@@ -195,9 +195,13 @@ User.create(
   PendingMatch.create(
     initiator: Mentee.all.sample,
     receiver: Mentor.all.sample,
+    mentee_id: Mentee.all.sample.id,
+    mentor_id: Mentor.all.sample.id,
     )
   PendingMatch.create(
     initiator: Mentor.all.sample,
     receiver: Mentee.all.sample,
+    mentee_id: Mentee.all.sample.id,
+    mentor_id: Mentor.all.sample.id,
     )
 end

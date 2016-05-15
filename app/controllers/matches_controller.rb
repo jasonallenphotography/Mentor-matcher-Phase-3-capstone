@@ -1,14 +1,23 @@
 class MatchesController < ApplicationController
 
   def index
-    @matches = AcceptedMatch.where(receiver_id: current_user.id)  || AcceptedMatch.where(initiator_id: current_user.id)
+    @matches = current_user.accepted_matches
     @matches_pending_my_decision = PendingMatch.where(receiver_id: current_user.id)
     @matches_pending_others_decision = PendingMatch.where(initiator_id: current_user.id)
   end
 
 
   def create
-    @match = PendingMatch.new(params[:pending])
+    @match = PendingMatch.new(match_params)
+    @match.initiator_id = current_user.id
+
+    if mentor?
+      @match.mentor = current_user
+      @match.mentee = @match.receiver
+    else
+      @match.mentor = @match.receiver
+      @match.mentee = current_user
+    end
     # @match.conversation = Conversation.new()
     if @match.save
       redirect_to '/matches#tabs-3'

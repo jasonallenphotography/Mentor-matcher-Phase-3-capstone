@@ -28,7 +28,10 @@
       <div class="button-group text-center">
         <a href="/users/<%=user.id%>" class="button success"><i class="step fi-address-book size-36"></i><br><%=user.first_name%>'s Profile</a>
         <a href="<%=user.public_profile_url%>" target="_blank" id="tabs-3-linkedin-button" class="button small"><i class="step fi-social-linkedin size-36"></i><br>LinkedIn</a>
-        <a href="#" class="button success"><i class="step fi-like size-36"></i><br>Connect!</a>
+        <!-- <a href="#" class="button success"><i class="step fi-like size-36"></i><br>Connect!</a> -->
+        <%= link_to matches_path(:match => { :receiver_id => "#{user.id}" }), {:method => :post} do %>
+          <div class="button success"><i class='step fi-like size-36'></i><br>Connect!</div>
+        <% end %>
       </div>
     </div>
   </div>

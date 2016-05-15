@@ -68,9 +68,7 @@
   <div id="tabs-2">
     <div class="container">
       <% if @matches %>
-        <% @matches.each do |match| %>
-
-        <% end %>
+        <%= render 'matches_partial' %>
       <% else %>
 
         <h3 class="text-center"><b>On no!</b></h3>
@@ -114,7 +112,9 @@
             <div class="small-12 columns">
               <div class="button-group small text-center">
                 <a href="<%=decision.receiver.public_profile_url%>" id="tabs-3-linkedin-button" class="button small"><i class="step fi-social-linkedin size-36"></i><br>LinkedIn</a>
-                <a href="#" class="button small alert"><i class="step fi-x size-36"></i><br>Cancel</a>
+                <%= link_to match_path(decision.id), {:method => :delete} do %>
+                  <div class="button small alert"><i class='step fi-x size-36'></i><br>Cancel</div>
+                <% end %>
               </div>
             </div>
           </div>
