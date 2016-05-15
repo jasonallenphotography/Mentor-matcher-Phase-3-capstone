@@ -1,9 +1,9 @@
 class ConversationsController < ApplicationController
 
   def index
-    @users = User.all
+    return_opposite_type(current_user)
     # instead of all users, only pass users who have accepted and matched
-    @conversations = Conversation.all
+    @conversations = current_user.conversations
   end
 
   def create

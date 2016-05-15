@@ -27,10 +27,17 @@ ActiveRecord::Schema.define(version: 20160514171723) do
     t.datetime "updated_at", null: false
 
   create_table "conversations", force: :cascade do |t|
+
     t.integer  "sender_id"
     t.integer  "recipient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+
+
+    t.integer  "mentor_id"
+    t.integer  "mentee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
 
   end
 

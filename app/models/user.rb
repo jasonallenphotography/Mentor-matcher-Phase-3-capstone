@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
   has_many :user_interests
   has_many :interests, through: :user_interests
   has_many :matches
-  has_many :conversations, through: :matches
+  has_many :accepted_matches
+  has_many :conversations
   has_many :messages
   accepts_nested_attributes_for :user_interests
 
