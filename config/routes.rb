@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create, :destroy]
   end
 
+  resources :searches, only: [:index]
 
   get '/auth/linkedin/callback', to: 'sessions#create', as: 'sessions_create'
   get '/logout', to: 'sessions#destroy', as: 'logout'
