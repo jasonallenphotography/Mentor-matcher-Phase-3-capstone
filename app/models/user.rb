@@ -15,8 +15,6 @@ class User < ActiveRecord::Base
   has_many :messages
   accepts_nested_attributes_for :user_interests
 
-  # fuzzily_searchable :first_name, :last_name
-
   def return_opposite_type(current_user)
     if current_user.type == "Mentor"
       User.where(type: "Mentee")
