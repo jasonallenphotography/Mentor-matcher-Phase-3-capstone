@@ -15,7 +15,13 @@
       <nav>
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
           <button class="menu-icon" type="button" data-toggle></button>
-          <div class="title-bar-title"><a href="/">Mentorship</a></div>
+          <div class="title-bar-title"><a href="/"><%= image_tag('150pxLogo.png', :alt=>'Sign In!')%></a></div>
+          <% if logged_in? %>
+            <%= form_tag(searches_path, method: "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+            <%= submit_tag "Search" %>
+            <%end%>
+          <%end%>
         </div>
         <div class="top-bar" id="main-menu">
           <div class="top-bar-left">
@@ -40,6 +46,7 @@
             </ul>
           </div>
         </div>
+
       </nav>
     </header>
 
