@@ -1,20 +1,22 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
 
   resources :users
-  resources :matches
+  get '/users/:id/finish', to: 'users#finish', as: 'users_finish'
+  post '/users/:id/finish', to: 'users#update'
 
   resources :user_interests, only: [:create, :destroy]
 
-  resources :conversations do
-    resources :messages
+  resources :matches, only: [:index, :create, :update, :destroy]
+
+
+  resources :conversations, only: [:index, :destroy] do
+    resources :messages, only: [:index, :create, :destroy]
   end
 
 
   get '/auth/linkedin/callback', to: 'sessions#create', as: 'sessions_create'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
-  get '/users/:id/finish', to: 'users#finish', as: 'users_finish'
-  post '/users/:id/finish', to: 'users#update'
 
-  root 'welcome#index'
 end

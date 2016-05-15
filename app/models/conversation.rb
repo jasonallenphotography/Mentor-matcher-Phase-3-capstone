@@ -10,12 +10,4 @@ class Conversation < ActiveRecord::Base
     where("(conversations.mentor_id = ? AND conversations.mentee_id =?) OR (conversations.mentor_id = ? AND conversations.mentee_id =?)", mentor_id, mentee_id, mentee_id, mentor_id)
   end
 
-  # def penpal_of(current_user)
-  #   if current_user.type == "Mentor"
-  #     "mentee"
-  #   else
-  #     "mentor"
-  #   end
-  # end
-
 end
