@@ -37,16 +37,22 @@
             </div>
 
           <hr class="style-two">
-
             <div class="row">
               <div class="small-12 columns">
                 <div class="button-group text-center">
-                  <a href="#" class="button success"><i class="step fi-like size-36"></i><br>Accept</a>
-                  <a href="#" class="button warning"><i class="step fi-dislike size-36"></i><br>Reject</a>
-                  <a href="#" class="button alert"><i class="step fi-prohibited size-36"></i><br>Block</a>
+                <%= link_to match_path(decision.id, :match => { :type => "AcceptedMatch" }), {:method => :put} do %>
+                  <div class="button success"><i class='step fi-like size-36'></i><br>Accept</div>
+                <% end %>
+                <%= link_to match_path(decision.id), {:method => :delete} do %>
+                  <div class="button warning"><i class='step fi-dislike size-36'></i><br>Reject</div>
+                <% end %>
+                <%= link_to match_path(decision.id), {:method => :delete} do %>
+                  <div class="button alert"><i class='step fi-prohibited size-36'></i><br>Block</div>
+                <% end %>
                 </div>
               </div>
             </div>
+
 
           <hr class="style-three">
 
@@ -64,9 +70,6 @@
       <% if @matches %>
         <% @matches.each do |match| %>
 
-          <h3>Matches go here!</h3>
-          <p>Matches stuff.</p>
-          <!-- buttons for messages, close, and block -->
         <% end %>
       <% else %>
 
