@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 20160515095539) do
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
-
   create_table "user_interests", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "interest_id"
