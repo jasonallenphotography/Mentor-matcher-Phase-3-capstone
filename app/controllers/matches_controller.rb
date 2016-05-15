@@ -19,7 +19,8 @@ class MatchesController < ApplicationController
       @match.mentee = current_user
     end
 
-    @convo = Conversation.create(mentor: @match.mentor, mentee: @match.mentee)
+    @convo = Conversation.find_or_create_by(mentor: @match.mentor, mentee: @match.mentee)
+
     @match.conversation_id = @convo.id
 
     if @match.save

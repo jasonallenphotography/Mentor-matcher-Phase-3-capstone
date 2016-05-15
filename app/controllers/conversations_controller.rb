@@ -8,18 +8,23 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    if Conversation.between(params[:sender_id], params[:recipient_id]).present?
-      @conversation = Conversation.between(params[:sender_id],params[:recipient_id]).first
+    @conversation = Conversation.find_or_create_by(conversation_params)
+    # if Conversation.between(params[:mentor_id], params[:mentee_id]).present?
+    #   @conversation = Conversation.between(params[:mentor_id],params[:mentee_id]).first
+    # else
+    #   @conversation = Conversation.create!(conversation_params)
+    # end
+    if @conversation.save
+      redirect_to conversation_messages_path(@conversation)
     else
-      @conversation = Conversation.create!(conversation_params)
+      @errors = @conversation.errors.full_messages
+      redirect_to root_path
     end
-
-    redirect_to conversation_messages_path(@conversation)
 
   end
 
   private
     def conversation_params
-      params.permit(:sender_id, :recipient_id)
+      params.permit(:mentor_id, :mentee_id)
     end
 end
