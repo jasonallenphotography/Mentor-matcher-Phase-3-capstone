@@ -58,22 +58,22 @@ User.create(
   )
 
 
-# User.create(
-#   first_name: "Jaclyn",
-#   last_name: "Feminella",
-#   location: "Greater New York City Area, US",
-#   industry: "Staffing and Recruiting",
-#   picture_url:
-#    "https://media.licdn.com/mpr/mprx/0_OfVE-1Vsm-RuFeWaOIuoVzeUmbIlTEWi0DuXcQgsEhErTsVacfhoMzKsebZlkJe_OJGkx31VGTeKGmMxBy0nVF-9bTeAGmY7By0WA6FRu8ggHZ51RDWFltdoFqt3wmdYO0UQnZmQlfs",
-  # public_profile_url: "https://www.linkedin.com/in/jaclyn-feminella-b634485b",
-#   current_title: "Student",
-#   current_company: "DBC",
-#   type: "Mentor",
-#   status: "available",
-#   mission_statement: "Offering professional mentorship to navigate industry changes from Recruiting to Technology.",
-#   linkedin_id: "RgcyJ34e37",
-#   email: "jaclynfeminella@gmail.com"
-#   )
+User.create(
+  first_name: "Jaclyn",
+  last_name: "Feminella",
+  location: "Greater New York City Area, US",
+  industry: "Staffing and Recruiting",
+  picture_url:
+   "https://media.licdn.com/mpr/mprx/0_OfVE-1Vsm-RuFeWaOIuoVzeUmbIlTEWi0DuXcQgsEhErTsVacfhoMzKsebZlkJe_OJGkx31VGTeKGmMxBy0nVF-9bTeAGmY7By0WA6FRu8ggHZ51RDWFltdoFqt3wmdYO0UQnZmQlfs",
+  public_profile_url: "https://www.linkedin.com/in/jaclyn-feminella-b634485b",
+  current_title: "Student",
+  current_company: "DBC",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "Offering professional mentorship to navigate industry changes from Recruiting to Technology.",
+  linkedin_id: "RgcyJ34e37",
+  email: "jaclynfeminella@gmail.com"
+  )
 
 User.create(
   first_name: "Ivy",
