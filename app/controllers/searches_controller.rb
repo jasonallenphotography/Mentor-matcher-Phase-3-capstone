@@ -1,7 +1,9 @@
 class SearchesController < ApplicationController
-  # def index
-  #   @users = return_opposite_type(current_user)
-  #   @users = @users.interests.find_by_fuzzy_name('web', limit: 10)
-  #   render 'index'
-  # end
+  def index
+    if params[:search]
+      @users_of_opposite_type = return_opposite_type(current_user)
+      @users = @users_of_opposite_type.search(params[:search])
+      render '/searches/index'
+    end
+  end
 end
