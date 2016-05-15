@@ -2,13 +2,6 @@ class UsersController < ApplicationController
 
   def index
     @users = return_opposite_type(current_user)
-    if params[:search]
-      @users = User.search(params[:search])
-      # render '/searches/index'
-    else
-      @users = return_opposite_type(current_user)
-      # render 'index'
-    end
   end
 
 
@@ -41,7 +34,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    p "-----------------------------"
     @user.assign_attributes(user_params)
 
     if @user.save

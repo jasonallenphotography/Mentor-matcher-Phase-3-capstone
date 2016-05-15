@@ -3,7 +3,7 @@
 <br>
 
 <% if @users.length == 0 %>
-  <div class="row"><h1>No results! Try expanding your search.</h1></div>
+  <div class="row"><h2>No users match that information! Try expanding your search.</h2></div>
 <%else%>
   <% @users.each do |user| %>
     <a href="/users/<%=user.id%>">
