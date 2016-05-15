@@ -26,7 +26,7 @@ class MatchesController < ApplicationController
       redirect_to '/matches'
     else
       @errors = @match.errors.full_messages
-      redirect_to user_path(current_user)
+      render 'welcome/show'
     end
   end
 

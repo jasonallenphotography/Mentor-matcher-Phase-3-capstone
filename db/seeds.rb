@@ -66,9 +66,15 @@ User.create(
   public_profile_url: "https://www.linkedin.com/in/jaclyn-feminella-b634485b",
   current_title: "Student",
   current_company: "DBC",
+
   type: "Mentor",
   status: "available",
   mission_statement: "Offering professional mentorship to navigate industry changes from Recruiting to Technology.",
+
+  type: "Mentee",
+  status: "available",
+  mission_statement: "Seeking professional mentorship to navigate industry changes from Recruiting to Technology.",
+
   linkedin_id: "RgcyJ34e37",
   email: "jaclynfeminella@gmail.com"
   )
