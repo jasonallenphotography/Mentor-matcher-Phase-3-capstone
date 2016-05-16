@@ -51,5 +51,9 @@ class User < ActiveRecord::Base
     # User.joins(:interests).where("interest.name LIKE ?", "%#{search}%")
   end
 
+  # def redirect_unless_editing_or_deleting_own(profile_owner)
+  #   redirect "/users/#{profile_owner}" unless logged_in? && current_user.id == profile_owner
+  # end
+
 
 end

@@ -26,6 +26,8 @@ class MatchesController < ApplicationController
       redirect_to '/matches'
     else
       @errors = @match.errors.full_messages
+      
+      binding.pry
       render 'welcome/show'
     end
   end
@@ -57,6 +59,3 @@ class MatchesController < ApplicationController
     end
 
 end
-
-
-

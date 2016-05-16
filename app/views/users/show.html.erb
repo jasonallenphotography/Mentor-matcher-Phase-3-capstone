@@ -22,6 +22,20 @@
 
 <hr class="style-two">
 
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <div class="row">
+      <div class="small-4 columns text-center">
+        <i id="error-glyphicon-notification" class="step fi-alert size-36"></i>
+      </div>
+      <div class="small-8 columns">
+        <b><small><%=error%></small></b>
+      </div>
+    </div>
+    <hr class="style-two">
+  <% end %>
+<% end %>
+
   <div class="row">
     <div class="small-12 small-centered columns text-center">
       <i><%= @user.mission_statement %></i>

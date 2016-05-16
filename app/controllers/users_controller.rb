@@ -29,11 +29,14 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    redirect_unless_editing_or_deleting_own(@user)
   end
 
 
   def update
     @user = User.find(params[:id])
+    redirect_unless_editing_or_deleting_own(@user)
+
     @user.assign_attributes(user_params)
 
     if @user.save
@@ -46,6 +49,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    redirect_unless_editing_or_deleting_own(@user)
+
     @user.destroy
     redirect '/users'
   end
