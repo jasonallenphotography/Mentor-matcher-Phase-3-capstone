@@ -16,6 +16,15 @@
 
  */
 
+ /* This media screen div is for iphone5 users (or those with 320px screens) */
+@media screen and (max-width: 350px) {
+    body{ font-size:13.75px; }
+}
+
+body {
+    font-family:'Source Sans Pro', sans-serif;
+}
+
 .title-bar{
     background-color: #003b63;
 }
@@ -28,7 +37,8 @@ button.warning{
 }
 
 #jackie-search-bar{
-padding: 0.3em 0.3em;
+padding: 0.75em 0.75em;
+width: 70%;
 }
 
 .button {
@@ -66,7 +76,7 @@ hr.style-three {
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
-#no-interests-profile{ background-color:#FF9700; }
+.button.warning{ background-color:#FF9700; }
 #no-interests-glyphicon{ color:#FF9700; }
 #error-glyphicon-notification{ color:red; }
 
@@ -105,3 +115,19 @@ hr.style-three {
 .image-styling-to-look-more-centered {
   padding-left: 30px;
 }
+
+/* JQUERY UI Tabs CSS for Match Index follows */
+li.our-match-index-tabs {
+    width:32.33%;
+}
+
+.our-match-index-tabs a {
+    width: 100%;
+}
+
+
+
+
+
+
+

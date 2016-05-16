@@ -5,14 +5,11 @@
 <h1 class="text-center"><%=current_user.first_name%>'s Requests</h1>
 
 <div id="tabs">
-
-  <div class="row text-center">
     <ul>
-      <li><a href="#tabs-1" class="text-center"><small><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%><br>Requests</small></a></li>
-      <li><a href="#tabs-2" class="text-center"><small>My<br><%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%></small></a></li>
-      <li><a href="#tabs-3" class="text-center"><small>Pending<br>Requests</small></a></li>
+      <li class="our-match-index-tabs"><a class="text-center" href="#tabs-1"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%><br>Requests</a></li>
+      <li class="our-match-index-tabs"><a class="text-center" href="#tabs-2">My<br><%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%></a></li>
+      <li class="our-match-index-tabs"><a class="text-center" href="#tabs-3">Pending<br>Requests</a></li>
     </ul>
-  </div>
 
   <div id="tabs-1">
     <div class="container">
