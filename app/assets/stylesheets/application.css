@@ -19,12 +19,21 @@
 .title-bar{
     background-color: #003b63;
 }
+button.warning{
+    background-color: #003b63;
+}
 
 .title-bar-title a {
     color: white;
 }
+
 #jackie-search-bar{
 padding: 0.3em 0.3em;
+}
+
+.button {
+    border:2.5px solid;
+    border-radius: 20px;
 }
 
 hr.style-one {
