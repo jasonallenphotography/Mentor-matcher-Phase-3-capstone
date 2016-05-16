@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :needs_type?, :mentor?
+  helper_method :current_user, :logged_in?, :needs_type?, :mentor?, :redirect_unless_editing_or_deleting_own
 
   def current_user
     User.find_by(id: session[:user_id])
@@ -23,6 +23,28 @@ class ApplicationController < ActionController::Base
 
   def return_opposite_type(current_user)
     mentor? ? User.where(type: "Mentee") : User.where(type: "Mentor")
+  end
+
+  def redirect_unless_logged_in
+    redirect_to '/login' unless logged_in?
+  end
+
+  def redirect_if_already_logged_in
+    redirect_to '/' if logged_in?
+  end
+
+  def redirect_unless_current_user_owns(thing)
+    redirect_to '/' unless logged_in? && current_user.id == thing.author_id
+  end
+
+  def redirect_unless_editing_or_deleting_own(profile_owner)
+    unless logged_in? && current_user == profile_owner
+      @user = User.find(profile_owner.id)
+      @interests = Interest.all
+      @user.errors.add(:user, "You do not have permission to edit profiles that are not yours.")
+      @errors = @user.errors.full_messages
+      render 'show'
+    end
   end
 
 end

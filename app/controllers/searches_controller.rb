@@ -3,6 +3,7 @@ class SearchesController < ApplicationController
     if params[:search]
       @users_of_opposite_type = return_opposite_type(current_user)
       @users = @users_of_opposite_type.search(params[:search])
+      # @users.distinct
     end
   end
 end
