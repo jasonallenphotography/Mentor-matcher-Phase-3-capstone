@@ -23,6 +23,9 @@
 .title-bar-title a {
     color: white;
 }
+#jackie-search-bar{
+padding: 0.3em 0.3em;
+}
 
 hr.style-one {
     height: 30px;

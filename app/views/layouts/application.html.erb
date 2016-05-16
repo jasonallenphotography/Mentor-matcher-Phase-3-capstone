@@ -16,13 +16,14 @@
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
           <button class="menu-icon" type="button" data-toggle></button>
           <div class="title-bar-title"><a href="/"><%= image_tag('150pxLogo.png', :alt=>'Sign In!')%></a></div>
-          <% if logged_in? %>
-            <%= form_tag(searches_path, method: "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
-            <%= submit_tag "Search" %>
-            <%end%>
-          <%end%>
-        </div>
+            <div id="jackie-search-bar" class='top-bar-right'>
+              <% if logged_in? %>
+                <%= form_tag(searches_path, method: "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+                <%end%>
+              <%end%>
+            </div>
+          </div>
         <div class="top-bar" id="main-menu">
           <div class="top-bar-left">
             <ul class="vertical dropdown menu" data-dropdown-menu>
@@ -49,9 +50,9 @@
 
       </nav>
     </header>
-  
+
   <%= yield %>
-  
+
 
 <% if logged_in? %>
   <br>
