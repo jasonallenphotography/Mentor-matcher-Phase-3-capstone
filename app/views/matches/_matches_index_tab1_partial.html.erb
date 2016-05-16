@@ -1,0 +1,37 @@
+<% @matches_pending_my_decision.each do |decision| %>
+  <div class="row">
+    <div class="small-4 large-4 columns">
+      <a href="<%=decision.initiator.public_profile_url%>" target="_blank"><%= image_tag decision.initiator.picture_url %></a>
+    </div>
+    <div class="small-8 large-8 columns">
+      <b><%= decision.initiator.first_name %> <%= decision.initiator.last_name %></b><br>
+      <small><%= decision.initiator.current_title %> at</small><br>
+      <b><%= decision.initiator.current_company%></b><br>
+    </div>
+  </div>
+
+  <hr class="style-two">
+
+  <div class="row">
+    <div class="small-12 small-centered columns text-center"><small><i><%= decision.initiator.mission_statement %></i></small></div>
+  </div>
+
+  <hr class="style-two">
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="button-group  text-center">
+      <%= link_to match_path(decision.id, :match => { :type => "AcceptedMatch" }), {:method => :put} do %>
+        <div class="button success"><i class='step fi-like size-36'></i><br>Accept</div>
+      <% end %>
+      <%= link_to match_path(decision.id), {:method => :delete} do %>
+        <div class="button warning"><i class='step fi-dislike size-36'></i><br>Reject</div>
+      <% end %>
+      <%= link_to match_path(decision.id, :match => { :type => "BlockedMatch" }), {:method => :put} do %>
+        <div class="button alert"><i class='step fi-prohibited size-36'></i><br>Block</div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <hr class="style-three">
+<% end %>
