@@ -1,9 +1,16 @@
-<div id="message-layout-on-the-right-side-of-conversations-index">
+<div class="small-12 columns">
+<br>
+
+  <%= link_to conversations_path do %>
+  <div class="button text-center">Back to Inbox</div>
+  <% end %>
+
+
 
   <% if @over_ten %>
     <%= link_to 'Show Previous', '?m=all' %>
   <% end %>
-
+<br>
   <div>
     <% @messages.each do |message| %>
       <% if message.body %>
@@ -13,24 +20,27 @@
             <div><strong><%= user.first_name %></strong> <%= message.message_time %></div>
             <div>
               <div>
-                <%= message.body %>
+                <small><%= message.body %></small>
               </div>
             </div>
           </div>
         </div>
+        <hr class="style-three">
       <% end %>
+
     <% end %>
   </div>
 
 </div>
 
-<%= form_for [@conversation, @message] do |f| %>
-  <div>
-    <%= f.text_area :body, required: true %>
-  </div>
-    <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-  <div style="text-align: center;">
-    <%= f.submit "Send" %>
-  </div>
-<% end %>
-
+<div class="footer">
+  <%= form_for [@conversation, @message] do |f| %>
+    <div>
+      <%= f.text_area :body, required: true %>
+    </div>
+      <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+    <div style="text-align: center;">
+      <%= f.submit "Send" %>
+    </div>
+  <% end %>
+</div>

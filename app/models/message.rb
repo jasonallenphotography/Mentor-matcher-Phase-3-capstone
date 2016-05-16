@@ -9,4 +9,8 @@ class Message < ActiveRecord::Base
     created_at.strftime("%m/%d/%y at %l:%M %p")
   end
 
+  def read_message?
+    self.read = true && current_user != self.user_id
+  end
+
 end

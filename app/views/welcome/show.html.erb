@@ -41,7 +41,11 @@
 <% end %>
   <div class="row">
     <div class="small-6 columns">
+    <% if current_user.id != current_user.messages.last.user_id && current_user.messages.last.read == false %>
+      <a href="/conversations" id='no-interests-profile' class="button expanded"><i class="step fi-mail size-48"></i><br>My Inbox</a>
+    <% else %>
       <a href="/conversations" class="button expanded"><i class="step fi-mail size-48"></i><br>My Inbox</a>
+    <% end %>
     </div>
     <div class="small-6 columns">
       <a href="/matches" class="button expanded"><i class="step fi-torsos-all size-48"></i><br>My Requests</a>

@@ -73,7 +73,7 @@ hr.style-three {
 
 /* STYLING FOR CONVERSATIONS AND MESSAGES BELOW */
 
-#right-side-chat-column-for-messages-index {
+/*#right-side-chat-column-for-messages-index {
     box-sizing:border-box;
     max-height: 500px;
     overflow-y: scroll;
@@ -93,5 +93,5 @@ hr.style-three {
 
 #form-for-text-on-conversations-index {
     /*padding-top: 20px;*/
-    margin-top: 10px;
-}
+    /*margin-top: 10px;*/
+/*}*/
