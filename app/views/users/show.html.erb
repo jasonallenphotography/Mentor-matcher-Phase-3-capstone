@@ -66,7 +66,7 @@
     </div>
   <%end%>
 
-<% if @user == current_user %>
+  <% if @user == current_user %>
   <div class="row">
     <p class="small-1 columns"></p>
     <div class="small-10 columns text-center">
@@ -82,19 +82,19 @@
       <div class="button-group expanded">
         <p class="small-3 columns"></p>
           <div class="small-6 columns text-center warning button">
-            <%= f.submit value="Add Interest!" %>
+            <%= f.submit value="Add Interest!", :class => 'add-interest-button-user-show'  %>
           <% end %>
           </div>
         <p class="small-3 columns"></p>
       </div>
     </div>
   </div>
-
+<%end%>
 
   <% if @user.interests.length > 0 %>
     <br>
-    <h3 class="text-center">My Interests</h3>
-    <div class="row">
+    <h3 class="text-center"><%= current_user == @user ? "My" : "#{@user.first_name}'s"%> Interests</h3>
+    <div class="row" id="interest-container-user-show">
       <% @user.interests.each do |interest| %>
         <div class="small-6 columns">
           <a href="/interests/<%=interest.id%>" class="button expanded professional-interest-button"><%= interest.name %></a>
@@ -106,7 +106,7 @@
       <p>You don't have any interests yet...<br> Add some using the form above!</p>
     </div>
   <% end %>
-<%end%>
+
 
 <hr class="style-two">
 
