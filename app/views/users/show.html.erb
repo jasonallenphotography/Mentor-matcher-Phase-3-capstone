@@ -66,39 +66,42 @@
     </div>
   <%end%>
 
-<% if @user == current_user %>
+  <% if @user == current_user %>
   <div class="row">
     <p class="small-1 columns"></p>
-    <div class="small-10 columns text-center">
+
+    <div id="add-interest-button-user-show">
+
+      <div class="small-10 columns text-center">
       <%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
-      <select name="interest_id">
-        <% (@interests - @user.interests).each do |int| %>
-          <option value="<%=int.id%>"><%=int.name%></option>
-        <%end%>
-      </select>
+      <div class='interest-options-holder'>
+      <%=render partial: 'interest_option_form' %>
+      </div>
       <p class="small-1 columns"></p>
     </div>
+
     <div class="row">
       <div class="button-group expanded">
         <p class="small-3 columns"></p>
-          <div class="small-6 columns text-center warning button">
-            <%= f.submit value="Add Interest!" %>
+            <%= f.submit value="Add Interest!", class: "small-6 columns text-center warning button" %>
           <% end %>
-          </div>
         <p class="small-3 columns"></p>
       </div>
     </div>
-  </div>
 
+    </div>
+  </div>
+<%end%>
 
   <% if @user.interests.length > 0 %>
     <br>
-    <h3 class="text-center">My Interests</h3>
-    <div class="row">
+    <h3 class="text-center"><%= current_user == @user ? "My" : "#{@user.first_name}'s"%> Interests</h3>
+    <div class="row" id="interest-container-user-show">
       <% @user.interests.each do |interest| %>
         <div class="small-6 columns">
           <a href="/interests/<%=interest.id%>" class="button expanded professional-interest-button"><%= interest.name %></a>
         </div>
+
       <% end %>
     </div>
   <% else %>
@@ -106,7 +109,7 @@
       <p>You don't have any interests yet...<br> Add some using the form above!</p>
     </div>
   <% end %>
-<%end%>
+
 
 <hr class="style-two">
 

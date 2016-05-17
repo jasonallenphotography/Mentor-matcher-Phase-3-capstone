@@ -22,8 +22,11 @@ class UsersController < ApplicationController
 
 
   def show
-   @user = User.find(params[:id])
-   @interests = Interest.all
+    @user = User.find(params[:id])
+    @interests = Interest.all
+    if request.xhr?
+      render partial: 'interest_option_form', locals: {interests: @interests, user: @user}, layout: false
+    end
   end
 
 
@@ -38,6 +41,7 @@ class UsersController < ApplicationController
     redirect_unless_editing_or_deleting_own(@user)
 
     @user.assign_attributes(user_params)
+    # binding.pry
 
     if @user.save
       redirect_to user_path(current_user)

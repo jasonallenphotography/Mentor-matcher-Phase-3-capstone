@@ -2,10 +2,19 @@
 <h1 class="text-center"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Search Matches</h1>
 <br>
 
-<% if @interest.users.length == 0 %>
-  <div class="row"><h2>No users have that interest at the moment. Try expanding your search.</h2></div>
+<% if @interested_users.length == 0 %>
+<br>
+  <div class="row">
+    <div class="small-3 columns text-center">
+      <i id="error-glyphicon-notification" class="step fi-alert size-36"></i>
+    </div>
+    <div class="small-9 columns text-center">No users have that interest at the moment. Try expanding your search.</div>
+  </div>
+<hr class="style-two">
+
+
 <%else%>
-  <% @interest.users.each do |user| %>
+  <% @interested_users.each do |user| %>
     <a href="/users/<%=user.id%>">
       <div class="row">
         <p class="small-1 columns"></p>
