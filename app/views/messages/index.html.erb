@@ -46,9 +46,12 @@
     <div class="small-12 columns">
       <%= form_for [@conversation, @message] do |f| %>
         <div>
-          <%= f.text_area :body, required: true %>
+          <%= f.text_field :body, required: true %>
         </div>
+        <div>
           <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+        </div>
+      
       <% end %>
     </div>
   </div>
