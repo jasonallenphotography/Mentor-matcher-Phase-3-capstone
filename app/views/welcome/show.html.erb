@@ -11,52 +11,50 @@
       <b><%= current_user.current_company%></b><br>
     </div>
   </div>
-  <hr class="style-two">
-
 <% if @errors %>
   <% @errors.each do |error| %>
+    <br>
     <div class="row">
-      <div class="small-4 columns text-center">
+      <div class="small-3 columns text-center">
         <i id="error-glyphicon-notification" class="step fi-alert size-36"></i>
       </div>
-      <div class="small-8 columns">
-        <b><small><%=error%></small></b>
+      <div class="small-9 columns text-center">
+        <b><%=error%></b>
       </div>
     </div>
-    <hr class="style-two">
   <% end %>
 <% end %>
+  <hr class="style-two">
+
 
 <% if current_user.interests.length == 0 %>
     <div class="row">
-      <div class="small-4 columns text-center">
-        <i id='no-interests-glyphicon' class="step fi-lightbulb size-72"></i>
+      <div class="small-3 columns text-center">
+        <i id='no-interests-glyphicon' class="step fi-lightbulb size-48"></i>
       </div>
-      <div class="small-8 columns"><br>
-        <b>You'll get noticed faster <br>
-            if you add what fields <br>
-            you're interested in!</b></div>
+      <div class="small-9 columns text-center"><br>
+        <b>You'll get noticed faster if you add interests to your profile!</b></div>
     </div>
     <hr class="style-two">
 <% end %>
   <div class="row">
     <div class="small-6 columns">
-      <a href="/conversations" class="button expanded"><i class="step fi-mail size-48"></i><br>My Inbox</a>
+      <a href="/conversations" class="button expanded"><i class="step fi-mail size-36"></i><br>My Inbox</a>
     </div>
     <div class="small-6 columns">
-      <a href="/matches" class="button expanded"><i class="step fi-torsos-all size-48"></i><br>My Requests</a>
+      <a href="/matches" class="button expanded"><i class="step fi-torsos-all size-36"></i><br>My Requests</a>
     </div>
   </div>
   <div class="row">
     <div class="small-6 columns">
     <% if current_user.interests.length == 0 %>
-      <a href="/users/<%=current_user.id%>" id='no-interests-profile' class="button expanded"><i class="step fi-torso size-48"></i><br>My Profile</a>
+      <a href="/users/<%=current_user.id%>" id='no-interests-profile' class="button warning expanded"><i class="step fi-torso size-36"></i><br>My Profile</a>
     <% else %>
-      <a href="/users/<%=current_user.id%>" class="button expanded"><i class="step fi-torso size-48"></i><br>My Profile</a>
+      <a href="/users/<%=current_user.id%>" class="button expanded"><i class="step fi-torso size-36"></i><br>My Profile</a>
     <% end %>
     </div>
     <div class="small-6 columns">
-      <a href="/users" class="button expanded"><i class="step fi-shuffle size-48"></i><br>Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%></a>
+      <a href="/users" class="button expanded"><i class="step fi-shuffle size-36"></i><br>Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%></a>
     </div>
   </div>
 
