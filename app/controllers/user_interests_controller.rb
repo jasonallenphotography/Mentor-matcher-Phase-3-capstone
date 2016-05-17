@@ -15,8 +15,12 @@ class UserInterestsController < ApplicationController
 
   def destroy
     @user_interest = UserInterest.find(params[:id])
-    @user_interest.destroy
-    redirect_to edit_user_path(current_user)
+    # binding.pry
+    if request.xhr? && @user_interest.destroy
+    else
+      @user_interest.destroy
+      redirect_to edit_user_path(current_user)
+    end
   end
 
 

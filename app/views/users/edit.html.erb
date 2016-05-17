@@ -78,7 +78,7 @@
 <hr class="style-three">
   <div class="row">
     <p class="text-center">Click below to remove one of your interests:</p>
-    <div class="small-12 columns text-center">
+    <div class="small-12 columns text-center" id="user-edit-remove-interest-container">
       <% @user.user_interests.each do |user_interest| %>
         <div class="small-6 columns">
           <%= link_to "#{user_interest.interest.name}", user_interest_path(user_interest.id), :method => :delete, :class => "button expanded warning professional-interest-button" %>
