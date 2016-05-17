@@ -11,21 +11,18 @@
             <b><%= match.mentee.first_name %> <%= match.mentee.last_name %></b><br>
             <small><%= match.mentee.current_title %><br> at </small><b><%= match.mentee.current_company %></b>
           </div>
+              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
 
-            <% conv = @conversations.where(mentee_id: match.mentee_id, mentor_id: match.mentor_id).first %>
-            <% if conv.messages.any? && current_user.id != conv.messages.last.user_id && conv.messages.last.read == false %>
-              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-                <div id='no-interests-profile' class="button small small-3 columns">
+
+
+
+              <% conv = @conversations.where(id: match.conversation_id).first %>
+              <% user_of_last_message = conv.messages.last.user_id %>
+
+                <div class="<%= (conv.messages.last.read == false && (user_of_last_message == match.mentee_id)) ? 'warning' : nil %> button small small-3 columns">
                   See Conversation
                 </div>
               <% end %>
-            <% else %>
-              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-                <div class="button small small-3 columns">
-                  See Conversation
-                </div>
-              <% end %>
-            <% end %>
 
         <% else %>
           <div class='row'>
@@ -36,21 +33,15 @@
               <b><%= match.mentor.first_name %> <%= match.mentor.last_name %></b><br>
               <small><%= match.mentor.current_title %><br> at </small><b><%= match.mentor.current_company %></b>
             </div>
+              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
 
-            <% conv = @conversations.where(mentee_id: match.mentee_id, mentor_id: match.mentor_id).first %>
-            <% if conv.messages.any? && current_user.id != conv.messages.last.user_id && conv.messages.last.read == false %>
-              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-                <div id='no-interests-profile' class="button small small-3 columns">
-                  See Conversation
-                </div>
-              <% end %>
-            <% else %>
-              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-                <div class="button small small-3 columns text-center">
+              <% conv = @conversations.where(id: match.conversation_id).first %>
+              <% user_of_last_message = conv.messages.last.user_id %>
+
+                <div class="<%= (conv.messages.last.read == false && (user_of_last_message == match.mentor_id)) ? 'warning' : nil %> button small small-3 columns">
                   See<br> Conversation
                 </div>
               <% end %>
-            <% end %>
           </div>
         <% end %>
       </div>

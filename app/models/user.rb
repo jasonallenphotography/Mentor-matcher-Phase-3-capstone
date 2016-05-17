@@ -51,6 +51,16 @@ class User < ActiveRecord::Base
     # User.joins(:interests).where("interest.name LIKE ?", "%#{search}%")
   end
 
+  def unread_conversations?
+    conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
+  end
+
+  # def unread_conversations?
+  #   conversations.any? do |conv|
+  #     conv.unread_message_for_user(self.id)
+  #   end
+  # end
+
   # def redirect_unless_editing_or_deleting_own(profile_owner)
   #   redirect "/users/#{profile_owner}" unless logged_in? && current_user.id == profile_owner
   # end

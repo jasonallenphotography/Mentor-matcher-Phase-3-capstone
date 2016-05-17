@@ -10,4 +10,12 @@ class Conversation < ActiveRecord::Base
     where("(conversations.mentor_id = ? AND conversations.mentee_id =?) OR (conversations.mentor_id = ? AND conversations.mentee_id =?)", mentor_id, mentee_id, mentee_id, mentor_id)
   end
 
+  def unread_message_for_user(user_id)
+  	messages.where(read: false).where('user_id !=? ', user_id)
+  end
+
+  def unread_messages?
+  	messages.where(read: false) && messages.last.user_id != current_user.id
+  end
+
 end
