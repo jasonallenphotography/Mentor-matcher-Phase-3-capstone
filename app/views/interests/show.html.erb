@@ -3,7 +3,16 @@
 <br>
 
 <% if @interested_users.length == 0 %>
-  <div class="row"><h2>No users have that interest at the moment. Try expanding your search.</h2></div>
+<br>
+  <div class="row">
+    <div class="small-3 columns text-center">
+      <i id="error-glyphicon-notification" class="step fi-alert size-36"></i>
+    </div>
+    <div class="small-9 columns text-center">No users have that interest at the moment. Try expanding your search.</div>
+  </div>
+<hr class="style-two">
+
+
 <%else%>
   <% @interested_users.each do |user| %>
     <a href="/users/<%=user.id%>">
