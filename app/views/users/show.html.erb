@@ -74,9 +74,9 @@
 
       <div class="small-10 columns text-center">
       <%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
-
+      <div class='interest-options-holder'>
       <%=render partial: 'interest_option_form' %>
-
+      </div>
       <p class="small-1 columns"></p>
     </div>
 

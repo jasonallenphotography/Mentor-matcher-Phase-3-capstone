@@ -12,8 +12,8 @@ $(document).ready(function() {
       $.get({
         url: window.location.href
       }).done(function(response){
-        $('#add-interest-button-user-show').empty(response);
-        $('#add-interest-button-user-show').html(response);
+        $('.interest-options-holder').empty(response);
+        $('.interest-options-holder').html(response);
       });
     });
   }); // new interest form click
