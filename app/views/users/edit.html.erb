@@ -1,4 +1,4 @@
-<h1 class="text-center"><b><%= @user.first_name %> <%= @user.last_name %></b> | Editing Profile
+<h1 class="text-center"><b><%= @user.first_name %> <%= @user.last_name %></b> | Editing Profile </h1>
 <br>
 
 <!-- <i class="step fi-pencil size-24"></i> -->
@@ -6,59 +6,68 @@
 
     <div class="small-12 columns">
       <%= form_for(:user, url: user_path(@user), html:{method:"put"}) do |f| %>
-        <table class="text-left">
-          <tr>
-            <td>Status</td>
-            <td>
+        <table class="text-left" id="users-edit-form-table">
+          <tr class="row">
+            <td class="small-4 columns">Status</td>
+            <td class="small-8 columns">
               <%= f.radio_button :status, 'available', :checked => true %>
-              <%= label :status_available, 'Available' %><br>
+              <%= label :status_available, 'Available' %>
               <%= f.radio_button :status, 'unavailable' %>
-              <%= label :status_unavailable, 'Unavailable' %>
+              <%= label :status_unavailable, 'Hide me!' %>
             </td>
           </tr>
-          <tr>
-            <td>First Name</td>
-            <td><%= f.text_field :first_name, :placeholder => "First Name" %></td>
+          <tr class="row">
+            <td class="small-4 columns">Account Type</td>
+            <td class="small-8 columns">
+              <%= f.radio_button :type, 'Mentor', :checked => true %>
+              <%= label :type_Mentor, 'Mentor' %>
+              <%= f.radio_button :type, 'Mentee' %>
+              <%= label :type_Mentee, 'Mentee' %>
+            </td>
           </tr>
-          <tr>
-            <td>Last Name</td>
-            <td><%= f.text_field :last_name, :placeholder => "Last Name" %></td>
+          <tr class="row">
+            <td class="small-4 columns"><small> First Name</small></td>
+            <td class="small-8 columns"><%= f.text_field :first_name, :placeholder => "First Name" %></td>
           </tr>
-          <tr>
-            <td>Location</td>
-            <td><%= f.text_field :location, :placeholder => "Location" %></td>
+          <tr class="row">
+            <td class="small-4 columns"><small> Last Name</small></td>
+            <td class="small-8 columns"><%= f.text_field :last_name, :placeholder => "Last Name" %></td>
           </tr>
-          <tr>
-            <td>Industry</td>
-            <td><%= f.text_field :industry, :placeholder => "Industry" %></td>
+          <tr class="row">
+            <td class="small-4 columns"><small> Location</small></td>
+            <td class="small-8 columns"><%= f.text_field :location, :placeholder => "Location" %></td>
           </tr>
-          <tr>
-            <td>Portrait URL</td>
-            <td><%= f.text_field :picture_url, :placeholder => "Portrait URL" %></td>
+          <tr class="row">
+            <td class="small-4 columns"><small> Industry</small></td>
+            <td class="small-8 columns"><%= f.text_field :industry, :placeholder => "Industry" %></td>
           </tr>
-          <tr>
-            <td>Current Title</td>
-            <td><%= f.text_field :current_title, :placeholder => "Current Title" %></td>
+          <tr class="row">
+            <td class="small-4 columns"><small> Portrait URL</small></td>
+            <td class="small-8 columns"><%= f.text_field :picture_url, :placeholder => "Portrait URL" %></td>
           </tr>
-          <tr>
-            <td>Current Company</td>
-            <td><%= f.text_field :current_company, :placeholder => "Current Company" %></td>
+          <tr class="row">
+            <td class="small-4 columns"><small> Current Title</small></td>
+            <td class="small-8 columns"><%= f.text_field :current_title, :placeholder => "Current Title" %></td>
           </tr>
-          <tr>
-            <td>Industry</td>
-            <td><%= f.text_field :industry, :placeholder => "Industry" %></td>
+          <tr class="row">
+            <td class="small-4 columns"><small> Current Company</small></td>
+            <td class="small-8 columns"><%= f.text_field :current_company, :placeholder => "Current Company" %></td>
+          </tr>
+          <tr class="row">
+            <td class="small-4 columns"><small> Industry</small></td>
+            <td class="small-8 columns"><%= f.text_field :industry, :placeholder => "Industry" %></td>
           </tr>
         </table>
-        <%= f.submit %>
+        <%= f.submit class: "button expanded" %>
       <% end %>
 
 <% if @errors %>
   <% @errors.each do |error| %>
     <div class="row">
-      <div class="small-4 columns text-center">
+      <div class="small-3 columns text-center">
         <i id="error-glyphicon-notification" class="step fi-alert size-72"></i>
       </div>
-      <div class="small-8 columns">
+      <div class="small-9 columns">
         <b><%=error.full_messages%></b>
       </div>
     </div>
@@ -68,11 +77,11 @@
 
 <hr class="style-three">
   <div class="row">
+    <p class="text-center">Click below to remove one of your interests:</p>
     <div class="small-12 columns text-center">
-      <small>Click below to remove one of your professional interests: </small>
       <% @user.user_interests.each do |user_interest| %>
         <div class="small-6 columns">
-          <%= link_to "#{user_interest.interest.name}", user_interest_path(user_interest.id), :method => :delete %>
+          <%= link_to "#{user_interest.interest.name}", user_interest_path(user_interest.id), :method => :delete, :class => "button expanded warning professional-interest-button" %>
         </div>
       <% end %>
     </div>

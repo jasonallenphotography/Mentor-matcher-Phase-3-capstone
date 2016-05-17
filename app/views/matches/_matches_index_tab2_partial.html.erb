@@ -20,15 +20,15 @@
   <hr class="style-two">
     <div class="row">
       <div class="small-12 columns">
-        <div class="button-group text-center">
+        <div class="button-group text-center" id="jackie-button-group-left-button">
         <%= link_to conversations_path do %>
-          <div class="button success"><i class='step fi-mail size-36'></i><br>Message</div>
+          <button class="button small small-4"><i class='step fi-mail size-36'></i><br>Message</button>
         <% end %>
         <%= link_to match_path(match.id), {:method => :delete} do %>
-          <div class="button warning"><i class='step fi-lock size-36'></i><br>Close</div>
+          <button class="button small small-4 warning"><i class='step fi-lock size-36'></i><br>Close</button>
         <% end %>
         <%= link_to match_path(match.id, :match => { :type => "BlockedMatch" }), {:method => :put} do %>
-          <div class="button alert"><i class='step fi-prohibited size-36'></i><br>Block</div>
+          <button class="button small small-4 alert"><i class='step fi-prohibited size-36'></i><br>Block</button>
         <% end %>
         </div>
       </div>

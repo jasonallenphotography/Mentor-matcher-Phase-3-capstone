@@ -16,12 +16,37 @@
 
  */
 
+ /* This media screen div is for iphone5 users (or those with 320px screens) */
+@media screen and (max-width: 350px) {
+    #users-edit-form-table td small{
+        font-size:14px;
+        color: #000000;
+    }
+    body { font-size:13.75px; }
+}
+
+body {
+    font-family:'Source Sans Pro', sans-serif;
+}
+
 .title-bar{
     background-color: #003b63;
 }
 
+
+
 .title-bar-title a {
     color: white;
+}
+
+#jackie-search-bar{
+padding: 0.75em 0.75em;
+width: 70%;
+}
+
+.button {
+    border:2.5px solid;
+    border-radius: 20px;
 }
 
 hr.style-one {
@@ -54,9 +79,24 @@ hr.style-three {
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
-#no-interests-profile{ background-color:#FF9700; }
+
+
+.button.warning{ background-color:#FF9700; }
 #no-interests-glyphicon{ color:#FF9700; }
 #error-glyphicon-notification{ color:red; }
+#users-edit-form-table small{
+    font-size:16px;
+    color: #000000;
+}
+a.professional-interest-button {
+    height:3.5em;
+}
+
+.fuzzy-search-button {
+    height: 90px;
+}
+
+
 
 
 .size-12 { font-size: 12px; }
@@ -93,3 +133,19 @@ hr.style-three {
 .image-styling-to-look-more-centered {
   padding-left: 30px;
 }
+
+/* JQUERY UI Tabs CSS for Match Index follows */
+li.our-match-index-tabs {
+    width:32.33%;
+}
+
+.our-match-index-tabs a {
+    width: 100%;
+}
+
+
+
+
+
+
+

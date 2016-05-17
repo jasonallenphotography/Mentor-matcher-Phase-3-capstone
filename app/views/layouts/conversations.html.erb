@@ -15,38 +15,31 @@
       <nav>
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
           <button class="menu-icon" type="button" data-toggle></button>
-          <div class="title-bar-title"><a href="/"><%= image_tag('150pxLogo.png', :alt=>'Sign In!')%></a></div>
-          <% if logged_in? %>
-            <%= form_tag(searches_path, method: "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
-            <%= submit_tag "Search" %>
-            <%end%>
-          <%end%>
-        </div>
+          <div class="title-bar-title"><a href="/"><%= image_tag('100pxWhiteLogo.png', :alt=>'Sign In!', size: "50x50")%></a></div>
+            <div id="jackie-search-bar" class='top-bar-right'>
+              <%= form_tag(searches_path, method: "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+              <% end %>
+            </div>
+          </div>
         <div class="top-bar" id="main-menu">
           <div class="top-bar-left">
             <ul class="vertical dropdown menu" data-dropdown-menu>
-              <% if logged_in? %>
-                <li><a href="/conversations">
-                    <i class="step fi-mail size-24">
-                    </i>  My Inbox</a></li>
-                <li><a href="/matches">
-                    <i class="step fi-torsos-all size-24">
-                    </i> My <%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Requests</a></li>
-                <li><a href="/users/<%=current_user.id%>">
-                    <i class="step fi-torso-business size-24">
-                    </i> My Profile</a></li>
-                <li><a href="/users">
-                    <i class="step fi-shuffle size-24">
-                    </i> Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%> </a></li>
-              <% else %>
-                <li><a href="/auth/linkedin">Login</a></li>
-                <li><a href="/auth/linkedin">Register</a></li>
-              <% end %>
+                <li><a href="/conversations" class="row"><i class="step fi-mail size-24 small-1 columns"></i>
+                    <div class="small-10 columns">My Inbox</div></li></a>
+
+                <li><a href="/matches" class="row">
+                    <i class="step fi-torsos-all size-24 small-1 columns"></i>
+                    <div class="small-10 columns">My <%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Requests</div></li></a>
+
+                <li><a href="/users/<%=current_user.id%>" class="row"><i class="step fi-torso-business size-24 small-1 columns"></i>
+                    <div class="small-10 columns">My Profile</div></li></a>
+
+                <li><a href="/users" class="row"><i class="step fi-shuffle size-24 small-1 columns"></i>
+                    <div class="small-10 columns">Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%> </div></li></a>
             </ul>
           </div>
         </div>
-
       </nav>
     </header>
 
