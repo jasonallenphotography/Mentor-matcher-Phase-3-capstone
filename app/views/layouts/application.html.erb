@@ -63,14 +63,10 @@
     <footer>
       <p class='text-center'>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %></p>
         <div class="row">
-          <div class="button-group">
-            <div class="small-6 columns">
-              <a href="/users/<%=current_user.id%>/edit" class="button expanded warning"><i class="step fi-pencil size-36"></i><br>Edit My Profile</a>
-            </div>
-            <div class="small-6 columns">
-              <a href="/logout" class="button expanded alert"><i class="step fi-unlock size-36"></i><br>Logout</a>
-            </div>
-
+          <div class="button-group expanded">
+            <p class="small-4 columns"></p>
+            <a href="/logout" class="small-4 columns button alert"><i class="step fi-unlock size-24"></i><br>Logout</a>
+            <p class="small-4 columns"></p>
           </div>
         </div>
       <p class='text-center'>(C) 2016<br><small>All rights reserved.</small><br>Jaclyn Feminella, David Lange,<br>Ivy Vetor, and Jason Allen</p>

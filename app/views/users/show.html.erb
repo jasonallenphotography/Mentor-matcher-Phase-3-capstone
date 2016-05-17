@@ -1,40 +1,50 @@
-<h1 class="text-center"><b><%= @user.first_name %> <%= @user.last_name %></b> |
-  <% if @user.status == 'available' %>
-    <% if @user.type == 'Mentor' %>
-      Offering
-    <% else %>
-      Seeking
-    <% end %>
-  <% end %></h1>
+<h1 class="text-center"><b><%= @user.first_name %> <%= @user.last_name %></b></h1>
+<% if @user.status == 'available' %>
+  <div class="row">
+    <p class="small-1 columns"></p>
+    <div class="small-10 columns text-center">
+      <% if @user.type == 'Mentor' %>
+        <%= @user.first_name %> is Offering Mentorship!
+      <% else %>
+        <%= @user.first_name %> is Seeking Mentorship
+      <% end %>
+    </div>
+    <p class="small-1 columns"></p>
+    </div>
+  </div>
+  <br>
+<% end %>
 
-<!-- If errors - place here -->
 
   <div class="row">
-    <div class="small-4 large-4 columns">
+    <p class="small-1 columns"></p>
+    <div class="small-4 columns">
       <%=image_tag @user.picture_url %>
     </div>
-    <div class="small-8 columns">
-      <br>
+    <div class="small-7 columns">
       <small><%= @user.current_title %> at</small><br>
       <b><%= @user.current_company%></b><br>
+      <small><%= @user.location %></small><br>
     </div>
   </div>
 
-<hr class="style-two">
 
+<!-- If errors - place here -->
 <% if @errors %>
   <% @errors.each do |error| %>
+    <br>
     <div class="row">
-      <div class="small-4 columns text-center">
+      <div class="small-3 columns text-center">
         <i id="error-glyphicon-notification" class="step fi-alert size-36"></i>
       </div>
-      <div class="small-8 columns">
-        <b><small><%=error%></small></b>
+      <div class="small-9 columns text-center">
+        <b><%=error%></b>
       </div>
     </div>
-    <hr class="style-two">
   <% end %>
 <% end %>
+<hr class="style-two">
+
 
   <div class="row">
     <div class="small-12 small-centered columns text-center">
@@ -42,21 +52,48 @@
     </div>
     <!-- <i class="step fi-pencil size-24"></i> -->
   </div>
-
-<hr class="style-three">
+  <br>
 
   <% if @user.id != current_user.id %>
     <div class="row">
-      <div class="small-12 columns">
+      <p class="small-1 columns"></p>
+      <div class="small-10 columns">
         <%= link_to matches_path(:match => { :receiver_id => "#{@user.id}" }), {:method => :post} do %>
           <div class="button expanded success"><i class='step fi-shuffle size-36'></i><br>Connect!</div>
         <% end %>
       </div>
+      <p class="small-1 columns"></p>
     </div>
   <%end%>
 
-<% if @user.interests.length > 0 %>
-    <p class="text-center">Current interests</p>
+<% if @user == current_user %>
+  <div class="row">
+    <p class="small-1 columns"></p>
+    <div class="small-10 columns text-center">
+      <%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
+      <select name="interest_id">
+        <% (@interests - @user.interests).each do |int| %>
+          <option value="<%=int.id%>"><%=int.name%></option>
+        <%end%>
+      </select>
+      <p class="small-1 columns"></p>
+    </div>
+    <div class="row">
+      <div class="button-group expanded">
+        <p class="small-3 columns"></p>
+          <div class="small-6 columns text-center warning button">
+            <%= f.submit value="Add Interest!" %>
+          <% end %>
+          </div>
+        <p class="small-3 columns"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <% if @user.interests.length > 0 %>
+    <br>
+    <h3 class="text-center">My Interests</h3>
     <div class="row">
       <% @user.interests.each do |interest| %>
         <div class="small-6 columns">
@@ -66,36 +103,20 @@
     </div>
   <% else %>
     <div class="small-12 columns text-center">
-      <p>You don't have any interests yet...<br> Add some using the form below!</p>
+      <p>You don't have any interests yet...<br> Add some using the form above!</p>
     </div>
   <% end %>
+<%end%>
 
 <hr class="style-two">
 
-<div class="row">
-  <div class="small-8 columns text-center">
-    <%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
-    <select name="interest_id">
-      <% (@interests - @user.interests).each do |int| %>
-        <option value="<%=int.id%>"><%=int.name%></option>
-      <%end%>
-    </select>
-  </div>
-  <div class="small-4 columns text-center button">
-    <%= f.submit value="Add Interest!" %>
-  <% end %>
-  </div>
-</div>
-
-<hr class="style-three">
-
-  <% if @user.id != current_user.id %>
-    <a href="<%= @user.public_profile_url %>" class="button">View me on LinkedIn</a>
-  <% else %>
-    <div class="button-group text-center">
-      <a href="<%= @user.public_profile_url %>" class="button">View my LinkedIn Profile</a>
-      <a href="https://www.linkedin.com/profile/edit?trk=nav_responsive_sub_nav_edit_profile" target='_empty' class="button">Edit my LinkedIn Profile</a>
+<% if @user == current_user %>
+  <div class="row">
+    <div class="button-group expanded">
+      <p class="small-3 columns"></p>
+      <a href="/users/<%=current_user.id%>/edit" class="small-6 columns button warning"><i class="step fi-pencil size-36"></i><br>Edit My Profile</a>
+      <p class="small-3 columns"></p>
     </div>
-  <%end%>
-
+  </div>
 <hr class="style-three">
+<% end %>
