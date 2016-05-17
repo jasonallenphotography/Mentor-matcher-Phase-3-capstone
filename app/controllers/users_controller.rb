@@ -38,10 +38,9 @@ class UsersController < ApplicationController
     redirect_unless_editing_or_deleting_own(@user)
 
     @user.assign_attributes(user_params)
+    # binding.pry
 
-    if request.xhr && @user.save
-
-    elsif @user.save
+    if @user.save
       redirect_to user_path(current_user)
     else
       render 'edit'

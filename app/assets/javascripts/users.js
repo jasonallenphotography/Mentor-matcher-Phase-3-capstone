@@ -3,11 +3,15 @@ $(document).ready(function() {
     event.preventDefault();
     var $target = $(event.target);
     $.ajax({
-      method: 'post',
-      url: $target.attr('href')
+      method: $target.attr('method'),
+      url: $target.attr('action'),
+      data: $target.serialize()
     }).done(function(response){
-      debugger
-      $('#interest-container-user-show').append(response);
+      // console.log(response)
+      $('#interest-container-user-show').prepend(response);
+    }).fail(function(response){
+      console.log('This is failing: ');
+      console.log(response);
     }); // done functionality
   }); // new interest form click
 }); // document ready end
