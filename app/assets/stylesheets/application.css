@@ -18,7 +18,11 @@
 
  /* This media screen div is for iphone5 users (or those with 320px screens) */
 @media screen and (max-width: 350px) {
-    body{ font-size:13.75px; }
+    #users-edit-form-table td small{
+        font-size:14px;
+        color: #000000;
+    }
+    body { font-size:13.75px; }
 }
 
 body {
@@ -79,7 +83,10 @@ hr.style-three {
 .button.warning{ background-color:#FF9700; }
 #no-interests-glyphicon{ color:#FF9700; }
 #error-glyphicon-notification{ color:red; }
-
+#users-edit-form-table small{
+    font-size:16px;
+    color: #000000;
+}
 
 .size-12 { font-size: 12px; }
 .size-14 { font-size: 14px; }

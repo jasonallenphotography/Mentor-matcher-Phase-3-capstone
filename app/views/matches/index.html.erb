@@ -84,9 +84,12 @@
         <% end %>
       <% else %>
 
-        <p class="text-center">It looks like you don't have any requests to connect with <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>.</p>
-        <hr class="style-two">
+        <h3 class="text-center"><b>On no!</b></h3>
+        <p class="text-center">It looks like you don't<br>have any <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%>!</p>
         <p class="text-center">Connect with a <%= current_user.type == "Mentor" ? "Protegé" : "Mentor"%> today!</p>
+
+        <hr class="style-two">
+
         <p><a href="/users" class="button expanded success"><i class='step fi-shuffle size-36'></i><br>Click here</a></p>
 
       <% end %>
