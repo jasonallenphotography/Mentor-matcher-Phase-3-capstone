@@ -81,6 +81,10 @@ hr.style-three {
 }
 
 
+.notification-for-new-message-or-request {
+  color:#FF9700
+}
+
 .button.warning{ background-color:#FF9700; }
 #no-interests-glyphicon{ color:#FF9700; }
 #error-glyphicon-notification{ color:red; }
