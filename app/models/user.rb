@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
   end
 
   def unread_conversations?
-    conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
+    self.conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
   end
 
   # def unread_conversations?
