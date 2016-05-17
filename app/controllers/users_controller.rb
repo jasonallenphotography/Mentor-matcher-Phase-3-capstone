@@ -22,8 +22,11 @@ class UsersController < ApplicationController
 
 
   def show
-   @user = User.find(params[:id])
-   @interests = Interest.all
+    @user = User.find(params[:id])
+    @interests = Interest.all
+    if request.xhr?
+      render partial: 'interest_option_form', locals: {interests: @interests, user: @user}, layout: false
+    end
   end
 
 

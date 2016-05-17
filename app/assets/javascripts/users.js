@@ -7,11 +7,18 @@ $(document).ready(function() {
       url: $target.attr('action'),
       data: $target.serialize()
     }).done(function(response){
-      $('#interest-container-user-show').append(response);
-    }); // done functionality
+      $('#interest-container-user-show').prepend(response);
+    }).then(function(){
+      $.get({
+        url: window.location.href
+      }).done(function(response){
+        $('#add-interest-button-user-show').empty(response);
+        $('#add-interest-button-user-show').html(response);
+      });
+    });
   }); // new interest form click
 
-  // 
+  //
   // $('#user-edit-remove-interest-container').on('click', 'a', function(event){
   //   event.preventDefault();
   //   var $target = $(event.target);

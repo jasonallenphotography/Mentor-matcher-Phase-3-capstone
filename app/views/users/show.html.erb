@@ -69,24 +69,26 @@
   <% if @user == current_user %>
   <div class="row">
     <p class="small-1 columns"></p>
-    <div class="small-10 columns text-center" id= "add-interest-button-user-show">
+
+    <div id="add-interest-button-user-show">
+
+      <div class="small-10 columns text-center">
       <%= form_for(:user_interests, url: user_interests_path, html: {method: "create"}) do |f| %>
-      <select name="interest_id">
-        <% (@interests - @user.interests).each do |int| %>
-          <option value="<%=int.id%>"><%=int.name%></option>
-        <%end%>
-      </select>
+
+      <%=render partial: 'interest_option_form' %>
+
       <p class="small-1 columns"></p>
     </div>
+
     <div class="row">
       <div class="button-group expanded">
         <p class="small-3 columns"></p>
-          <!-- <div class="small-6 columns text-center warning button"> -->
             <%= f.submit value="Add Interest!", class: "small-6 columns text-center warning button" %>
           <% end %>
-          <!-- </div> -->
         <p class="small-3 columns"></p>
       </div>
+    </div>
+
     </div>
   </div>
 <%end%>
