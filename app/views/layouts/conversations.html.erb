@@ -25,7 +25,7 @@
         <div class="top-bar" id="main-menu">
           <div class="top-bar-left">
             <ul class="vertical dropdown menu" data-dropdown-menu>
-                <li><a href="/conversations" class="row"><i class="step fi-mail size-24 small-1 <%= current_user.unread_conversations? ? 'notification-for-new-message-or-request' : nil %> columns"></i>
+                <li><a href="/conversations" class="row"><i class="step fi-mail size-24 small-1 <%= current_user.unread_conversations_nav_notification %> columns"></i>
                     <div class="small-10 columns">My Inbox</div></li></a>
 
                 <li><a href="/matches" class="row">

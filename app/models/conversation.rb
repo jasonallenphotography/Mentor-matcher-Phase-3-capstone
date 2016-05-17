@@ -14,10 +14,9 @@ class Conversation < ActiveRecord::Base
   	self.messages.where(read: false).where('user_id !=? ', user_id)
   end
 
-  def unread_messages?
-  	messages.where(read: false) && messages.last.user_id != current_user.id
-  end
-
+  # def unread_messages?
+  # 	messages.where(read: false) && messages.last.user_id != current_user.id
+  # end
 
   def has_new_unread_message(user)
     if self.messages.any?

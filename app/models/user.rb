@@ -51,8 +51,20 @@ class User < ActiveRecord::Base
     # User.joins(:interests).where("interest.name LIKE ?", "%#{search}%")
   end
 
-  def unread_conversations?
-    self.conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
+  def unread_conversations_nav_notification
+    if self.conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
+      return 'notification-for-new-message-or-request'
+    else
+      return ''
+    end
+  end
+
+  def unread_conversations_button_notification
+    if self.conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
+      return 'warning'
+    else
+      return ''
+    end
   end
 
   # def unread_conversations?
