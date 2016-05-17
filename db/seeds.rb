@@ -313,13 +313,15 @@ User.create(
   email: "dlange8181@gmail.com"
   )
 
-75.times do
-  i = Interest.all.sample
-  u = User.all.sample
+users = User.all
+users.each do |user|
+  5.times do
+    i = Interest.all.sample
 
-  UserInterest.create(
-    user: u,
-    interest: i)
+    UserInterest.create(
+      user: user,
+      interest: i)
+  end
 end
 
 10.times do
@@ -356,22 +358,23 @@ end
     )
 end
 
-15.times do
-  c = Conversation.all.sample
+
+conversations = Conversation.all
+conversations.each do |conversation|
 
   15.times do
-  Message.create(
-    body: "I am a message!",
-    conversation: c,
-    user: c.mentor,
-    read: [true, false].sample
-  )
-  Message.create(
-    body: "I am a message!",
-    conversation: c,
-    user: c.mentee,
-    read: [true, false].sample
-  )
+    Message.create(
+      body: "I am a message!",
+      conversation: conversation,
+      user: conversation.mentor,
+      read: [true, false].sample
+    )
+    Message.create(
+      body: "I am a message!",
+      conversation: conversation,
+      user: conversation.mentee,
+      read: [true, false].sample
+    )
   end
 
 end
