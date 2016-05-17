@@ -45,11 +45,12 @@ class User < ActiveRecord::Base
   end
 
   def self.search(search)
-    User.joins(:interests).where("first_name || email || last_name || industry || current_company || current_title || mission_statement || interests.name LIKE ?", "%#{search}%")
+    User.joins(:interests).where("first_name || email || last_name || industry || current_company || current_title || mission_statement || location || interests.name LIKE ?", "%#{search}%")
 
     # Just the interests join table query:
     # User.joins(:interests).where("interest.name LIKE ?", "%#{search}%")
   end
+
 
   def unread_conversations_nav_notification
     if self.conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
@@ -76,6 +77,5 @@ class User < ActiveRecord::Base
   # def redirect_unless_editing_or_deleting_own(profile_owner)
   #   redirect "/users/#{profile_owner}" unless logged_in? && current_user.id == profile_owner
   # end
-
 
 end

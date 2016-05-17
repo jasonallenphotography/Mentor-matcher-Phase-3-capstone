@@ -1,0 +1,5 @@
+<select name="interest_id">
+  <% (@interests - @user.interests).each do |int| %>
+    <option value="<%=int.id%>"><%=int.name%></option>
+  <%end%>
+</select>
