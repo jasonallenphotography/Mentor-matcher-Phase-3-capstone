@@ -32,9 +32,8 @@ body {
 .title-bar{
     background-color: #003b63;
 }
-button.warning{
-    background-color: #003b63;
-}
+
+
 
 .title-bar-title a {
     color: white;
@@ -80,6 +79,8 @@ hr.style-three {
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+
+
 .button.warning{ background-color:#FF9700; }
 #no-interests-glyphicon{ color:#FF9700; }
 #error-glyphicon-notification{ color:red; }
@@ -90,6 +91,13 @@ hr.style-three {
 a.professional-interest-button {
     height:3.5em;
 }
+
+.fuzzy-search-button {
+    height: 90px;
+}
+
+
+
 
 .size-12 { font-size: 12px; }
 .size-14 { font-size: 14px; }
