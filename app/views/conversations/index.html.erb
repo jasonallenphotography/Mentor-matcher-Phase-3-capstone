@@ -1,53 +1,56 @@
 <div class="container">
   <h1 class="text-center">Inbox</h1><br>
   <div class='row'>
-    <% @matches.each do |match| %>
+    <% @conversations.each do |conversation| %>
+      <% if mentor? %>
       <div class="row">
-        <% if mentor? %>
-          <div class="small-4 large-4 columns text-center">
-            <img class="image-styling-to-look-more-centered" src="<%= match.mentee.picture_url %>">
-          </div>
-          <div class="small-4 columns">
-            <b><%= match.mentee.first_name %> <%= match.mentee.last_name %></b><br>
-            <small><%= match.mentee.current_title %><br> at </small><b><%= match.mentee.current_company %></b>
-          </div>
-              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
+        <p class="small-1 columns"></p>
+        <div class="small-4 columns">
+          <%=image_tag conversation.mentee.picture_url %>
+        </div>
+        <div class="small-7 columns">
+          <b><%= conversation.mentee.first_name %> <%= conversation.mentee.last_name %></b><br>
+          <small><%= conversation.mentee.current_title %> at</small><br>
+          <b><%= conversation.mentee.current_company%></b><br>
+          <small><%= conversation.mentee.location %></small><br>
+        </div>
+      </div>
 
-
-
-
-              <% conv = @conversations.where(id: match.conversation_id).first %>
-              <% user_of_last_message = conv.messages.last.user_id %>
-
-                <div class="<%= (conv.messages.last.read == false && (user_of_last_message == match.mentee_id)) ? 'warning' : nil %> button small small-3 columns">
-                  See Conversation
-                </div>
-              <% end %>
-
-        <% else %>
-          <div class='row'>
-            <div class="small-4 large-4 columns text-center">
-              <img class="image-styling-to-look-more-centered" src="<%= match.mentor.picture_url %>">
-            </div>
-            <div class="small-4 columns text-center">
-              <b><%= match.mentor.first_name %> <%= match.mentor.last_name %></b><br>
-              <small><%= match.mentor.current_title %><br> at </small><b><%= match.mentor.current_company %></b>
-            </div>
-              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-
-              <% conv = @conversations.where(id: match.conversation_id).first %>
-              <% user_of_last_message = conv.messages.last.user_id %>
-
-                <div class="<%= (conv.messages.last.read == false && (user_of_last_message == match.mentor_id)) ? 'warning' : nil %> button small small-3 columns">
-                  See<br> Conversation
-                </div>
-              <% end %>
+        <%= link_to(conversation_messages_path(conversation.id)) do %>
+          <div class="<%= conversation.has_new_unread_message(current_user) %> button small small-3 columns">
+            See Conversation
           </div>
         <% end %>
+
+      <% else %>
+
+      <div class="row">
+        <p class="small-1 columns"></p>
+        <div class="small-4 columns">
+          <%=image_tag conversation.mentor.picture_url %>
+        </div>
+        <div class="small-7 columns">
+          <b><%= conversation.mentor.first_name %> <%= conversation.mentor.last_name %></b><br>
+          <small><%= conversation.mentor.current_title %> at</small><br>
+          <b><%= conversation.mentor.current_company%></b><br>
+          <small><%= conversation.mentor.location %></small><br>
+        </div>
       </div>
-      <hr class="style-two">
+      <div class="row">
+        <p class="small-4 columns"></p>
+        <%= link_to(conversation_messages_path(conversation.id)) do %>
+          <div class="<%= conversation.has_new_unread_message(current_user) %> button small small-4 columns">
+            See Conversation
+          </div>
+        <% end %>
+        <p class="small-4 columns"></p>
+
+      </div>
+
+      <% end %>
     <% end %>
+  </div>
+
+<hr class="style-two">
+
 </div>
-
-
-

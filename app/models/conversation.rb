@@ -18,4 +18,18 @@ class Conversation < ActiveRecord::Base
   	messages.where(read: false) && messages.last.user_id != current_user.id
   end
 
+
+  def has_new_unread_message(user)
+    if self.messages.any?
+        if !self.messages.last.read && self.messages.last.user != user then 'warning'
+        else
+          ''
+        end
+    else
+      return ''
+    end
+  end
+
+
+
 end
