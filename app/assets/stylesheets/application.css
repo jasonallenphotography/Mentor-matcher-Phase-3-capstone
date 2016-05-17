@@ -73,25 +73,23 @@ hr.style-three {
 
 /* STYLING FOR CONVERSATIONS AND MESSAGES BELOW */
 
-#right-side-chat-column-for-messages-index {
-    box-sizing:border-box;
-    max-height: 500px;
-    overflow-y: scroll;
-    background-color: #ecebeb;
-    padding-bottom: 10px;
-    padding-top: 10px;
+#sticky-footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  padding-top: 15px;
 }
 
-#left-side-chat-column-for-messages-index {
-    overflow-y: scroll;
-    max-height: 500px;
+#list-of-messages-in-the-messages-index {
+  margin-bottom: 75px;
+  padding: 10px;
 }
 
-#message-layout-on-the-right-side-of-conversations-index {
-    overflow-y: scroll;
-}
+/* STYLING BELOW IS APPLIED TO THE CONVERSATIONS INDEX PAGE */
+/* Please look at how it appears and approve/reject styling as this would need to be applied across all images */
 
-#form-for-text-on-conversations-index {
-    /*padding-top: 20px;*/
-    margin-top: 10px;
+.image-styling-to-look-more-centered {
+  padding-left: 30px;
 }
