@@ -320,23 +320,20 @@ User.create(
       email: "dlange8181@gmail.com"
   )
 
-
-# 10.times do
-#   Conversation.create(
-#     mentee_id: Mentee.all.sample.id,
-#     mentor_id: Mentor.all.sample.id)
-# end
-
-5.times do
+10.times do
   mentee = Mentee.all.sample
   mentor = Mentor.all.sample
 
-  PendingMatch.create(
-    initiator: mentee,
-    receiver: mentor,
+  c = Conversation.create(
+    mentee_id: mentee.id,
+    mentor_id: mentor.id)
+
+  AcceptedMatch.create(
+    initiator: mentor,
+    receiver: mentee,
     mentee_id: mentee.id,
     mentor_id: mentor.id,
-    conversation_id: Conversation.all.sample.id
+    conversation_id: c.id
     )
 end
 
@@ -344,11 +341,33 @@ end
   mentee = Mentee.all.sample
   mentor = Mentor.all.sample
 
+ c = Conversation.create(
+    mentee_id: mentee.id,
+    mentor_id: mentor.id)
+
   PendingMatch.create(
-    initiator: mentor,
-    receiver: mentee,
+    initiator: mentee,
+    receiver: mentor,
     mentee_id: mentee.id,
     mentor_id: mentor.id,
-    conversation_id: Conversation.all.sample.id
+    conversation_id: c.id
     )
+end
+
+5.times do
+  Message.create(
+    body: "I am a message!",
+    conversation_id: Conversation.sample,
+    user_id: AcceptedMatch.initiator.sample,
+    read: [true, false].sample
+  )
+end
+
+5.times do
+  i = Interest.sample
+  u = User.sample
+
+  UserInterest.create(
+    user_id = u.id,
+    interest_id = i.id)
 end
