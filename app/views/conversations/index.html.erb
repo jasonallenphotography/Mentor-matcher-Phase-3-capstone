@@ -1,71 +1,63 @@
 <div class="container">
   <h1 class="text-center">Inbox</h1><br>
   <div class='row'>
-        <% @matches.each do |match| %>
-          <div class="row">
-              <% if mentor? %>
-                <div class="small-4 large-4 columns text-center">
-                  <img src="<%= match.mentee.picture_url %>">
-                </div>
-                <div class="small-4 columns">
-                  <b><%= match.mentee.first_name %> <%= match.mentee.last_name %></b><br>
-                  <small><%= match.mentee.current_title %><br> at </small><b><%= match.mentee.current_company %></b>
-                </div>
-
-
-             <% conv = @conversations.where(mentee_id: match.mentee_id, mentor_id: match.mentor_id).first %>
-                <% if conv.messages.any? && current_user.id != conv.messages.last.user_id && conv.messages.last.read == false %>
-                  <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-                    <div id='no-interests-profile' class="button small small-4 columns">
-                      See Conversation
-                    </div>
-                  <% end %>
-                <% else %>
-                  <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-                    <div class="button small small-4 columns">
-                      See Conversation
-                    </div>
-                  <% end %>
-                <% end %>
-
-
-
-              <% else %>
-                <div class='row'>
-                  <div class="small-4 large-4 columns text-center">
-                    <img src="<%= match.mentor.picture_url %>">
-                  </div>
-                  <div class="small-4 columns">
-                    <b><%= match.mentor.first_name %> <%= match.mentor.last_name %></b><br>
-                    <small><%= match.mentor.current_title %><br> at </small><b><%= match.mentor.current_company %></b>
-                  </div>
-
-
-                  <% conv = @conversations.where(mentee_id: match.mentee_id, mentor_id: match.mentor_id).first %>
-
-                    <% if conv.messages.any? && current_user.id != conv.messages.last.user_id && conv.messages.last.read == false %>
-                      <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-                        <div id='no-interests-profile' class="button small small-4 columns">
-                          See Conversation
-                        </div>
-                      <% end %>
-                    <% else %>
-                      <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
-                        <div class="button small small-4 columns">
-                          See Conversation
-                        </div>
-                      <% end %>
-                    <% end %>
-
-
-
-              <% end %>
+    <% @matches.each do |match| %>
+      <div class="row">
+        <% if mentor? %>
+          <div class="small-4 large-4 columns text-center">
+            <img class="image-styling-to-look-more-centered" src="<%= match.mentee.picture_url %>">
           </div>
-          <hr class="style-three">
+          <div class="small-4 columns">
+            <b><%= match.mentee.first_name %> <%= match.mentee.last_name %></b><br>
+            <small><%= match.mentee.current_title %><br> at </small><b><%= match.mentee.current_company %></b>
+          </div>
+
+            <% conv = @conversations.where(mentee_id: match.mentee_id, mentor_id: match.mentor_id).first %>
+            <% if conv.messages.any? && current_user.id != conv.messages.last.user_id && conv.messages.last.read == false %>
+              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
+                <div id='no-interests-profile' class="button small small-3 columns">
+                  See Conversation
+                </div>
+              <% end %>
+            <% else %>
+              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
+                <div class="button small small-3 columns">
+                  See Conversation
+                </div>
+              <% end %>
+            <% end %>
+
+        <% else %>
+          <div class='row'>
+            <div class="small-4 large-4 columns text-center">
+              <img class="image-styling-to-look-more-centered" src="<%= match.mentor.picture_url %>">
+            </div>
+            <div class="small-4 columns text-center">
+              <b><%= match.mentor.first_name %> <%= match.mentor.last_name %></b><br>
+              <small><%= match.mentor.current_title %><br> at </small><b><%= match.mentor.current_company %></b>
+            </div>
+
+            <% conv = @conversations.where(mentee_id: match.mentee_id, mentor_id: match.mentor_id).first %>
+            <% if conv.messages.any? && current_user.id != conv.messages.last.user_id && conv.messages.last.read == false %>
+              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
+                <div id='no-interests-profile' class="button small small-3 columns">
+                  See Conversation
+                </div>
+              <% end %>
+            <% else %>
+              <%= link_to(conversation_messages_path(match.conversation_id,match.id)) do %>
+                <div class="button small small-3 columns text-center">
+                  See<br> Conversation
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
+
+      <hr class="style-three">
+
     </div>
-
-
+  <% end %>
 </div>
 
 

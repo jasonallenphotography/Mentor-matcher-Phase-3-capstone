@@ -86,3 +86,10 @@ hr.style-three {
   margin-bottom: 75px;
   padding: 10px;
 }
+
+/* STYLING BELOW IS APPLIED TO THE CONVERSATIONS INDEX PAGE */
+/* Please look at how it appears and approve/reject styling as this would need to be applied across all images */
+
+.image-styling-to-look-more-centered {
+  padding-left: 30px;
+}
