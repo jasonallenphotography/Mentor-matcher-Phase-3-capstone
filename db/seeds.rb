@@ -1,11 +1,4 @@
-# # This file should contain all the record creation needed to seed the database with its default values.
-# # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-# #
-# # Examples:
-# #
-# #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-# #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+# Creating interests for Interest tag dropdown
 Interest.create(name: "3D Technology")
 Interest.create(name: "Accessibility Technology")
 Interest.create(name: "Account Management")
@@ -39,6 +32,8 @@ Interest.create(name: "Startups")
 Interest.create(name: "UX/UI Design")
 Interest.create(name: "Web Development")
 
+
+# Users 0-12 on our Heroku DB, AND local test data - if adding more users, start at User 13 on Heroku DB
 User.create(
   first_name: "Jason",
   last_name: "Allen",
@@ -189,35 +184,198 @@ User.create(
   email: "cbudzyna@gmail.com"
   )
 
+User.create(
+  first_name: "Ayaz",
+  last_name: "Uddin",
+  location: "Greater New York City Area, US",
+  industry: "Information Technology and Services",
+  picture_url: "https://media.licdn.com/mpr/mprx/0__by8vxujMQ9vB_a1T_V1vpDAv6tnz_a13Qe0vjpGEiQboFJPfTuuRge2Ue-enkf0CkYYssCxZXBS",
+  public_profile_url: "https://www.linkedin.com/in/ayaz2589",
+  current_title: "Boss",
+  current_company: "DBC",
+  type: "Mentee",
+  status: "available",
+  mission_statement: 'Confusion is the feeling that comes before understanding',
+  linkedin_id: "0-7hFUkCA5",
+  email: "uddin2589@yahoo.com"
+  )
 
-# 10.times do
-#   Conversation.create(
-#     mentee_id: Mentee.all.sample.id,
-#     mentor_id: Mentor.all.sample.id)
-# end
+User.create(
+  first_name: "Jonathan O.",
+  last_name: "Schwartz",
+  location: "Greater New York City Area, US",
+  industry: "Computer Software",
+  picture_url: "https://media.licdn.com/mpr/mprx/0_toKw91admk5lEe489H6QqNydmk6uWR42ca6LKQoHw8JDWINyjUX543kdDkqxEJQ8PHXwgKwWF1eS70VKZMvBOF65C1e270r2RMvez61eW-g85dIKBHi6vtjMGQtp60bjtVAbtZ4k3yP",
+  public_profile_url: "https://www.linkedin.com/in/jonoschwartz",
+  current_title: "Student",
+  current_company: "Dev Bootcamp",
+  type: "Mentee",
+  status: "available",
+  mission_statement: "Find me a mentor!",
+  linkedin_id: "2FFqx7V8Ge",
+  email: "josch@umich.edu"
+  )
 
-5.times do
+User.create(
+  first_name: "Veronica",
+  last_name: "Staehle",
+  location: "Greater New York City Area, US",
+  industry: "Graphic Design",
+  picture_url: "https://media.licdn.com/mpr/mprx/0_73E_PZS2q-vkVQP0STHpPVRCqvCwZL_0DhYpPRogIKnUbTNxiFs7jUYPVRGNRGC1mGegyyZeSn4C",
+  public_profile_url: "https://www.linkedin.com/in/veronica-staehle-47242930",
+  current_title: "ASL Interpreter",
+  current_company: "LC Interpreting Services",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "Available to mentor eager DBC students on learning ASL!",
+  linkedin_id: "Y7xmZDSS8Y",
+  email: "veronicastaehle@gmail.com"
+  )
+
+User.create(
+  first_name: "Maria-Angela",
+  last_name: "Sanzone",
+  location: "Greater New York City Area, US",
+  industry: "Marketing and Advertising",
+  picture_url: "https://media.licdn.com/mpr/mprx/0_NArAmTrAOpd0YlbbnznmmG5gyssxt-bb9rXmmG_T_xm7SnKF4chjhCc7tqV8AzQwv--fT5gvH1ML",
+  public_profile_url: "https://www.linkedin.com/in/maria-angela-sanzone-46034a5",
+  current_title: "Media Buyer",
+  current_company: "Brand Networks",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "To test this page",
+  linkedin_id: "SZHE4B_nRc",
+  email: "masanzone@gmail.com"
+  )
+
+User.create(
+  first_name: "Ryan",
+  last_name: "Horn",
+  location: "Greater New York City Area, US",
+  industry: "Marketing and Advertising",
+  picture_url: "https://media.licdn.com/mpr/mprx/0_Gj0mWYtI4DqUm6QnSuw_FEhIJJiFeFZReuwmfEzoyJ3QeBv9euLaCRcIsRAQDBQcDjwmFj4wKja6I_DQwmVtTEJbzjabI_AVHmVSEw2EOpRI3voQk0uio0GUveqBC_QITDYCDzxssBm",
+  public_profile_url: "https://www.linkedin.com/in/ryan-horn-a9a1547",
+  current_title: "Director, Customer Success",
+  current_company: "Brand Networks",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "To test this page",
+  linkedin_id: "ShqXLW0BES",
+  email: "phi2618@yahoo.com"
+  )
+
+User.create(
+  first_name: "Kevin",
+  last_name: "Perkins",
+  location: "Greater New York City Area, US",
+  industry: "Computer Software",
+  picture_url: "https://media.licdn.com/mpr/mprx/0_foFc5xhvGyE5Qy-oQo0cwp3v6RZJ5YOwQUjM8o9vCD5Zhm_wwHlJG4Cv3DvJ8yKnWa0MmS3zIRe4_shnLMGISwhJmReM_sFoQMGqQEzq5VgzWupnoHNs6ORLamtWosKRfVQR3NF2TLv",
+  public_profile_url: "https://www.linkedin.com/in/kevperk",
+  current_title: "Technical Product Manager, Search Algorithms",
+  current_company: "Google",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "I would like to mentor junior developers and those interested
+    in becoming full-stack developers!",
+  linkedin_id: "j-buZIBGCS",
+  email: "kevcorper@gmail.com"
+  )
+
+User.create(
+  first_name: "Anthony",
+  last_name: "Narisi",
+  location: "Greater New York City Area, US",
+  industry: "Computer Software",
+  picture_url: "https://media.licdn.com/mpr/mprx/0_i2oR-pOzb6eZ_DDiGaYUsJ0zF6OLhuumf2tvcWMz3Bbkhyx_o2yzVSNz5GIZ_D1fo2YsVacvmTdX_e2PuxfFVH9MITd5_eRfExf4AdiNh8pdWYhP6aMnlgD5wq1voeuOipwcncgAcHW",
+  public_profile_url: "https://www.linkedin.com/in/anthony-narisi-43b3a580",
+  current_title: "Phase 0 Student",
+  current_company: "Dev Bootcamp",
+  type: "Mentee",
+  status: "available",
+  mission_statement: "I am interested in becoming a full-stack developer!",
+  linkedin_id: "cPCx2Sc9RL",
+  email: "tonynarisi@gmail.com"
+  )
+
+User.create(
+  first_name: "David",
+  last_name: "Lange",
+  location: "Greater New York City Area, US",
+  industry: "Computer Software",
+  picture_url: "https://media.licdn.com/mpr/mprx/0_mO0h7ezeJePI7qwnG7whXIbeyeG9dFvBwVWmdjAeyI4BdcwBGOwDTyxeRRTLfc49IVWhXepHle-cE_bR3SVpbyjXqe-nEif9CSViugHd0WFV8zqEapuS2d64NjHQiiZFIaY2I_4LrUI",
+  public_profile_url: "https://www.linkedin.com/in/david-lange-65b82576",
+  current_title: "Student",
+  current_company: "Dev Bootcamp",
+  type: "Mentee",
+  status: "available",
+  mission_statement: "Seeking to connect with professions in Tech and Music.",
+  linkedin_id: "98d1FsVNfd",
+  email: "dlange8181@gmail.com"
+  )
+
+users = User.all
+users.each do |user|
+  5.times do
+    i = Interest.all.sample
+
+    UserInterest.create(
+      user: user,
+      interest: i)
+  end
+end
+
+10.times do
   mentee = Mentee.all.sample
   mentor = Mentor.all.sample
+
+  c = Conversation.create(
+    mentee_id: mentee.id,
+    mentor_id: mentor.id)
+
+  AcceptedMatch.create(
+    initiator: mentor,
+    receiver: mentee,
+    mentee_id: mentee.id,
+    mentor_id: mentor.id,
+    conversation_id: c.id
+    )
+end
+
+10.times do
+  mentee = Mentee.all.sample
+  mentor = Mentor.all.sample
+
+ c = Conversation.create(
+    mentee_id: mentee.id,
+    mentor_id: mentor.id)
 
   PendingMatch.create(
     initiator: mentee,
     receiver: mentor,
     mentee_id: mentee.id,
     mentor_id: mentor.id,
-    conversation_id: Conversation.all.sample.id
+    conversation_id: c.id
     )
 end
 
-5.times do
-  mentee = Mentee.all.sample
-  mentor = Mentor.all.sample
 
-  PendingMatch.create(
-    initiator: mentor,
-    receiver: mentee,
-    mentee_id: mentee.id,
-    mentor_id: mentor.id,
-    conversation_id: Conversation.all.sample.id
+conversations = Conversation.all
+conversations.each do |conversation|
+
+  15.times do
+    Message.create(
+      body: "I am a message!",
+      conversation: conversation,
+      user: conversation.mentor,
+      read: [true, false].sample
     )
+    Message.create(
+      body: "I am a message!",
+      conversation: conversation,
+      user: conversation.mentee,
+      read: [true, false].sample
+    )
+  end
+
 end
+
