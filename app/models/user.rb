@@ -67,6 +67,17 @@ class User < ActiveRecord::Base
     end
   end
 
+  def sorted_conversations
+    array = self.conversations.sort_by do |conv|
+      if conv.messages.last != nil
+        conv.messages.last.created_at
+      end
+    end
+
+    return array.reverse
+
+  end
+
   # def unread_conversations?
   #   conversations.any? do |conv|
   #     conv.unread_message_for_user(self.id)

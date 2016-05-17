@@ -11,7 +11,7 @@ class Conversation < ActiveRecord::Base
   end
 
   def unread_message_for_user(user_id)
-  	self.messages.where(read: false).where('user_id !=? ', user_id)
+    self.messages.where(read: false).where('user_id != ?', user_id)
   end
 
   # def unread_messages?
