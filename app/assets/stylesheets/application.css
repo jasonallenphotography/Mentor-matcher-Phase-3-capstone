@@ -87,6 +87,9 @@ hr.style-three {
     font-size:16px;
     color: #000000;
 }
+a.professional-interest-button {
+    height:3.5em;
+}
 
 .size-12 { font-size: 12px; }
 .size-14 { font-size: 14px; }
