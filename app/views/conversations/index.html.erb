@@ -6,21 +6,20 @@
       <div class="row">
         <p class="small-1 columns"></p>
         <div class="small-4 columns">
-          <%=image_tag conversation.mentee.picture_url %>
+          <%=image_tag conversation.mentee.picture_url %><br>
         </div>
         <div class="small-7 columns">
           <b><%= conversation.mentee.first_name %> <%= conversation.mentee.last_name %></b><br>
-          <small><%= conversation.mentee.current_title %> at</small><br>
-          <b><%= conversation.mentee.current_company%></b><br>
-          <small><%= conversation.mentee.location %></small><br>
+          <%= link_to(conversation_messages_path(conversation.id)) do %>
+        <div class="row">
+            <div class="<%= conversation.has_new_unread_message(current_user) %> button small small-8 columns">
+              <i class="step fi-mail size-36"></i><br>See Conversation
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
 
-        <%= link_to(conversation_messages_path(conversation.id)) do %>
-          <div class="<%= conversation.has_new_unread_message(current_user) %> button small small-3 columns">
-            See Conversation
-          </div>
-        <% end %>
 
       <% else %>
 
@@ -31,26 +30,20 @@
         </div>
         <div class="small-7 columns">
           <b><%= conversation.mentor.first_name %> <%= conversation.mentor.last_name %></b><br>
-          <small><%= conversation.mentor.current_title %> at</small><br>
-          <b><%= conversation.mentor.current_company%></b><br>
-          <small><%= conversation.mentor.location %></small><br>
+     <%= link_to(conversation_messages_path(conversation.id)) do %>
+        <div class="row">
+            <div class="<%= conversation.has_new_unread_message(current_user) %> button small small-8 columns">
+              <i class="step fi-mail size-36"></i><br>See Conversation
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <p class="small-4 columns"></p>
-        <%= link_to(conversation_messages_path(conversation.id)) do %>
-          <div class="<%= conversation.has_new_unread_message(current_user) %> button small small-4 columns">
-            See Conversation
-          </div>
-        <% end %>
-        <p class="small-4 columns"></p>
-
-      </div>
-
       <% end %>
+<hr class="style-two">
+
     <% end %>
   </div>
 
-<hr class="style-two">
 
 </div>
