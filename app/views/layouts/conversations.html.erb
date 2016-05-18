@@ -14,7 +14,7 @@
     <header>
       <nav>
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
-          <button class="menu-icon" type="button" data-toggle></button>
+          <button class="menu-icon slide-down-menu-button" type="button" data-toggle></button>
           <div class="title-bar-title"><a href="/"><%= image_tag('100pxWhiteLogo.png', :alt=>'Sign In!', size: "50x50")%></a></div>
             <div id="jackie-search-bar" class='top-bar-right'>
               <%= form_tag(searches_path, method: "get", id: "search-form") do %>
@@ -22,7 +22,7 @@
               <% end %>
             </div>
           </div>
-        <div class="top-bar" id="main-menu">
+        <div class="top-bar menu-to-expand" id="main-menu">
           <div class="top-bar-left">
             <ul class="vertical dropdown menu" data-dropdown-menu>
                 <li><a href="/conversations" class="row"><i class="step fi-mail size-24 small-1 <%= current_user.unread_conversations_nav_notification %> columns"></i>
