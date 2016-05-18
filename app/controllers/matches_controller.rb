@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+  before_action :allow_user, :finish_profile
 
   def index
     @matches = current_user.accepted_matches

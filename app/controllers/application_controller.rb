@@ -3,10 +3,21 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :needs_type?, :mentor?, :return_opposite_type, :redirect_unless_editing_or_deleting_own
+  helper_method :current_user, :allow_user, :finish_profile, :logged_in?, :needs_type?, :mentor?, :return_opposite_type, :redirect_unless_editing_or_deleting_own
 
   def current_user
     User.find_by(id: session[:user_id])
+  end
+
+  def allow_user
+    redirect_to root_path unless logged_in?
+  end
+
+  def finish_profile
+    if needs_type?
+      @errors = ["You must finish filling out your profile to view that page"]
+      redirect_to "/users/#{current_user.id}/finish.html?errors=NO"
+    end
   end
 
   def logged_in?
