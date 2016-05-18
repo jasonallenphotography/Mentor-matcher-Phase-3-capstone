@@ -89,11 +89,11 @@ class UsersController < ApplicationController
 
         @convo = Conversation.find_or_create_by(mentor: @match.mentor, mentee: @match.mentee)
         @match.conversation_id = @convo.id
-        Message.create(body: "Welcome to Mentorship, where mentors and people seeking mentorship connect!\n
-                          Make sure to complete your profile and add your professional interests to get noticed more quickly.\n
-                          I hope that you enjoy our site, and please email support@mentorship-app.com if you have any questions or concerns!
-                          With love from the internet,\n
-                          Welcome Bot",
+        Message.create(body:"Welcome to Mentorship, where mentors and people seeking mentorship connect!\n
+                             Make sure to complete your profile and add your professional interests to get noticed more quickly.\n
+                             I hope that you enjoy our site, and please email support@mentorship-app.com if you have any questions or concerns!\n
+                             With love from the internet,\n
+                             Welcome Bot\n"
                     conversation_id: @convo.id,
                     user_id: @bot.id,
                     read: false)
