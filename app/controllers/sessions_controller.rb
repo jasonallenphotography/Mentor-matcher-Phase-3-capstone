@@ -11,8 +11,14 @@ class SessionsController < ApplicationController
         redirect_to "/users/#{@user.id}/finish"
       end
     else
-      redirect_to '/auth/linkedin'
+      @errors = @user.errors.full_messages
+      redirect_to '/'
     end
+  end
+
+  def failure
+    @errors = ["From LinkedIn: #{params[:message]}"]
+    render 'welcome/index'
   end
 
   def destroy
