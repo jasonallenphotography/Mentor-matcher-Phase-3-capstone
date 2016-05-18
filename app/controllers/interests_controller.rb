@@ -5,6 +5,7 @@ class InterestsController < ApplicationController
 
   def show
     @interest = Interest.find(params[:id])
-    @interested_users = @interest.users.distinct - [current_user]
+    same_type = User.where(type: current_user.type)
+    @interested_users = @interest.users.distinct - same_type
   end
 end
