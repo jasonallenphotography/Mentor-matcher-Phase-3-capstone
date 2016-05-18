@@ -5,6 +5,6 @@ class InterestsController < ApplicationController
 
   def show
     @interest = Interest.find(params[:id])
-    @interested_users = @interest.users - [current_user]
+    @interested_users = @interest.users.distinct - [current_user]
   end
 end

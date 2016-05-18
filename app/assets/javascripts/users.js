@@ -40,5 +40,19 @@ $(document).ready(function() {
     $('.menu-to-expand').slideToggle("slow").done({});
   });
 
+  // $('#jackie-button-group-left-button').on('click', '.block-button-to-hide-profile', function(e){
+  //   e.preventDefault();
+  //   var $target = $(e.target);
+  //   $.ajax({
+  //     method: $target.attr('action'),
+  //     url: $target.attr('href'),
+  //     data: $target.serialize()
+  //   }).done(function(){
+  //     $('.parent-container-to-remove-profile-when-blocked').hide(200);
+  //   });
+  // });
+
+
+
 }); // document ready end
 

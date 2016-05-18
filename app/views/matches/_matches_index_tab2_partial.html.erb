@@ -28,7 +28,7 @@
           <button class="button small small-4 warning"><i class='step fi-lock size-36'></i><br>Close</button>
         <% end %>
         <%= link_to match_path(match.id, :match => { :type => "BlockedMatch" }), {:method => :put} do %>
-          <button class="button small small-4 alert"><i class='step fi-prohibited size-36'></i><br>Block</button>
+          <button class="button small small-4 alert block-button-to-hide-profile"><i class='step fi-prohibited size-36'></i><br>Block</button>
         <% end %>
         </div>
       </div>

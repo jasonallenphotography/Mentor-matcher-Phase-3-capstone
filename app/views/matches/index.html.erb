@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 
 <h1 class="text-center"><%=current_user.first_name%>'s Requests</h1>
@@ -26,7 +27,7 @@
   </div>
 
   <div id="tabs-2">
-    <div class="container">
+    <div class="container parent-container-to-remove-profile-when-blocked">
       <% if @matches.length > 0 %>
         <%= render 'matches_index_tab2_partial' %>
       <% else %>
