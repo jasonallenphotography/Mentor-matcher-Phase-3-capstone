@@ -2,7 +2,7 @@
 <h1 class="text-center"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Matches</h1>
 <br>
 
-  <% @users_with_commonality_score.each do |user| %>
+  <% @users.each do |user| %>
     <a href="/users/<%=user[0].id%>">
       <div class="row">
         <p class="small-1 columns"></p>
