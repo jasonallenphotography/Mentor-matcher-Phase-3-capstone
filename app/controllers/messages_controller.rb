@@ -5,14 +5,14 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = @conversation.messages
+    @messages = @conversation.messages.reverse
     if @messages.length > 5
       @over_five = true
       @messages = @messages[-5..-1]
     end
     if params[:m]
       @over_ten = false
-      @messages = @conversation.messages
+      @messages = @conversation.messages.reverse
     end
     if @messages.last
       if @messages.last.user_id != current_user.id
