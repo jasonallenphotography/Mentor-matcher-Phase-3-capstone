@@ -22,7 +22,6 @@ $(document).ready(function() {
 
 
   $('#user-edit-remove-interest-container').on('click', 'a', function(e){
-// debugger;
     e.preventDefault();
     var $target = $(e.target);
 
