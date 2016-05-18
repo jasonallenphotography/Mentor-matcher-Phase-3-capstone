@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def finish_profile
     if needs_type?
       @errors = ["You must finish filling out your profile to view that page"]
-      redirect_to "/users/#{current_user.id}/finish.html?errors=NO"
+      redirect_to "/users/#{current_user.id}/finish"
     end
   end
 
@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
     unless logged_in? && current_user == profile_owner
       @user = User.find(profile_owner.id)
       @interests = Interest.all
-      @user.errors.add(:user, "You do not have permission to edit profiles that are not yours.")
+      @user.errors.add(:user, " - You do not have permission to edit profiles that are not yours.")
       @errors = @user.errors.full_messages
       render 'show'
     end
