@@ -8,13 +8,14 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
     <header>
       <nav>
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
-          <button class="menu-icon" type="button" data-toggle></button>
+          <button class="menu-icon slide-down-menu-button" type="button" data-toggle></button>
               <% if logged_in? %>
           <div class="title-bar-title"><a href="/"><%= image_tag('100pxWhiteLogo.png', :alt=>'Sign In!', size: "50x50")%></a></div>
             <div id="jackie-search-bar" class='top-bar-right'>
@@ -27,7 +28,7 @@
               <% end %>
             </div>
           </div>
-        <div class="top-bar" id="main-menu">
+        <div class="top-bar menu-to-expand" id="main-menu">
           <div class="top-bar-left">
             <ul class="vertical dropdown menu" data-dropdown-menu>
               <% if logged_in? %>

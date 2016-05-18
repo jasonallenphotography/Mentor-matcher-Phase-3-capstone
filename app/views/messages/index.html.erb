@@ -23,10 +23,9 @@
     <div id="list-of-messages-in-the-messages-index">
       <% @messages.each do |message| %>
         <% if message.body %>
-          <% user = User.find(message.user_id) %>
           <div>
             <div>
-              <div><strong><%= user.first_name %></strong> <%= message.message_time %></div>
+              <div><strong><%= message.user.first_name %></strong> <%= message.message_time %></div>
               <div>
                 <div>
                   <small><%= message.body %></small>
@@ -51,7 +50,7 @@
         <div>
           <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
         </div>
-      
+
       <% end %>
     </div>
   </div>

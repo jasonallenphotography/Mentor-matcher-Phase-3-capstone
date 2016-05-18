@@ -39,7 +39,7 @@ User.create(
   last_name: "Bot",
   location: "The Internet",
   industry: "Robotics",
-  picture_url: '/assets/100pxWhiteLogo.png',
+  picture_url: 'WhiteLogoBlueBG300px.jpg',
   public_profile_url: "#Robot1",
   current_title: "Helpful Robot",
   current_company: "Mentorship",
@@ -395,20 +395,21 @@ User.create(
 # conversations = Conversation.all
 # conversations.each do |conversation|
 
-#   15.times do
+#   10.times do
 #     Message.create(
-#       body: "I am a message!",
+#       body: "I am a Mentor message!",
 #       conversation: conversation,
 #       user: conversation.mentor,
-#       read: [true, false].sample
+#       read: false
 #     )
 #     Message.create(
-#       body: "I am a message!",
+#       body: "I am a Mentee message!",
 #       conversation: conversation,
 #       user: conversation.mentee,
-#       read: [true, false].sample
+#       read: false
 #     )
 #   end
 
 # end
+
 

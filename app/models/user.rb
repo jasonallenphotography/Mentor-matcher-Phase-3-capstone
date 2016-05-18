@@ -30,25 +30,20 @@ class User < ActiveRecord::Base
       User.find_by(linkedin_id: auth['uid'])
     else
       @user = User.new()
-      @user.linkedin_id = auth['uid']
-      @user.email = auth['info']['email']
-      @user.first_name = auth['info']['first_name']
-      @user.last_name = auth['info']['last_name']
+      @user.linkedin_id = auth['uid'] ||= ""
+      @user.email = auth['info']['email'] ||= ""
+      @user.first_name = auth['info']['first_name'] ||= ""
+      @user.last_name = auth['info']['last_name'] ||= ""
       @user.location = auth['info']['location'] ||= ""
       @user.industry = auth['info']['industry'] ||= ""
-      @user.picture_url = auth['info']['image']
-      @user.public_profile_url = auth['info']['urls']['public_profile']
-      # @user.current_title = auth['extra']['raw_info']['firstName']
-      # @user.current_company = auth['extra']['raw_info']['firstName']
+      @user.picture_url = auth['info']['image'] ||= ""
+      @user.public_profile_url = auth['info']['urls']['public_profile'] ||= ""
       return @user if @user.save
     end
   end
 
   def self.search(search)
     User.joins(:interests).where("first_name || email || last_name || industry || current_company || current_title || mission_statement || location || interests.name LIKE ?", "%#{search}%")
-
-    # Just the interests join table query:
-    # User.joins(:interests).where("interest.name LIKE ?", "%#{search}%")
   end
 
 

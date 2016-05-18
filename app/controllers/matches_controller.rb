@@ -34,7 +34,9 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
 
     @match.assign_attributes(match_params)
-    if @match.save
+    if request.xhr? && @match.save
+      render partial: 'matches_index_tab2_partial', locals: {matches: @matches}, layout: false
+    elsif @match.save
       redirect_to '/matches'
     else
       @errors = @match.errors.full_messages

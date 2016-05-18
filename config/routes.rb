@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   get '/auth/linkedin/callback', to: 'sessions#create', as: 'sessions_create'
   get '/auth/failure', to:'sessions#failure'
   get '/logout', to: 'sessions#destroy', as: 'logout'
-
+  get '/deleteuserinterest/:id', to: 'user_interests#destroy', as: 'user_interest_delete'
 
 end
