@@ -28,7 +28,7 @@
               <div><strong><%= message.user.first_name %></strong> <%= message.message_time %></div>
               <div>
                 <div>
-                  <small><%= message.body %></small>
+                  <p><small><%= message.body %></small></p>
                 </div>
               </div>
             </div>
@@ -55,3 +55,10 @@
     </div>
   </div>
 </footer>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#list-of-messages-in-the-messages-index").scrollTop($(document).height());
+  })
+</script>
+
