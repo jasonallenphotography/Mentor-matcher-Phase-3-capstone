@@ -55,10 +55,8 @@ class UsersController < ApplicationController
     redirect '/users'
   end
 
-layout "finish"
   def finish
-
-    render 'finish'
+    render 'finish', layout: "finish"
   end
 
   def initialize_new_user
@@ -89,14 +87,14 @@ layout "finish"
         @match.conversation_id = @convo.id
         Message.create(body: "Welcome to Mentorship, where mentors and people seeking mentorship connect!\n
                           Make sure to complete your profile and add your professional interests to get noticed more quickly.\n
-                          I hope that you enjoy our site, and please email support@mentoship-app.com if you have any questions or concerns!
+                          I hope that you enjoy our site, and please email support@mentorship-app.com if you have any questions or concerns!
                           With love from the internet,\n
                           Welcome Bot",
                     conversation_id: @convo.id,
                     user_id: @bot.id,
                     read: false)
 
-      redirect_to user_path(current_user)
+      redirect_to root_path
     else
       render 'edit'
     end
