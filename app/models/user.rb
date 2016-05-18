@@ -78,6 +78,7 @@ class User < ActiveRecord::Base
 
   end
 
+
   # def unread_conversations?
   #   conversations.any? do |conv|
   #     conv.unread_message_for_user(self.id)
