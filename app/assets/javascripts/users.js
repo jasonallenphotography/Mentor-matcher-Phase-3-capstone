@@ -8,6 +8,7 @@ $(document).ready(function() {
       url: $target.attr('action'),
       data: $target.serialize()
     }).done(function(response){
+      $('#warning-if-no-interests').slideUp('slow');
       $('#interest-container-user-show').prepend(response);
       $('.newly-added-button').css({"background-color":"#FF9700"}).animate({"background-color":"#19A2FF"},750);
     }).then(function(){
