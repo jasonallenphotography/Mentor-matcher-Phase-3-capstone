@@ -9,6 +9,7 @@ $(document).ready(function() {
       data: $target.serialize()
     }).done(function(response){
       $('#interest-container-user-show').prepend(response);
+      $('.newly-added-button').css({"background-color":"#FF9700"}).animate({"background-color":"#19A2FF"},750);
     }).then(function(){
       $.get({
         url: window.location.href
