@@ -395,87 +395,21 @@ User.create(
 # conversations = Conversation.all
 # conversations.each do |conversation|
 
-#   15.times do
+#   10.times do
 #     Message.create(
-#       body: "I am a message!",
+#       body: "I am a Mentor message!",
 #       conversation: conversation,
 #       user: conversation.mentor,
-#       read: [true, false].sample
+#       read: false
 #     )
 #     Message.create(
-#       body: "I am a message!",
+#       body: "I am a Mentee message!",
 #       conversation: conversation,
 #       user: conversation.mentee,
-#       read: [true, false].sample
+#       read: false
 #     )
 #   end
 
 # end
-
-users = User.all
-users.each do |user|
-  5.times do
-    i = Interest.all.sample
-
-    UserInterest.create(
-      user: user,
-      interest: i)
-  end
-end
-
-10.times do
-  mentee = Mentee.all.sample
-  mentor = Mentor.all.sample
-
-  c = Conversation.create(
-    mentee_id: mentee.id,
-    mentor_id: mentor.id)
-
-  AcceptedMatch.create(
-    initiator: mentor,
-    receiver: mentee,
-    mentee_id: mentee.id,
-    mentor_id: mentor.id,
-    conversation_id: c.id
-    )
-end
-
-10.times do
-  mentee = Mentee.all.sample
-  mentor = Mentor.all.sample
-
- c = Conversation.create(
-    mentee_id: mentee.id,
-    mentor_id: mentor.id)
-
-  PendingMatch.create(
-    initiator: mentee,
-    receiver: mentor,
-    mentee_id: mentee.id,
-    mentor_id: mentor.id,
-    conversation_id: c.id
-    )
-end
-
-
-conversations = Conversation.all
-conversations.each do |conversation|
-
-  10.times do
-    Message.create(
-      body: "I am a Mentor message!",
-      conversation: conversation,
-      user: conversation.mentor,
-      read: false
-    )
-    Message.create(
-      body: "I am a Mentee message!",
-      conversation: conversation,
-      user: conversation.mentee,
-      read: false
-    )
-  end
-
-end
 
 
