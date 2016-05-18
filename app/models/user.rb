@@ -82,4 +82,17 @@ class User < ActiveRecord::Base
     common_interests.count
   end
 
+  def users_sorted_by_common_interests_with_score(collection_of_users)
+    users_with_commonality_to_current = {}
+    bots = [User.find(1), User.find(2)]
+    collection_of_users -= bots
+
+    collection_of_users.each_with_index do |comparison_user, idx|
+      v = self.common_interests(comparison_user)
+      k = comparison_user
+      users_with_commonality_to_current[k] = v
+    end
+    users_with_commonality_to_current.sort_by {|key, value| value }.reverse
+  end
+
 end

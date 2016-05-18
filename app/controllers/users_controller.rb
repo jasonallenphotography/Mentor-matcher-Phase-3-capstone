@@ -1,26 +1,13 @@
 class UsersController < ApplicationController
 
   def index
-
     if mentor?
       available_users = Mentee.where(status: 'available')
     else
       available_users = Mentor.where(status: 'available')
     end
 
-    non_bot_users = available_users[1..-1]
-    users_with_commonality_to_current = {}
-    non_bot_users.each_with_index do |comparison_user, idx|
-      v = current_user.common_interests(comparison_user)
-      k = comparison_user
-      users_with_commonality_to_current[k] = v
-    end
-
-    @users_with_commonality_score = users_with_commonality_to_current.sort_by {|key, value| value }.reverse
-
-    # @users = @users_with_commonality_score.map { |user| user[0] }
-    # @users_score = @users_with_commonality_score.map { |user| user[1] }
-
+    @users = current_user.users_sorted_by_common_interests_with_score(available_users)
   end
 
 
