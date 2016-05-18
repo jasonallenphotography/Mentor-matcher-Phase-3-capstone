@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def create
+    binding.pry
     #try to change pretty generate to parse later
     @data = JSON.pretty_generate(auth_hash) #.to_json
     @data_hash = YAML.load(@data)
@@ -11,8 +12,14 @@ class SessionsController < ApplicationController
         redirect_to "/users/#{@user.id}/finish"
       end
     else
-      redirect_to '/auth/linkedin'
+      @errors = @user.errors.full_messages
+      redirect_to '/'
     end
+  end
+
+  def failure
+    @errors = ["From LinkedIn: #{params[:message]}"]
+    render 'welcome/index'
   end
 
   def destroy

@@ -14,6 +14,9 @@ Rails.application.config.middleware.use OmniAuth::Builder do
               "location"]
 end
 
+OmniAuth.config.on_failure = Proc.new { |env|
+  OmniAuth::FailureEndpoint.new(env).redirect_to_failure
+}
 #does this go in this file?
 # LinkedIn.configure do |config|
 #   config.token = "77gircg58feacx"
