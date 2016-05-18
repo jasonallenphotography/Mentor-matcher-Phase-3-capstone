@@ -1,4 +1,6 @@
 class InterestsController < ApplicationController
+  before_action :allow_user, :finish_profile
+
   def index
     @interests = Interest.all
   end
