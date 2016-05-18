@@ -130,8 +130,10 @@ a.professional-interest-button {
 }
 
 #list-of-messages-in-the-messages-index {
-  margin-bottom: 55px;
+  margin-bottom: 50px;
   padding: 10px;
+  max-height: 63vh;
+  overflow-y: scroll;
 }
 
 
