@@ -34,8 +34,8 @@ class User < ActiveRecord::Base
       @user.email = auth['info']['email']
       @user.first_name = auth['info']['first_name']
       @user.last_name = auth['info']['last_name']
-      @user.location = auth['info']['location']
-      @user.industry = auth['info']['industry']
+      @user.location = auth['info']['location'] ||= ""
+      @user.industry = auth['info']['industry'] ||= ""
       @user.picture_url = auth['info']['image']
       @user.public_profile_url = auth['info']['urls']['public_profile']
       # @user.current_title = auth['extra']['raw_info']['firstName']

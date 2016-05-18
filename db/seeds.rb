@@ -35,6 +35,40 @@ Interest.create(name: "Web Development")
 
 # Users 0-12 on our Heroku DB, AND local test data - if adding more users, start at User 13 on Heroku DB
 User.create(
+  first_name: "Welcome",
+  last_name: "Bot",
+  location: "The Internet",
+  industry: "Robotics",
+  picture_url: "<%= image_tag('100pxWhiteLogo.png', :alt=>'Sign In!', size: "80x80")%>",
+  public_profile_url: "#",
+  current_title: "Helpful Robot",
+  current_company: "Mentorship",
+  type: "Mentee",
+  status: "unavailable",
+  mission_statement: "I welcome people to this awesome website! Hello world!",
+  linkedin_id: "#",
+  email: "."
+  )
+
+User.create(
+  first_name: "Welcome",
+  last_name: "Bot",
+  location: "The Internet",
+  industry: "Robotics",
+  picture_url: "<%= image_tag('100pxWhiteLogo.png', :alt=>'Sign In!', size: "80x80")%>",
+  public_profile_url: "#",
+  current_title: "Helpful Robot",
+  current_company: "Mentorship",
+  type: "Mentor",
+  status: "unavailable",
+  mission_statement: "I welcome people to this awesome website! Hello world!",
+  linkedin_id: "#",
+  email: "."
+  )
+
+
+
+User.create(
   first_name: "Jason",
   last_name: "Allen",
   location: "Greater New York City Area, US",
