@@ -39,7 +39,7 @@ User.create(
   last_name: "Bot",
   location: "The Internet",
   industry: "Robotics",
-  picture_url: '/assets/100pxWhiteLogo.png',
+  picture_url: 'WhiteLogoBlueBG300px.jpg',
   public_profile_url: "#Robot1",
   current_title: "Helpful Robot",
   current_company: "Mentorship",

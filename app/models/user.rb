@@ -61,11 +61,11 @@ class User < ActiveRecord::Base
   end
 
   def unread_conversations_button_notification
-    # if self.conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
-    #   return 'warning'
-    # else
-    #   return ''
-    # end
+    if self.conversations.any?{ |convo| convo.unread_message_for_user(self.id).length > 0 }
+      return 'warning'
+    else
+      return ''
+    end
   end
 
   def sorted_conversations
