@@ -44,6 +44,8 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     User.joins(:interests).where("first_name || email || last_name || industry || current_company || current_title || mission_statement || location || interests.name LIKE ?", "%#{search}%")
+
+    #  User.joins(:interests).where("interests.name LIKE ?", "%#{search}%")
   end
 
 
@@ -71,20 +73,13 @@ class User < ActiveRecord::Base
         conv.created_at
       end
     end
-
     return array.reverse
-
   end
 
-
-  # def unread_conversations?
-  #   conversations.any? do |conv|
-  #     conv.unread_message_for_user(self.id)
-  #   end
-  # end
-
-  # def redirect_unless_editing_or_deleting_own(profile_owner)
-  #   redirect "/users/#{profile_owner}" unless logged_in? && current_user.id == profile_owner
-  # end
+  def common_interests(comparison_user)
+    user_interest_difference = self.interests - comparison_user.interests
+    common_interests = self.interests - user_interest_difference
+    common_interests.count
+  end
 
 end
