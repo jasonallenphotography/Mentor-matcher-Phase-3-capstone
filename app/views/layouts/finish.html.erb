@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
+          <button class="menu-icon" type="button" data-toggle></button>
+              <% if logged_in? %>
+          <div class="title-bar-title"><a href="/"><%= image_tag('100pxWhiteLogo.png', :alt=>'Sign In!', size: "50x50")%></a></div>
+            <div id="jackie-search-bar" class='top-bar-right'>
+                <%= form_tag(searches_path, method: "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+                <% end %>
+                <% else %>
+            <div class="title-bar-title"><a href="/"><%= image_tag('300pxLogo.png', :alt=>'Sign In!', size: "150x100")%></a></div>
+            <div id="jackie-search-bar" class='top-bar-right'>
+              <% end %>
+            </div>
+          </div>
+        <div class="top-bar" id="main-menu">
+          <div class="top-bar-left">
+            <ul class="vertical dropdown menu" data-dropdown-menu>
+              <% if logged_in? %>
+                <li><a href="/conversations" class="row"><i class="step fi-mail size-24 small-1 columns"></i>
+                    <div class="small-10 columns">My Inbox</div></li></a>
+
+                <li><a href="/matches" class="row">
+                    <i class="step fi-torsos-all size-24 small-1 columns"></i>
+                    <div class="small-10 columns">My <%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Requests</div></li></a>
+
+                <li><a href="/users/<%=current_user.id%>" class="row"><i class="step fi-torso-business size-24 small-1 columns"></i>
+                    <div class="small-10 columns">My Profile</div></li></a>
+
+                <li><a href="/users" class="row"><i class="step fi-shuffle size-24 small-1 columns"></i>
+                    <div class="small-10 columns">Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%> </div></li></a>
+              <% else %>
+                <li class="row"><a href="/auth/linkedin">Login</a></li>
+                <li class="row"><a href="/auth/linkedin">Register</a></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+  <%= yield %>
+
+
+<% if logged_in? %>
+  <br>
+  <div class="small-12 small-centered columns text-center">
+    <footer>
+      <p class='text-center'>You are logged in as <%= current_user.first_name %> <%= current_user.last_name %></p>
+        <div class="row">
+          <div class="button-group expanded">
+            <p class="small-4 columns"></p>
+            <a href="/logout" class="small-4 columns button alert"><i class="step fi-unlock size-24"></i><br>Logout</a>
+            <p class="small-4 columns"></p>
+          </div>
+        </div>
+      <p class='text-center'>(C) 2016<br><small>All rights reserved.</small><br>Jaclyn Feminella, David Lange,<br>Ivy Vetor, and Jason Allen</p>
+
+      <i class="step fi-social-linkedin size-48"></i>
+      <p class='text-center'>User authentication courtesy LinkedIn API</p>
+
+    </footer>
+  </div>
+
+<% end %>
+  </body>
+
+</html>

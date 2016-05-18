@@ -6,7 +6,7 @@
       <div class="row">
         <p class="small-1 columns"></p>
         <div class="small-4 columns">
-          <%=image_tag conversation.mentee.picture_url %><br>
+          <%=image_tag conversation.mentee.picture_url, size:"80x80" %><br>
         </div>
         <div class="small-7 columns">
           <b><%= conversation.mentee.first_name %> <%= conversation.mentee.last_name %></b><br>
@@ -26,7 +26,7 @@
       <div class="row">
         <p class="small-1 columns"></p>
         <div class="small-4 columns">
-          <%=image_tag conversation.mentor.picture_url %>
+          <%=image_tag conversation.mentor.picture_url, size:"80x80"  %>
         </div>
         <div class="small-7 columns">
           <b><%= conversation.mentor.first_name %> <%= conversation.mentor.last_name %></b><br>
