@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/users/:id/finish', to: 'users#finish', as: 'users_finish'
   post '/users/:id/finish', to: 'users#initialize_new_user'
 
+
   resources :user_interests, only: [:create, :destroy]
   resources :interests, only: [:show]
 
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   resources :searches, only: [:index]
 
   get '/auth/linkedin/callback', to: 'sessions#create', as: 'sessions_create'
+  get '/auth/failure', to:'sessions#failure'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
 

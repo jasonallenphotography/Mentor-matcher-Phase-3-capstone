@@ -18,6 +18,23 @@
     </div>
   </div>
   <br>
+
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <br>
+      <div class="row">
+        <p class="small-2 columns text-center"></p>
+        <div class="small-3 columns text-center">
+          <i id="error-glyphicon-notification" class="step fi-alert size-36"></i>
+        </div>
+        <div class="small-5 columns text-center">
+          <b><%=error%></b>
+        </div>
+        <p class="small-2 columns text-center"></p>
+      </div>
+    <% end %>
+  <% end %>
+
   <div class="row">
     <div class="small-12 columns">
       <a href="/auth/linkedin" class="button expanded"><i class="step fi-social-linkedin size-48"></i><br>Sign In With LinkedIn!</a>
