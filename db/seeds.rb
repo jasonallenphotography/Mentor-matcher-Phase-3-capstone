@@ -33,7 +33,7 @@ Interest.create(name: "UX/UI Design")
 Interest.create(name: "Web Development")
 
 
-# Users 0-12 on our Heroku DB, AND local test data - if adding more users, start at User 13 on Heroku DB
+# Users 0-15 on our Heroku DB, AND local test data - if adding more users, start at User 16 on Heroku DB
 User.create(
   first_name: "Welcome",
   last_name: "Bot",
@@ -345,6 +345,23 @@ User.create(
 #   linkedin_id: "98d1FsVNfd",
 #   email: "dlange8181@gmail.com"
 #   )
+
+# User.create(
+#   first_name: "Devin",
+#   last_name: "Mandelbaum",
+#   location: "Greater New York City Area, US",
+#   industry: "Computer Software",
+#   picture_url: 'https://media.licdn.com/mpr/mprx/0_tzJFb3HjeOeAl45eYzTQuntjSWv2cIUzgkiFCzgjHp6StRLd-A7od15joUqlqZcXRk3o5LEg3V5DNfcXYQpR7zwlkV5uNfTdYQpXkqYy7RKhYJsv-cEEX8KSX7xyjf94cLZIiEMOcRR',
+#   public_profile_url: "https://www.linkedin.com/in/devinmandelbaum",
+#   current_title: "Code Mentor",
+#   current_company: "Dev Bootcamp",
+#   type: "Mentor",
+#   status: "available",
+#   mission_statement: "I teach Ruby on Rails and tutor junior developers. Contact me if you're interested in mentorship!",
+#   linkedin_id: "lOq0U7HieY",
+#   email: "devin.mandelbaum@gmail.com"
+#   )
+
 
 # users = User.all
 # users.each do |user|
