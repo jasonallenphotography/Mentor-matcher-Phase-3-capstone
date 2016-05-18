@@ -1,4 +1,5 @@
 class UserInterestsController < ApplicationController
+  before_action :allow_user, :finish_profile
   # respond_to :html, :json
 
   def create

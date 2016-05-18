@@ -1,41 +1,63 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
+<% if @errors %>
+    <% @errors.each do |error| %>
+    <br>
+    <div class="row">
+      <p class="small-2 columns text-center"></p>
+      <div class="small-3 columns text-center">
+        <i id="error-glyphicon-notification" class="step fi-alert size-36"></i>
+      </div>
+      <div class="small-5 columns text-center">
+        <b><%=error%></b>
+      </div>
+      <p class="small-2 columns text-center"></p>
+    </div>
+  <% end %>
+<% end %>
+
 <div style="font-family:Open Sans, sans-serif;">
   <h1 class="text-center">Finish Your Profile</h1>
 <%= form_for :user do |f| %>
 
-<table>
-  <tr>
-    <td>
-      Please put your mission statement here
+<table class="text-left">
+  <tr class="row">
+    <td class="small-4 columns">
+      <small>Your mission statement:</small>
     </td>
-    <td>
+    <td class="small-8 columns">
       <%= f.text_field :mission_statement %>
     </td>
   </tr>
-  <tr>
-    <td>
-      What is your current position?
+  <tr class="row">
+    <td class="small-4 columns">
+      <small>Current position:</small>
     </td>
-    <td>
+    <td class="small-8 columns">
       <%= f.text_field :current_title %>
     </td>
   </tr>
-  <tr>
-    <td>
-      What is your current company?
+  <tr class="row">
+    <td class="small-4 columns">
+      <small>Current company:</small>
     </td>
-    <td>
+    <td class="small-8 columns">
       <%= f.text_field :current_company %>
     </td>
   </tr>
-  <tr>
-    <td>
-      Are you seeking or offering mentorship?
+  <tr class="row">
+    <td class="small-4 columns">
+      <small>Are you seeking or offering mentorship?</small>
     </td>
-    <td>
-      Seeking <%= f.radio_button :type, 'Mentee', :checked => true %>
-      Offering <%= f.radio_button :type, 'Mentor' %>
+    <td class="small-8 columns text-center">
+      <!-- <label class="ios7-switch" style="font-size: 36px";>
+        <input type="checkbox" checked>
+        <span></span>
+      </label> <br> -->
+      <%= f.radio_button :type, 'Mentor', :checked => true %>
+      <%= label :type_Mentor, 'Mentor' %>
+      <%= f.radio_button :type, 'Mentee' %>
+      <%= label :type_Mentee, 'Mentee' %>
     </td>
   </tr>
 </table>

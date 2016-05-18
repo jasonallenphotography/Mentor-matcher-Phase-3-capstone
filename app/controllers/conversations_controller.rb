@@ -1,4 +1,6 @@
 class ConversationsController < ApplicationController
+  before_action :allow_user, :finish_profile
+
   layout "conversations"
 
   def index

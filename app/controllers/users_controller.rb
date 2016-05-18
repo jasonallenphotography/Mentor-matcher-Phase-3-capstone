@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :finish_profile, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @users = return_opposite_type(current_user)
@@ -32,7 +33,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-     # binding.pry
     redirect_unless_editing_or_deleting_own(@user)
   end
 
@@ -43,7 +43,6 @@ class UsersController < ApplicationController
     redirect_unless_editing_or_deleting_own(@user)
 
     @user.assign_attributes(user_params)
-    # binding.pry
 
     if @user.save
       redirect_to user_path(current_user)
@@ -62,7 +61,11 @@ class UsersController < ApplicationController
   end
 
   def finish
-    render 'finish', layout: "finish"
+    if needs_type?
+      render 'finish', layout: "finish"
+    else
+      redirect_to root_path
+    end
   end
 
   def initialize_new_user
