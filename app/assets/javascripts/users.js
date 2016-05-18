@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $('#add-interest-button-user-show').on('submit', function(event){
     event.preventDefault();
     var $target = $(event.target);
@@ -18,17 +19,22 @@ $(document).ready(function() {
     });
   }); // new interest form click
 
-  //
-  // $('#user-edit-remove-interest-container').on('click', 'a', function(event){
-  //   event.preventDefault();
-  //   var $target = $(event.target);
-  //   $.ajax({
-  //     method: $target.attr('method'),
-  //     url: $target.attr('action')
-  //   }).done(function(response){
-  //     $target.hide();
-  //   }); // done functionality
-  // }); // new interest form click
+
+  $('#user-edit-remove-interest-container').on('click', 'a', function(e){
+// debugger;
+    e.preventDefault();
+    var $target = $(e.target);
+
+    $.get({
+      url: $target.attr('href'),
+      data: $target.serialize()
+    }).done(function(){
+      $target.hide(500);
+      alert:("Deleted Successfully!");
+    }).fail(function(error) {
+      console.log(error);
+    }); // done functionality
+  }); // new interest form click
 
 
 
@@ -37,3 +43,4 @@ $(document).ready(function() {
 
 
 }); // document ready end
+

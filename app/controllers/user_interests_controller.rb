@@ -1,4 +1,6 @@
 class UserInterestsController < ApplicationController
+  # respond_to :html, :json
+
   def create
     @user_interest = UserInterest.new(interest_id: params[:interest_id])
     @user_interest.user = current_user
@@ -15,13 +17,13 @@ class UserInterestsController < ApplicationController
 
   def destroy
     @user_interest = UserInterest.find(params[:id])
-    # binding.pry
-    if request.xhr? && @user_interest.destroy
+
+    @user_interest.destroy
+    if request.xhr?
+      render partial: 'nil_partial'
     else
-      @user_interest.destroy
       redirect_to edit_user_path(current_user)
     end
   end
-
 
 end
