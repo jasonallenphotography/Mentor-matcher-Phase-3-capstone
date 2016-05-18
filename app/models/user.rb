@@ -72,6 +72,8 @@ class User < ActiveRecord::Base
     array = self.conversations.sort_by do |conv|
       if conv.messages.last != nil
         conv.messages.last.created_at
+      else
+        conv.created_at
       end
     end
 
