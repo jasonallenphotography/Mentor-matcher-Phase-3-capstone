@@ -29,7 +29,7 @@ $(document).ready(function() {
       url: $target.attr('href'),
       data: $target.serialize()
     }).done(function(){
-      $target.hide(500);
+      $target.hide(200);
       alert:("Deleted Successfully!");
     }).fail(function(error) {
       console.log(error);

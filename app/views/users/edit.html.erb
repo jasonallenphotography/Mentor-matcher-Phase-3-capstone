@@ -10,6 +10,10 @@
           <tr class="row">
             <td class="small-4 columns">Status</td>
             <td class="small-8 columns">
+              <label class="ios7-switch" style="font-size: 36px";>
+                <input type="checkbox" checked>
+                <span></span>
+              </label> <br>
               <%= f.radio_button :status, 'available', :checked => true %>
               <%= label :status_available, 'Available' %>
               <%= f.radio_button :status, 'unavailable' %>
@@ -19,6 +23,10 @@
           <tr class="row">
             <td class="small-4 columns">Account Type</td>
             <td class="small-8 columns">
+              <label class="ios7-switch" style="font-size: 36px";>
+                <input type="checkbox" checked>
+                <span></span>
+              </label> <br>
               <%= f.radio_button :type, 'Mentor', :checked => true %>
               <%= label :type_Mentor, 'Mentor' %>
               <%= f.radio_button :type, 'Mentee' %>
