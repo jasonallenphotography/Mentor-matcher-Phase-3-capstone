@@ -32,11 +32,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+     # binding.pry
     redirect_unless_editing_or_deleting_own(@user)
   end
 
 
   def update
+
     @user = User.find(params[:id])
     redirect_unless_editing_or_deleting_own(@user)
 
@@ -93,7 +95,7 @@ class UsersController < ApplicationController
                              Make sure to complete your profile and add your professional interests to get noticed more quickly.\n
                              I hope that you enjoy our site, and please email support@mentorship-app.com if you have any questions or concerns!\n
                              With love from the internet,\n
-                             Welcome Bot\n"
+                             Welcome Bot\n",
                     conversation_id: @convo.id,
                     user_id: @bot.id,
                     read: false)

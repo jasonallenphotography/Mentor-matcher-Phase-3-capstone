@@ -1,11 +1,8 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
 
 <h1 class="text-center"><%=current_user.first_name%>'s Requests</h1>
 
-<div id="tabs">
+<div id="tabs" style="font-family:Open Sans, sans-serif;">
     <ul>
       <li class="our-match-index-tabs"><a class="text-center" href="#tabs-1"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%><br>Requests</a></li>
       <li class="our-match-index-tabs"><a class="text-center" href="#tabs-2">My<br><%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%></a></li>
@@ -97,7 +94,6 @@
     </div>
   </div>
 </div>
-
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script>
 $(function() {

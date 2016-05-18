@@ -66,7 +66,7 @@
     </div>
   <%end%>
 
-  <% if @user == current_user %>
+  <% if @user == current_user && (@interests - @user.interests).length != 0%>
   <div class="row">
     <p class="small-1 columns"></p>
 
@@ -106,9 +106,11 @@
     <% end %>
     </div>
   <% else %>
-    <div class="small-12 columns text-center" id="warning-if-no-interests">
-      <p>You don't have any interests yet...<br> Add some using the form above!</p>
-    </div>
+     <% if @user == current_user %>
+      <div class="small-12 columns text-center" id="warning-if-no-interests">
+        <p>You don't have any interests yet...<br> Add some using the form above!</p>
+      </div>
+    <% end %>
   <% end %>
 
 
