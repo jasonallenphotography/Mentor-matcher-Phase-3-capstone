@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def create
-    binding.pry
     #try to change pretty generate to parse later
     @data = JSON.pretty_generate(auth_hash) #.to_json
     @data_hash = YAML.load(@data)
