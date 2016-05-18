@@ -37,11 +37,9 @@ $(document).ready(function() {
     }); // done functionality
   }); // new interest form click
 
-
-
-
-
-
+  $('.slide-down-menu-button').on('click', function(){
+    $('.menu-to-expand').slideToggle("slow").done({});
+  });
 
 }); // document ready end
 
