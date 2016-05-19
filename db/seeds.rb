@@ -363,6 +363,39 @@ User.create(
   )
 
 
+ User.create(
+  first_name: "Patrick",
+  last_name: "Skelley",
+  location: "Greater New York City Area, US",
+  industry: "Web Development",
+  picture_url: 'https://media.licdn.com/mpr/mprx/0_xnjNTB72THVGg4tHM8FzE_T287LYOem5MtWNk_h28Sc0O4fkMtWNoBD26MW0UWOv0tWzW6GuuoMx426XPL4eW_78doMO42wLvL4BCCsSGIut-VKMJNmJG9NyWx_al2pqpQyZLrzvR-B',
+  public_profile_url: "https://www.linkedin.com/in/patrickskelley",
+  current_title: "Web Developer Student",
+  current_company: "Dev Bootcamp",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "Helping those interested in web development bootcamps if they are right for them",
+  linkedin_id: "eAnNwhskJx",
+  email: "skelley.patrick@gmail.com"
+  )
+
+
+User.create(
+  first_name: "Susannah",
+  last_name: "Beltz",
+  location: "Greater New York City Area, US",
+  industry: "Marketing and Advertising",
+  picture_url: 'https://media.licdn.com/mpr/mprx/0_0n1sOl72G98YRIG_stIq98L2C6p0RRK04NIqZX_DG5CYRIpYvnbsP-mDT610Ywp1vnws9-DSwT7OZ0af1L9Q952TaT7xZ0Z0zL9MjkJuL8s1td__MN8cgrcgmqv7A0fayQtnsnE-Qrd',
+  public_profile_url: "https://www.linkedin.com/in/susannah-beltz-603a539",
+  current_title: "Manager of Media Execution",
+  current_company: "Brand Networks",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "Helping those interested in marketing",
+  linkedin_id: "HLPoyoxx30",
+  email: "suannah.beltz@gmail.com"
+  )
+
 
 users = User.all
 users.each do |user|
@@ -406,70 +439,70 @@ users.each do |user|
 end
 
 
-users = User.all
-users.each do |user|
-  5.times do
-    i = Interest.all.sample
+# users = User.all
+# users.each do |user|
+#   5.times do
+#     i = Interest.all.sample
 
-    UserInterest.create(
-      user: user,
-      interest: i)
-  end
-end
+#     UserInterest.create(
+#       user: user,
+#       interest: i)
+#   end
+# end
 
-10.times do
-  mentee = Mentee.all.sample
-  mentor = Mentor.all.sample
+# 10.times do
+#   mentee = Mentee.all.sample
+#   mentor = Mentor.all.sample
 
-  c = Conversation.create(
-    mentee_id: mentee.id,
-    mentor_id: mentor.id)
+#   c = Conversation.create(
+#     mentee_id: mentee.id,
+#     mentor_id: mentor.id)
 
-  AcceptedMatch.create(
-    initiator: mentor,
-    receiver: mentee,
-    mentee_id: mentee.id,
-    mentor_id: mentor.id,
-    conversation_id: c.id
-    )
-end
+#   AcceptedMatch.create(
+#     initiator: mentor,
+#     receiver: mentee,
+#     mentee_id: mentee.id,
+#     mentor_id: mentor.id,
+#     conversation_id: c.id
+#     )
+# end
 
-10.times do
-  mentee = Mentee.all.sample
-  mentor = Mentor.all.sample
+# 10.times do
+#   mentee = Mentee.all.sample
+#   mentor = Mentor.all.sample
 
- c = Conversation.create(
-    mentee_id: mentee.id,
-    mentor_id: mentor.id)
+#  c = Conversation.create(
+#     mentee_id: mentee.id,
+#     mentor_id: mentor.id)
 
-  PendingMatch.create(
-    initiator: mentee,
-    receiver: mentor,
-    mentee_id: mentee.id,
-    mentor_id: mentor.id,
-    conversation_id: c.id
-    )
-end
+#   PendingMatch.create(
+#     initiator: mentee,
+#     receiver: mentor,
+#     mentee_id: mentee.id,
+#     mentor_id: mentor.id,
+#     conversation_id: c.id
+#     )
+# end
 
 
-conversations = Conversation.all
-conversations.each do |conversation|
+# conversations = Conversation.all
+# conversations.each do |conversation|
 
-  10.times do
-    Message.create(
-      body: "I am a Mentor message!",
-      conversation: conversation,
-      user: conversation.mentor,
-      read: false
-    )
-    Message.create(
-      body: "I am a Mentee message!",
-      conversation: conversation,
-      user: conversation.mentee,
-      read: false
-    )
-  end
+#   10.times do
+#     Message.create(
+#       body: "I am a Mentor message!",
+#       conversation: conversation,
+#       user: conversation.mentor,
+#       read: false
+#     )
+#     Message.create(
+#       body: "I am a Mentee message!",
+#       conversation: conversation,
+#       user: conversation.mentee,
+#       read: false
+#     )
+#   end
 
-end
+# end
 
 
