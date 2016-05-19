@@ -18,37 +18,12 @@
 
 <div style="font-family:Open Sans, sans-serif;">
   <h1 class="text-center">Finish Your Profile</h1>
+<hr class="style-two">
+
 <%= form_for :user do |f| %>
 
-<table class="text-left">
-  <tr class="row">
-    <td class="small-4 columns"
-      <small>Your mission statement:</small>
-    </td>
-    <td class="small-8 columns">
-      <%= f.text_field :mission_statement %>
-    </td>
-  </tr>
-  <tr class="row">
-    <td class="small-4 columns">
-      <small>Current position:</small>
-    </td>
-    <td class="small-8 columns">
-      <%= f.text_field :current_title %>
-    </td>
-  </tr>
-  <tr class="row">
-    <td class="small-4 columns">
-      <small>Current company:</small>
-    </td>
-    <td class="small-8 columns">
-      <%= f.text_field :current_company %>
-    </td>
-  </tr>
-</table>
-
   <div class="row">
-    <p class="small-12 columns text-center">Are you seeking or offering mentorship?</p>
+    <div class="small-12 columns text-center">Are you seeking or offering mentorship?</div>
   </div>
 
   <div class="row">
@@ -71,7 +46,36 @@
     <p class="small-1 columns text-center"></p>
   </div>
 
+  <div class="row">
+    <div class="small-12 columns">
+      <p class="text-center">Tell us about what you're looking for:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.text_field :mission_statement %>
+    </div>
+  </div>
+
+<table class="text-left">
+  <tr class="row">
+    <td class="small-4 columns">
+      <small>Current position:</small>
+    </td>
+    <td class="small-8 columns">
+      <%= f.text_field :current_title %>
+    </td>
+  </tr>
+  <tr class="row">
+    <td class="small-4 columns">
+      <small>Current company:</small>
+    </td>
+    <td class="small-8 columns">
+      <%= f.text_field :current_company %>
+    </td>
+  </tr>
+</table>
+
 <%= f.submit value="Finish my Profile!", class: "button expanded" %>
 <% end %>
-<hr class="style-two">
 </div>
