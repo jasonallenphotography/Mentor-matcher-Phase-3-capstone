@@ -2,7 +2,12 @@ class MatchesController < ApplicationController
   before_action :allow_user, :finish_profile
 
   def index
-    @matches = current_user.accepted_matches
+    mentor? ? @matches = AcceptedMatch.where(mentor_id: current_user.id) : @matches = AcceptedMatch.where(mentee_id: current_user.id)
+    bot1matches = AcceptedMatch.where(initiator_id: 1)
+    bot2matches = AcceptedMatch.where(initiator_id: 2)
+# binding.pry
+    bots = bot1matches + bot2matches
+    @matches -= bots
     @matches_pending_my_decision = PendingMatch.where(receiver_id: current_user.id)
     @matches_pending_others_decision = PendingMatch.where(initiator_id: current_user.id)
   end
