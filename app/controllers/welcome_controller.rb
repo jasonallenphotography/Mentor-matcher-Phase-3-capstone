@@ -12,5 +12,6 @@ class WelcomeController < ApplicationController
   end
 
   def demo
+    render 'demo', layout: false
   end
 end
