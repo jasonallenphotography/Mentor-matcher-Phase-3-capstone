@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-
+  get 'demo', to: 'welcome#demo'
   resources :users
   get '/users/:id/finish', to: 'users#finish', as: 'users_finish'
   post '/users/:id/finish', to: 'users#initialize_new_user'

@@ -66,6 +66,54 @@ User.create(
   email: "#robot2@robot2.robot2"
   )
 
+# User.create(
+#   first_name: "Jaclyn",
+#   last_name: "Feminella",
+#   location: "Greater New York City Area, US",
+#   industry: "Staffing and Recruiting",
+#   picture_url:
+#    "https://media.licdn.com/mpr/mprx/0_OfVE-1Vsm-RuFeWaOIuoVzeUmbIlTEWi0DuXcQgsEhErTsVacfhoMzKsebZlkJe_OJGkx31VGTeKGmMxBy0nVF-9bTeAGmY7By0WA6FRu8ggHZ51RDWFltdoFqt3wmdYO0UQnZmQlfs",
+#   public_profile_url: "https://www.linkedin.com/in/jaclyn-feminella-b634485b",
+#   current_title: "Student",
+#   current_company: "Dev Bootcamp",
+
+#   type: "Mentor",
+#   status: "available",
+#   mission_statement: "Offering professional mentorship to navigate industry changes from Recruiting to Technology.",
+#   linkedin_id: "RgcyJ34e37",
+#   email: "jaclynfeminella@gmail.com"
+#   )
+
+# User.create(
+#   first_name: "Ivy",
+#   last_name: "Vetor",
+#   location: "Greater New York City Area, US",
+#   industry: "Computer Software",
+#   picture_url: "https://media.licdn.com/mpr/mprx/0_9-HjcTh_ZbVjjXIlNvJCcG-_s3ppxbRlqzpCciT05XHD8i2Asq4AM_zAN7yGp8VgcAoi4kPNkgoD",
+#   public_profile_url: "https://www.linkedin.com/in/ivyvetor",
+#   current_title: "unemployed",
+#   current_company: "none",
+#   type: "Mentee",
+#   status: "available",
+#   mission_statement: "looking for a mentor",
+#   linkedin_id: "_PHmiMG9vW",
+#   email: "ivyvetor@gmail.com"
+#   )
+# User.create(
+#   first_name: "David",
+#   last_name: "Lange",
+#   location: "Greater New York City Area, US",
+#   industry: "Computer Software",
+#   picture_url: "https://media.licdn.com/mpr/mprx/0_mO0h7ezeJePI7qwnG7whXIbeyeG9dFvBwVWmdjAeyI4BdcwBGOwDTyxeRRTLfc49IVWhXepHle-cE_bR3SVpbyjXqe-nEif9CSViugHd0WFV8zqEapuS2d64NjHQiiZFIaY2I_4LrUI",
+#   public_profile_url: "https://www.linkedin.com/in/david-lange-65b82576",
+#   current_title: "Student",
+#   current_company: "Dev Bootcamp",
+#   type: "Mentee",
+#   status: "available",
+#   mission_statement: "Seeking to connect with professions in Tech and Music.",
+#   linkedin_id: "98d1FsVNfd",
+#   email: "dlange8181@gmail.com"
+#   )
 
 User.create(
   first_name: "Jason",
@@ -74,9 +122,9 @@ User.create(
   industry: "Media Production",
   picture_url: "https://media.licdn.com/mpr/mprx/0_0-CI4tcKiF1Slxg8jNhq4A67i8NSPVg8gznN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnVym4rT",
   public_profile_url: "https://www.linkedin.com/in/jasonallen127",
-  current_title: "Unemployed student",
-  current_company: "None",
-  type: "Mentee",
+  current_title: "Student",
+  current_company: "Dev Bootcamp",
+  type: "Mentor",
   status: "available",
   mission_statement: "My goal is to be mentored!",
   linkedin_id: "g8CGYxpaQV",
@@ -84,39 +132,6 @@ User.create(
   )
 
 
-User.create(
-  first_name: "Jaclyn",
-  last_name: "Feminella",
-  location: "Greater New York City Area, US",
-  industry: "Staffing and Recruiting",
-  picture_url:
-   "https://media.licdn.com/mpr/mprx/0_OfVE-1Vsm-RuFeWaOIuoVzeUmbIlTEWi0DuXcQgsEhErTsVacfhoMzKsebZlkJe_OJGkx31VGTeKGmMxBy0nVF-9bTeAGmY7By0WA6FRu8ggHZ51RDWFltdoFqt3wmdYO0UQnZmQlfs",
-  public_profile_url: "https://www.linkedin.com/in/jaclyn-feminella-b634485b",
-  current_title: "Student",
-  current_company: "DBC",
-
-  type: "Mentor",
-  status: "available",
-  mission_statement: "Offering professional mentorship to navigate industry changes from Recruiting to Technology.",
-  linkedin_id: "RgcyJ34e37",
-  email: "jaclynfeminella@gmail.com"
-  )
-
-User.create(
-  first_name: "Ivy",
-  last_name: "Vetor",
-  location: "Greater New York City Area, US",
-  industry: "Computer Software",
-  picture_url: "https://media.licdn.com/mpr/mprx/0_9-HjcTh_ZbVjjXIlNvJCcG-_s3ppxbRlqzpCciT05XHD8i2Asq4AM_zAN7yGp8VgcAoi4kPNkgoD",
-  public_profile_url: "https://www.linkedin.com/in/ivyvetor",
-  current_title: "unemployed",
-  current_company: "none",
-  type: "Mentee",
-  status: "available",
-  mission_statement: "looking for a mentor",
-  linkedin_id: "_PHmiMG9vW",
-  email: "ivyvetor@gmail.com"
-  )
 
 User.create(
   first_name: "Emily",
@@ -225,7 +240,7 @@ User.create(
   picture_url: "https://media.licdn.com/mpr/mprx/0__by8vxujMQ9vB_a1T_V1vpDAv6tnz_a13Qe0vjpGEiQboFJPfTuuRge2Ue-enkf0CkYYssCxZXBS",
   public_profile_url: "https://www.linkedin.com/in/ayaz2589",
   current_title: "Boss",
-  current_company: "DBC",
+  current_company: "Dev Bootcamp",
   type: "Mentee",
   status: "available",
   mission_statement: 'Confusion is the feeling that comes before understanding',
@@ -260,7 +275,7 @@ User.create(
   current_company: "LC Interpreting Services",
   type: "Mentor",
   status: "available",
-  mission_statement: "Available to mentor eager DBC students on learning ASL!",
+  mission_statement: "Available to mentor eager Dev Bootcamp students on learning ASL!",
   linkedin_id: "Y7xmZDSS8Y",
   email: "veronicastaehle@gmail.com"
   )
@@ -330,21 +345,6 @@ User.create(
   email: "tonynarisi@gmail.com"
   )
 
-User.create(
-  first_name: "David",
-  last_name: "Lange",
-  location: "Greater New York City Area, US",
-  industry: "Computer Software",
-  picture_url: "https://media.licdn.com/mpr/mprx/0_mO0h7ezeJePI7qwnG7whXIbeyeG9dFvBwVWmdjAeyI4BdcwBGOwDTyxeRRTLfc49IVWhXepHle-cE_bR3SVpbyjXqe-nEif9CSViugHd0WFV8zqEapuS2d64NjHQiiZFIaY2I_4LrUI",
-  public_profile_url: "https://www.linkedin.com/in/david-lange-65b82576",
-  current_title: "Student",
-  current_company: "Dev Bootcamp",
-  type: "Mentee",
-  status: "available",
-  mission_statement: "Seeking to connect with professions in Tech and Music.",
-  linkedin_id: "98d1FsVNfd",
-  email: "dlange8181@gmail.com"
-  )
 
 User.create(
   first_name: "Devin",
@@ -399,6 +399,35 @@ User.create(
 
 users = User.all
 users.each do |user|
+  5.times do
+    i = Interest.all.sample
+
+    UserInterest.create(
+      user: user,
+      interest: i)
+  end
+end
+
+
+User.create(
+  first_name: "Steven",
+  last_name: "Cassidy",
+  location: "Greater New York City Area, US",
+  industry: "Computer Software",
+  picture_url: 'https://media.licdn.com/mpr/mprx/0_OozIaLHZIWgy5eE5Oa_IhQqMmVgj8RXNAof5eK7Zog3y8IMJgpfI2z3Z2aCj5eIZqUDLW3C4FStpixEMBMrc6A_qCStgi0jvlMrHDrnJWubAdd6djHQQSkZHG4eSE0Ek4VNFEasrYWw',
+  public_profile_url: "https://www.linkedin.com/in/stevencassidytech",
+  current_title: "Instructor",
+  current_company: "Dev Bootcamp",
+  type: "Mentor",
+  status: "available",
+  mission_statement: "Teachin' code, writin' code. We geek all week at DBC!",
+  linkedin_id: "",
+  email: ""
+  )
+
+
+users = User.all
+users.each do |user|
   user.type == "Mentor" ? bot = User.find(1) : bot = User.find(2)
 
   @match = AcceptedMatch.new(receiver: user, initiator: bot )
@@ -427,16 +456,6 @@ users.each do |user|
 end
 
 
-users = User.all
-users.each do |user|
-  8.times do
-    i = Interest.all.sample
-
-    UserInterest.create(
-      user: user,
-      interest: i)
-  end
-end
 
 
 # users = User.all
