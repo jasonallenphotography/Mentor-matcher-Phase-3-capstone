@@ -35,7 +35,16 @@
 
     <div class="row">
       <div class="small-12 small-centered columns text-center">
-        <small><i><%= user[0].mission_statement %></i></small>
+        <i><%= user[0].mission_statement %></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 small-centered columns text-center">
+        <% if user[1] > 0 %>
+        <small><b>You have <%= user[1] %> <%= user[1] != 1 ? 'interests' : 'interest'%> in common</b></small>
+        <% else %>
+        <small><b>You have no interests in common</b></small>
+        <% end %>
       </div>
     </div>
 
