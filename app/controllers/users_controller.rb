@@ -49,6 +49,7 @@ class UsersController < ApplicationController
     redirect_unless_editing_or_deleting_own(@user)
 
     @user.assign_attributes(user_params)
+    params[:user][:status] == "available" ? @user.status = "available" : @user.status = "unavailable"
 
     if @user.save
       redirect_to user_path(current_user)
