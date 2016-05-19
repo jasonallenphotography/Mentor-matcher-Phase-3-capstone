@@ -10,4 +10,7 @@ class WelcomeController < ApplicationController
       render 'index'
     end
   end
+
+  def demo
+  end
 end
