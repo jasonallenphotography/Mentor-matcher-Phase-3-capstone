@@ -2,7 +2,13 @@ class UsersController < ApplicationController
   before_action :finish_profile, only: [:index, :show, :edit, :update, :destroy]
 
   def index
-    @users = return_opposite_type(current_user)
+    if mentor?
+      available_users = Mentee.where(status: 'available')
+    else
+      available_users = Mentor.where(status: 'available')
+    end
+
+    @users = current_user.users_sorted_by_common_interests_with_score(available_users)
   end
 
 

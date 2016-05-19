@@ -394,17 +394,16 @@ users.each do |user|
 end
 
 
+users = User.all
+users.each do |user|
+  8.times do
+    i = Interest.all.sample
 
-# users = User.all
-# users.each do |user|
-#   5.times do
-#     i = Interest.all.sample
-
-#     UserInterest.create(
-#       user: user,
-#       interest: i)
-#   end
-# end
+    UserInterest.create(
+      user: user,
+      interest: i)
+  end
+end
 
 
 # users = User.all
