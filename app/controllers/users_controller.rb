@@ -49,6 +49,7 @@ class UsersController < ApplicationController
     redirect_unless_editing_or_deleting_own(@user)
 
     @user.assign_attributes(user_params)
+    params[:user][:status] == "available" ? @user.status = "available" : @user.status = "unavailable"
 
     if @user.save
       redirect_to user_path(current_user)
@@ -79,7 +80,7 @@ class UsersController < ApplicationController
     redirect_unless_editing_or_deleting_own(@user)
 
     @user.assign_attributes(user_params)
-
+    params[:user][:type] == "Mentor" ? @user.type = "Mentor" : @user.type = "Mentee"
       # creates welcome bot Accepted Match
         @user.type == "Mentor" ? @bot = User.find(1) : @bot = User.find(2)
 
@@ -111,7 +112,7 @@ class UsersController < ApplicationController
 
       redirect_to root_path
     else
-      render 'edit'
+      render 'finish'
     end
   end
 

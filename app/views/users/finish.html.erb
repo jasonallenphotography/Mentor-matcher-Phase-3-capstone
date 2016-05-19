@@ -18,17 +18,46 @@
 
 <div style="font-family:Open Sans, sans-serif;">
   <h1 class="text-center">Finish Your Profile</h1>
+<hr class="style-two">
+
 <%= form_for :user do |f| %>
 
-<table class="text-left">
-  <tr class="row">
-    <td class="small-4 columns">
-      <small>Your mission statement:</small>
-    </td>
-    <td class="small-8 columns">
+  <div class="row">
+    <div class="small-12 columns text-center">Are you seeking or offering mentorship?</div>
+  </div>
+
+  <div class="row">
+    <p class="small-1 columns text-center"></p>
+    <div class="small-3 columns text-center">
+      <br>
+      <p>Seeking</p>
+      <br>
+    </div>
+    <label class="ios7-switch small-4 columns text-center" style="font-size: 36px";>
+      <input type="checkbox" name= "user[type]" value="Mentor" checked>
+      <span></span>
+      <br>
+    </label>
+    <div class="small-3 columns text-center">
+      <br>
+      <p>Mentor</p>
+      <br>
+    </div>
+    <p class="small-1 columns text-center"></p>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <p class="text-center">Tell us about what you're looking for:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
       <%= f.text_field :mission_statement %>
-    </td>
-  </tr>
+    </div>
+  </div>
+
+<table class="text-left">
   <tr class="row">
     <td class="small-4 columns">
       <small>Current position:</small>
@@ -45,23 +74,8 @@
       <%= f.text_field :current_company %>
     </td>
   </tr>
-  <tr class="row">
-    <td class="small-4 columns">
-      <small>Are you seeking or offering mentorship?</small>
-    </td>
-    <td class="small-8 columns text-center">
-      <!-- <label class="ios7-switch" style="font-size: 36px";>
-        <input type="checkbox" checked>
-        <span></span>
-      </label> <br> -->
-      <%= f.radio_button :type, 'Mentor', :checked => true %>
-      <%= label :type_Mentor, 'Mentor' %>
-      <%= f.radio_button :type, 'Mentee' %>
-      <%= label :type_Mentee, 'Mentee' %>
-    </td>
-  </tr>
 </table>
+
 <%= f.submit value="Finish my Profile!", class: "button expanded" %>
 <% end %>
-<hr class="style-two">
 </div>

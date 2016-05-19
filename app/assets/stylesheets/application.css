@@ -88,6 +88,8 @@ hr.style-three {
   color:#FF9700
 }
 
+
+.yes-no-selector-thumbs { color:#19A2FF; }
 .button.warning{ background-color:#FF9700; }
 #no-interests-glyphicon{ color:#FF9700; }
 #error-glyphicon-notification{ color:red; }
