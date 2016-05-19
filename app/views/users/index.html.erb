@@ -3,7 +3,7 @@
 <br>
 
   <% @users.each do |user| %>
-    <a href="/users/<%=user[0].id%>">
+    <a href="/users/<%= "#{user[0].id}" %>">
       <div class="row">
         <p class="small-1 columns"></p>
         <div class="small-4 columns">
@@ -40,7 +40,7 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="button-group expanded text-center">
-          <a href="/user[0]s/<%=user[0].id%>" class="button fuzzy-search-button"><%= image_tag('100pxWhiteLogo.png', :alt=>'Mentorship', size: "30x30")%><br><%=user[0].first_name%>'s Profile</a>
+          <a href="/users/<%= "#{user[0].id}" %>" class="button fuzzy-search-button"><%= image_tag('100pxWhiteLogo.png', :alt=>'Mentorship', size: "30x30")%><br><%=user[0].first_name%>'s Profile</a>
           <a href="<%=user[0].public_profile_url%>" target="_blank" id="tabs-3-linkedin-button" class="button fuzzy-search-button"><i class="step fi-social-linkedin size-36"></i><br>LinkedIn</a>
           <%= link_to matches_path(:match => { :receiver_id => "#{user[0].id}" }), {:method => :post} do %>
             <div class="button warning fuzzy-search-button"><i class='step fi-like size-36'></i><br>Connect</div>
