@@ -35,8 +35,8 @@
           <b><%= conversation.mentor.first_name %> <%= conversation.mentor.last_name %></b><br>
      <%= link_to(conversation_messages_path(conversation.id)) do %>
         <div class="row">
-            <div class="<%= conversation.has_new_unread_message(current_user) %> button small small-8 columns">
-              <i class="step fi-mail size-36"></i><br>See Conversation
+            <div class="<%= conversation.has_new_unread_message(current_user) %> button small-8 columns">
+              <i class="step fi-mail size-36"></i><br><b>See Conversation</b>
             </div>
           <% end %>
           </div>
