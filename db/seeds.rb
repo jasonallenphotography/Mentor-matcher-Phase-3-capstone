@@ -115,21 +115,21 @@ User.create(
 #   email: "dlange8181@gmail.com"
 #   )
 
-User.create(
-  first_name: "Jason",
-  last_name: "Allen",
-  location: "Greater New York City Area, US",
-  industry: "Media Production",
-  picture_url: "https://media.licdn.com/mpr/mprx/0_0-CI4tcKiF1Slxg8jNhq4A67i8NSPVg8gznN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnVym4rT",
-  public_profile_url: "https://www.linkedin.com/in/jasonallen127",
-  current_title: "Student",
-  current_company: "Dev Bootcamp",
-  type: "Mentor",
-  status: "available",
-  mission_statement: "My goal is to be mentored!",
-  linkedin_id: "g8CGYxpaQV",
-  email: "JasonAllen127@GMAIL.com"
-  )
+# User.create(
+#   first_name: "Jason",
+#   last_name: "Allen",
+#   location: "Greater New York City Area, US",
+#   industry: "Media Production",
+#   picture_url: "https://media.licdn.com/mpr/mprx/0_0-CI4tcKiF1Slxg8jNhq4A67i8NSPVg8gznN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnVym4rT",
+#   public_profile_url: "https://www.linkedin.com/in/jasonallen127",
+#   current_title: "Student",
+#   current_company: "Dev Bootcamp",
+#   type: "Mentor",
+#   status: "available",
+#   mission_statement: "My goal is to be mentored!",
+#   linkedin_id: "g8CGYxpaQV",
+#   email: "JasonAllen127@GMAIL.com"
+#   )
 
 
 
@@ -409,7 +409,7 @@ users.each do |user|
 end
 
 
-User.create(
+steven = User.create(
   first_name: "Steven",
   last_name: "Cassidy",
   location: "Greater New York City Area, US",
@@ -421,9 +421,18 @@ User.create(
   type: "Mentor",
   status: "available",
   mission_statement: "Teachin' code, writin' code. We geek all week at DBC!",
-  linkedin_id: "",
-  email: ""
+  linkedin_id: "98d1FsVNfd",
+  email: "dlange8181@gmail.com"
   )
+
+
+interests = Interest.all
+interests.each do |i|
+    UserInterest.create!(
+      user: steven,
+      interest: i)
+end
+
 
 
 users = User.all
@@ -454,6 +463,7 @@ users.each do |user|
         read: false)
   end
 end
+
 
 
 
