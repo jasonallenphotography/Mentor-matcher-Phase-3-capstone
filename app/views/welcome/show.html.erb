@@ -41,22 +41,22 @@
 
   <div class="row">
     <div class="small-6 columns">
-      <a href="/conversations" class="<%= current_user.unread_conversations_button_notification %> button expanded"><i class="step fi-mail size-36"></i><br>My Inbox</a>
+      <a href="/conversations" class="<%= current_user.unread_conversations_button_notification %> button expanded"><i class="step fi-mail size-36"></i><br><b>My Inbox</b></a>
     </div>
     <div class="small-6 columns">
-      <a href="/matches" class="button expanded"><i class="step fi-torsos-all size-36"></i><br>My Requests</a>
+      <a href="/matches" class="button expanded"><i class="step fi-torsos-all size-36"></i><br><b>My Requests</b></a>
     </div>
   </div>
   <div class="row">
     <div class="small-6 columns">
     <% if current_user.interests.length == 0 %>
-      <a href="/users/<%=current_user.id%>" id='no-interests-profile' class="button warning expanded"><i class="step fi-torso size-36"></i><br>My Profile</a>
+      <a href="/users/<%=current_user.id%>" id='no-interests-profile' class="button warning expanded"><i class="step fi-torso size-36"></i><br><b>My Profile</b></a>
     <% else %>
-      <a href="/users/<%=current_user.id%>" class="button expanded"><i class="step fi-torso size-36"></i><br>My Profile</a>
+      <a href="/users/<%=current_user.id%>" class="button expanded"><i class="step fi-torso size-36"></i><br><b>My Profile</b></a>
     <% end %>
     </div>
     <div class="small-6 columns">
-      <a href="/users" class="button expanded"><i class="step fi-shuffle size-36"></i><br>Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%></a>
+      <a href="/users" class="button expanded"><i class="step fi-shuffle size-36"></i><br><b>Find <%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%></b></a>
     </div>
   </div>
 
@@ -70,7 +70,7 @@
     <div class="row">
         <% current_user.interests.each do |interest| %>
         <div class="small-6 columns">
-          <a href="/interests/<%=interest.id%>" class="button expanded professional-interest-button"><%=interest.name %></a>
+          <a href="/interests/<%=interest.id%>" class="button expanded professional-interest-button"><b><%=interest.name %></b></a>
         </div>
       <% end %>
     </div>

@@ -5,12 +5,12 @@
     <div class="row">
       <ul class="button-group">
         <%= link_to conversations_path do %>
-          <li class="button text-center small-5 columns">Back to Inbox</li>
+          <li class="button text-center small-5 columns"><b>Back to Inbox</b></li>
         <% end %>
 
         <% if @over_five %>
           <%= link_to '?m=all' do %>
-            <li class="button text-center small-6 columns">Show Previous</li>
+            <li class="button text-center small-6 columns"><b>Show Previous</b></li>
           <% end %>
         <% end %>
       </ul>
