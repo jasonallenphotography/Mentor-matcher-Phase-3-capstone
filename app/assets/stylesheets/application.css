@@ -32,6 +32,8 @@
 body {
     /*font-family:'Source Sans Pro', sans-serif;*/
     font-family: 'Open Sans', sans-serif;
+    max-width:768px;
+    margin: 0 auto;
 }
 
 .title-bar{
