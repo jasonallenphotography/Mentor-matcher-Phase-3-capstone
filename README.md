@@ -1,7 +1,8 @@
 #Mentorship
 ##Navigating careers can be tricky. Find your way with Mentorship!
 
-#Background Something that not everyone is lucky enough to find is a professional mentor. Our team felt there was a need for a platform that more easily connects professionals that are seeking and offering mentorship. Through our easy signup, users can add interests to their profile and find mentors/mentees that will most likely be a match based on shared interests. From there, users can request to connect, and once both parties have accepted the connection, a 1:1 conversation is unlocked for them. From here, they can help each other improve on their goals, cultivate and guide talent, and gain insights into new industries.
+#Background
+Something that not everyone is lucky enough to find is a professional mentor. Our team felt there was a need for a platform that more easily connects professionals that are seeking and offering mentorship. Through our easy signup, users can add interests to their profile and find mentors/mentees that will most likely be a match based on shared interests. From there, users can request to connect, and once both parties have accepted the connection, a 1:1 conversation is unlocked for them. From here, they can help each other improve on their goals, cultivate and guide talent, and gain insights into new industries.
 
 We hope that this platform provides mutually beneficial mentorship opportunities.
 
