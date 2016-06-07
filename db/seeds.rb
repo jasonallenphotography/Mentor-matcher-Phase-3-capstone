@@ -408,33 +408,6 @@ users.each do |user|
   end
 end
 
-
-steven = User.create(
-  first_name: "Steven",
-  last_name: "Cassidy",
-  location: "Greater New York City Area, US",
-  industry: "Computer Software",
-  picture_url: 'https://media.licdn.com/mpr/mprx/0_OozIaLHZIWgy5eE5Oa_IhQqMmVgj8RXNAof5eK7Zog3y8IMJgpfI2z3Z2aCj5eIZqUDLW3C4FStpixEMBMrc6A_qCStgi0jvlMrHDrnJWubAdd6djHQQSkZHG4eSE0Ek4VNFEasrYWw',
-  public_profile_url: "https://www.linkedin.com/in/stevencassidytech",
-  current_title: "Instructor",
-  current_company: "Dev Bootcamp",
-  type: "Mentor",
-  status: "available",
-  mission_statement: "Teachin' code, writin' code. We geek all week at DBC!",
-  linkedin_id: "98d1FsVNfd",
-  email: "dlange8181@gmail.com"
-  )
-
-
-interests = Interest.all
-interests.each do |i|
-    UserInterest.create!(
-      user: steven,
-      interest: i)
-end
-
-
-
 users = User.all
 users.each do |user|
   user.type == "Mentor" ? bot = User.find(1) : bot = User.find(2)
