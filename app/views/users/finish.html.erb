@@ -22,29 +22,24 @@
 
 <%= form_for :user do |f| %>
 
-  <div class="row">
-    <div class="small-12 columns text-center">Are you seeking or offering mentorship?</div>
-  </div>
-
-  <div class="row">
-    <p class="small-1 columns text-center"></p>
-    <div class="small-3 columns text-center">
-      <br>
-      <p>Seeking</p>
-      <br>
+<div class="row">
+  <div class="text-center">
+    <div class="button-group toggle" data-toggle="buttons-radio">
+      <div class="small-6 columns">
+        <p>
+          <input type="radio" id="r1" name="user[type]" value="Mentee" data-toggle="button">
+          <label class="button expanded" for="r1"><strong>I Am Seeking<br>Mentorship</strong></label>
+        </p>
+      </div>
+      <div class="small-6 columns">
+        <p>
+          <input type="radio" id="r2" name="user[type]" value="Mentor" data-toggle="button">
+          <label class="button expanded" for="r2"><strong>I Am Offering<br>Mentorship</strong></label>
+        </p>
+      </div>
     </div>
-    <label class="ios7-switch small-4 columns text-center" style="font-size: 36px";>
-      <input type="checkbox" name= "user[type]" value="Mentor" checked>
-      <span></span>
-      <br>
-    </label>
-    <div class="small-3 columns text-center">
-      <br>
-      <p>Mentor</p>
-      <br>
-    </div>
-    <p class="small-1 columns text-center"></p>
   </div>
+</div>
 
   <div class="row">
     <div class="small-12 columns">
