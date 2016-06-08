@@ -100,7 +100,7 @@ class UsersController < ApplicationController
         # for new users to avoid empty inbox bug
 
         @convo = Conversation.find_or_create_by(mentor: @match.mentor, mentee: @match.mentee)
-        @match.conversation_id = @convo.id
+        @match.update_attributes(conversation_id: @convo.id)
         Message.create(body:"Welcome to Mentorship, where mentors and people seeking mentorship connect!\n
                              Make sure to complete your profile and add your professional interests to get noticed more quickly.\n
                              I hope that you enjoy our site, and please email support@mentorship-app.com if you have any questions or concerns!\n

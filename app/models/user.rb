@@ -66,14 +66,19 @@ class User < ActiveRecord::Base
   end
 
   def sorted_conversations
-    array = self.conversations.sort_by do |conv|
+    accepted_matches = self.accepted_matches
+    conversations_to_display = []
+    accepted_matches.each do |match|
+      conversations_to_display << match.conversation
+    end
+    conversations_to_display.sort_by do |conv|
       if conv.messages.last != nil
         conv.messages.last.created_at
       else
         conv.created_at
       end
     end
-    return array.reverse
+    return conversations_to_display.reverse
   end
 
   def common_interests(comparison_user)
