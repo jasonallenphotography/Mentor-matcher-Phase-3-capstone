@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   def self.find_or_create_from_auth_hash(auth)
     if User.find_by(linkedin_id: auth['uid'])
       User.find_by(linkedin_id: auth['uid'])
+      # User.where(linkedin_id: auth['uid']).update_attributes(picture_url: auth.extra.raw_info.pictureUrls.values.last.first)
     else
       @user = User.new()
       @user.linkedin_id = auth['uid'] ||= ""
@@ -36,7 +37,7 @@ class User < ActiveRecord::Base
       @user.last_name = auth['info']['last_name'] ||= ""
       @user.location = auth['info']['location'] ||= ""
       @user.industry = auth['info']['industry'] ||= ""
-      @user.picture_url = auth['info']['image'] ||= ""
+      @user.picture_url = auth.extra.raw_info.pictureUrls.values.last.first ||= ""
       @user.public_profile_url = auth['info']['urls']['public_profile'] ||= ""
       return @user if @user.save
     end

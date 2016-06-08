@@ -9,7 +9,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
               "first-name",
               "last-name",
               "industry",
-              "picture-url",
+              # "picture-url",
+              "picture-urls::(original)",
               "public-profile-url",
               "location"]
 end
