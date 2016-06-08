@@ -69,10 +69,10 @@
 
           <div class="row">
             <div class="small-12 columns">
-              <div class="button-group small text-center">
-                <a href="<%=decision.receiver.public_profile_url%>" target='_empty' id="tabs-3-linkedin-button" class="button small"><i class="step fi-social-linkedin size-60"></i></a>
+              <div class="button-group text-center">
+                <a href="<%=decision.receiver.public_profile_url%>" target='_empty' ><div class="button small small-6" id="tabs-3-linkedin-button"><i class="step fi-social-linkedin size-60"></i></div></a>
                 <%= link_to match_path(decision.id), {:method => :delete} do %>
-                  <div class="button small alert"><i class='step fi-x size-60'></i></div>
+                  <div class="button small small-6 alert"><i class='step fi-x size-60'></i></div>
                 <% end %>
               </div>
             </div>
