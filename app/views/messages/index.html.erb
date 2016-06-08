@@ -40,21 +40,21 @@
   </div>
 </div>
 
-<footer>
-  <div class="row" id="sticky-footer">
-    <div class="small-12 columns">
-      <%= form_for [@conversation, @message] do |f| %>
-        <div>
-          <%= f.text_field :body, required: true %>
-        </div>
-        <div>
-          <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-        </div>
 
-      <% end %>
-    </div>
+<div class="row" id="sticky-footer">
+  <div class="small-12 expanded columns">
+    <%= form_for [@conversation, @message] do |f| %>
+      <div>
+        <%= f.text_field :body, required: true %>
+      </div>
+      <div>
+        <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+      </div>
+
+    <% end %>
   </div>
-</footer>
+</div>
+
 
 <script type="text/javascript">
   $(document).ready(function() {
