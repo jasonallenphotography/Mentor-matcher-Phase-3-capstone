@@ -1,20 +1,22 @@
 <div class="container">
-  <h1 class="text-center">Inbox</h1><br>
+  <h1 class="text-center">Inbox</h1>
   <div class='row'>
     <% @conversations.each do |conversation| %>
       <% if mentor? %>
       <div class="row">
         <p class="small-1 columns"></p>
-        <div class="small-4 columns">
-          <br>
-          <%=image_tag conversation.mentee.picture_url, size:"80x80" %><br>
-        </div>
+        <a href="/users/<%=conversation.mentee.id%>">
+          <div class="small-4 columns">
+            <br>
+            <%=image_tag conversation.mentee.picture_url, size:"80x80" %><br>
+          </div>
+        </a>
         <div class="small-7 columns">
-          <b><%= conversation.mentee.first_name %> <%= conversation.mentee.last_name %></b><br>
+          <br>
           <%= link_to(conversation_messages_path(conversation.id)) do %>
         <div class="row">
             <div class="<%= conversation.has_new_unread_message(current_user) %> button small-8 columns">
-              <i class="step fi-mail size-36"></i><br><b>See Conversation</b>
+              <i class="step fi-mail size-36"></i><br><b><%= conversation.mentee.first_name %> <%= conversation.mentee.last_name %></b>
             </div>
           <% end %>
           </div>
@@ -26,17 +28,18 @@
 
       <div class="row">
         <p class="small-1 columns"></p>
+        <a href="/users/<%=conversation.mentor.id%>">
         <div class="small-4 columns">
           <br>
-
           <%=image_tag conversation.mentor.picture_url, size:"80x80"  %>
         </div>
+        </a>
         <div class="small-7 columns">
-          <b><%= conversation.mentor.first_name %> <%= conversation.mentor.last_name %></b><br>
+          <br>
      <%= link_to(conversation_messages_path(conversation.id)) do %>
         <div class="row">
             <div class="<%= conversation.has_new_unread_message(current_user) %> button small-8 columns">
-              <i class="step fi-mail size-36"></i><br><b>See Conversation</b>
+              <i class="step fi-mail size-36"></i><br><b><%= conversation.mentor.first_name %> <%= conversation.mentor.last_name %></b>
             </div>
           <% end %>
           </div>
