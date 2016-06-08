@@ -1,5 +1,5 @@
 <div class="container">
-<h1 class="text-center"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%> Search Matches</h1>
+<h3 class="text-center"><%= current_user.type == "Mentor" ? "Seekers" : "Mentors"%> interested in <%= @interest.name %></h3>
 <br>
 
 <% if @interested_users.length == 0 %>
@@ -14,18 +14,17 @@
 
 
 <%else%>
-  <% @interested_users.each do |user| %>
-    <a href="/users/<%=user.id%>">
+  <% @interested_users.each do |user| %>    <a href="/users/<%=user[0].id%>">
       <div class="row">
         <p class="small-1 columns"></p>
         <div class="small-4 columns">
-          <%=image_tag user.picture_url %>
+          <%=image_tag user[0].picture_url %>
         </div>
         <div class="small-7 columns">
-          <b><%= user.first_name %> <%= user.last_name %></b><br>
-          <small><%= user.current_title %> at</small><br>
-          <b><%= user.current_company%></b><br>
-          <small><%= user.location %></small><br>
+          <b><%= user[0].first_name %> <%= user[0].last_name %></b><br>
+          <small><%= user[0].current_title %> at</small><br>
+          <b><%= user[0].current_company%></b><br>
+          <small><%= user[0].location %></small><br>
         </div>
       </div>
     </a>
@@ -34,7 +33,16 @@
 
     <div class="row">
       <div class="small-12 small-centered columns text-center">
-        <small><i><%= user.mission_statement %></i></small>
+        <i><%= user[0].mission_statement %></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 small-centered columns text-center">
+        <% if user[1] > 0 %>
+        <small><b>You have <%= user[1] %> <%= user[1] != 1 ? 'interests' : 'interest'%> in common</b></small>
+        <% else %>
+        <small><b>You have no interests in common</b></small>
+        <% end %>
       </div>
     </div>
 
@@ -43,14 +51,15 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="button-group expanded text-center">
-          <b><a href="/users/<%=user.id%>" class="button fuzzy-search-button"><%= image_tag('100pxWhiteLogo.png', :alt=>'Mentorship', size: "50x50")%></a></b>
-          <b><a href="<%=user.public_profile_url%>" target="_blank" id="tabs-3-linkedin-button" class="button fuzzy-search-button"><i class="step fi-social-linkedin size-60"></i></a></b>
-          <%= link_to matches_path(:match => { :receiver_id => "#{user.id}" }), {:method => :post} do %>
+          <b><a href="/users/<%=user[0].id%>" class="button fuzzy-search-button"><%= image_tag('100pxWhiteLogo.png', :alt=>'Mentorship', size: "50x50")%></a></b>
+          <b><a href="<%=user[0].public_profile_url%>" target="_blank" id="tabs-3-linkedin-button" class="button fuzzy-search-button"><i class="step fi-social-linkedin size-60"></i></a></b>
+          <%= link_to matches_path(:match => { :receiver_id => "#{user[0].id}" }), {:method => :post} do %>
             <b><div class="button warning fuzzy-search-button"><i class='step fi-like size-60'></i></div></b>
           <% end %>
         </div>
       </div>
     </div>
+
     <hr class="style-three">
   <% end %>
   </div>
