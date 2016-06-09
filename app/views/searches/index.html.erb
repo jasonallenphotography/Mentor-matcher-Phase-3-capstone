@@ -53,10 +53,18 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="button-group expanded text-center">
-          <b><a href="/users/<%=user[0].id%>" class="button fuzzy-search-button"><%= image_tag('100pxWhiteLogo.png', :alt=>'Mentorship', size: "50x50")%></a></b>
-          <b><a href="<%=user[0].public_profile_url%>" target="_blank" id="tabs-3-linkedin-button" class="button fuzzy-search-button"><i class="step fi-social-linkedin size-60"></i></a></b>
+          <a href="/users/<%=user[0].id%>">
+            <div class="button small-4 small fuzzy-search-button">
+              <b><%= image_tag('100pxWhiteLogo.png', :alt=>'Mentorship', size: "50x50")%></b>
+            </div>
+          </a>
+          <a href="<%=user[0].public_profile_url%>" target="_blank">
+            <div id="tabs-3-linkedin-button" class="button small-4 small fuzzy-search-button">
+              <b><i class="step fi-social-linkedin size-60"></i></b>
+            </div>
+          </a>
           <%= link_to matches_path(:match => { :receiver_id => "#{user[0].id}" }), {:method => :post} do %>
-            <b><div class="button warning fuzzy-search-button"><i class='step fi-like size-60'></i></div></b>
+            <b><div class="button warning small-4 small fuzzy-search-button"><i class='step fi-like size-60'></i></div></b>
           <% end %>
         </div>
       </div>
