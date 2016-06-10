@@ -2,14 +2,17 @@
 
 <h1 class="text-center"><%=current_user.first_name%>'s Requests</h1>
 
-<div id="tabs" style="font-family:Open Sans, sans-serif;">
-    <ul>
-      <li class="our-match-index-tabs"><a class="text-center" href="#tabs-1"><%= current_user.type == "Mentor" ? "Seeker" : "Mentor"%><br>Requests</a></li>
-      <li class="our-match-index-tabs"><a class="text-center" href="#tabs-2">My<br><%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%></a></li>
-      <li class="our-match-index-tabs"><a class="text-center" href="#tabs-3">Pending<br>Requests</a></li>
-    </ul>
+<div class="row">
+  <div class="small-12 text-center columns">
+  <ul class="tabs-bar">
+    <li class="active"><a class="text-center" href="#tabs-1">Requests</a></li>
+    <li><a class="text-center" href="#tabs-2">My <%= current_user.type == "Mentor" ? "Protegés" : "Mentors"%></a></li>
+    <li><a class="text-center" href="#tabs-3">Pending</a></li>
+  </ul>
+  </div>
+</div>
 
-  <div id="tabs-1">
+  <div class="tab-content" id="tabs-1">
     <div class="container">
       <% if @matches_pending_my_decision.length > 0 %>
           <%= render 'matches_index_tab1_partial' %>
@@ -23,7 +26,7 @@
     </div>
   </div>
 
-  <div id="tabs-2">
+  <div class="tab-content" id="tabs-2">
     <div class="container parent-container-to-remove-profile-when-blocked">
       <% if @matches.length > 0 %>
         <%= render 'matches_index_tab2_partial' %>
@@ -42,7 +45,7 @@
     </div>
   </div>
 
-  <div id="tabs-3">
+  <div class="tab-content" id="tabs-3">
     <div class="container">
       <% if @matches_pending_others_decision.length > 0 %>
         <% @matches_pending_others_decision.each do |decision| %>
@@ -94,10 +97,10 @@
     </div>
   </div>
 </div>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script>
 $(function() {
   $( "#tabs" ).tabs();
 });
 </script>
-
+ -->
