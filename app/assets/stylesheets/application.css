@@ -11,9 +11,9 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require foundation_and_overrides
  *= require jquery-ui
+ *= require_self
 
  */
 
@@ -154,19 +154,6 @@ a.professional-interest-button {
   padding-left: 30px;
 }
 
-/* JQUERY UI Tabs CSS for Match Index follows */
-li.our-match-index-tabs {
-    width:32.33%;
-}
-
-.our-match-index-tabs a {
-    width: 100%;
-}
-
-
-
-
-
 /*Animation for Page Load on Welcome Page*/
 
 /* make keyframes that tell the start state and the end state of our object */
@@ -220,3 +207,49 @@ input[data-toggle]:checked + label:active {
 .button-group.toggle li:not(first-child) {
   margin: 0 -0.9rem; }
 
+/* Styling for Tab interface */
+li.our-match-index-tabs {
+    list-style: none;
+}
+
+.our-match-index-tabs a {
+    width: 100%;
+}
+
+.tab-content {
+    display: none;
+}
+.tabs-bar {
+    float: left;
+    border-bottom: 1px solid #ccc;
+    width: 90%;
+    margin-bottom: 16px;
+    list-style: none;
+}
+.tabs-bar li {
+    float: left;
+    /*margin-right: 16px;*/
+    padding: 10px 10px;
+    height: 49px;
+    line-height: 30px;
+}
+.tabs-bar li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.tabs-bar li.active {
+    border: 1px solid #ccc;
+    border-bottom: 3px solid white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-bottom: -1px;
+    height: 51px;
+    padding: 9px 9px;
+}
+
+.tabs-bar li.active a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}
